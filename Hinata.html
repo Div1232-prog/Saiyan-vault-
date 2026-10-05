@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hinata Lofi Wallpaper - Saiyan Mindset Vault</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px 16px;
+
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    #3b3d42 0%,
+                    #1d1f23 25%,
+                    #0b0c0e 58%,
+                    #020304 100%
+                );
+
+            background-attachment: fixed;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 420px;
+
+            padding: 30px 22px 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(54, 56, 61, 0.72),
+                    rgba(13, 14, 17, 0.94) 45%,
+                    rgba(5, 6, 8, 0.98)
+                );
+
+            border: 1px solid rgba(220, 224, 230, 0.20);
+            border-radius: 22px;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.90),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08),
+                0 0 35px rgba(180, 185, 195, 0.05);
+
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        /* SILVER HEADING */
+
+        .brand-title {
+            font-family: 'Cinzel', serif;
+            font-size: 25px;
+            font-weight: 800;
+            line-height: 1.2;
+
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff 0%,
+                    #d9dce1 25%,
+                    #ffffff 45%,
+                    #92969d 65%,
+                    #f5f6f7 82%,
+                    #aeb2b8 100%
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            filter:
+                drop-shadow(0 0 5px rgba(255,255,255,0.30))
+                drop-shadow(0 0 16px rgba(210,215,225,0.12));
+
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 11px;
+            font-weight: 600;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: #aeb2b8;
+
+            margin-bottom: 22px;
+        }
+
+        /* WALLPAPER PREVIEW */
+
+        .preview-box {
+            width: 100%;
+
+            overflow: hidden;
+
+            border-radius: 15px;
+
+            border: 1px solid rgba(255,255,255,0.14);
+
+            background: #08090b;
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.70),
+                0 0 25px rgba(255,255,255,0.035);
+
+            margin-bottom: 18px;
+        }
+
+        .preview-box img {
+            display: block;
+
+            width: 100%;
+            height: auto;
+
+            object-fit: cover;
+        }
+
+        /* DIRECT DOWNLOAD LINK */
+
+        .direct-link {
+            display: block;
+
+            margin-bottom: 14px;
+
+            color: #aeb4bc;
+
+            font-size: 11px;
+            font-weight: 600;
+
+            letter-spacing: 0.8px;
+
+            text-decoration: none;
+
+            transition: 0.2s ease;
+        }
+
+        .direct-link:hover {
+            color: #ffffff;
+        }
+
+        .direct-link span {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* DESCRIPTION */
+
+        .description {
+            font-size: 13px;
+            line-height: 1.65;
+
+            color: #b9bcc2;
+
+            margin-top: 18px;
+            margin-bottom: 20px;
+
+            font-weight: 400;
+        }
+
+        .description strong {
+            color: #e4e6e9;
+            font-weight: 600;
+        }
+
+        /* BUTTON CONTAINER */
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+
+        /* COMMON BUTTON */
+
+        .btn {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 9px;
+
+            width: 100%;
+
+            padding: 15px 18px;
+
+            border-radius: 13px;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 0.7px;
+            text-transform: uppercase;
+
+            text-decoration: none;
+
+            border: 1px solid transparent;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                filter 0.2s ease;
+        }
+
+        .btn:hover {
+            filter: brightness(1.12);
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        /* PREMIUM DOWNLOAD BUTTON */
+
+        .btn-download {
+            color: #08090a;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff 0%,
+                    #d7d9dd 28%,
+                    #a8acb2 55%,
+                    #f5f6f7 78%,
+                    #b8bbc0 100%
+                );
+
+            border-color: rgba(255,255,255,0.55);
+
+            box-shadow:
+                0 7px 24px rgba(210,215,225,0.16),
+                inset 0 1px 0 rgba(255,255,255,0.8);
+        }
+
+        .btn-download:hover {
+            box-shadow:
+                0 9px 30px rgba(220,225,235,0.28),
+                inset 0 1px 0 rgba(255,255,255,0.9);
+        }
+
+        /* TELEGRAM BUTTON */
+
+        .btn-telegram {
+            color: #ffffff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #394b5d 0%,
+                    #263746 50%,
+                    #18242e 100%
+                );
+
+            border-color: rgba(145,180,205,0.32);
+
+            box-shadow:
+                0 7px 24px rgba(40,80,105,0.20),
+                inset 0 1px 0 rgba(255,255,255,0.08);
+        }
+
+        .btn-telegram:hover {
+            box-shadow:
+                0 9px 30px rgba(55,105,135,0.30),
+                inset 0 1px 0 rgba(255,255,255,0.12);
+        }
+
+        /* FILE INFO */
+
+        .file-info {
+            margin-top: 17px;
+
+            text-align: center;
+
+            font-size: 10px;
+
+            letter-spacing: 0.5px;
+
+            color: #777b82;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 420px) {
+
+            body {
+                padding: 15px 10px;
+            }
+
+            .card {
+                padding: 25px 17px 21px;
+                border-radius: 19px;
+            }
+
+            .brand-title {
+                font-size: 22px;
+            }
+
+            .subtitle {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <!-- HEADING -->
+
+        <h1 class="brand-title">
+            Hinata Lofi Wallpaper
+        </h1>
+
+        <div class="subtitle">
+            Saiyan Mindset Vault
+        </div>
+
+
+        <!-- WALLPAPER PREVIEW -->
+
+        <div class="preview-box">
+            <img
+                src="Hinata_lofi_wallpaper.png"
+                alt="Hinata Lofi Anime Wallpaper Preview"
+            >
+        </div>
+
+
+        <!-- DIRECT DOWNLOAD LINK -->
+
+        <a
+            href="Hinata_lofi_wallpaper.png"
+            download="Hinata_lofi_wallpaper.png"
+            class="direct-link"
+        >
+            ↓ Direct Download: <span>Hinata Lofi Wallpaper</span>
+        </a>
+
+
+        <!-- DOWNLOAD BUTTON -->
+
+        <div class="btn-container">
+
+            <a
+                href="Hinata_lofi_wallpaper.png"
+                download="Hinata_lofi_wallpaper.png"
+                class="btn btn-download"
+            >
+                📥 Download Wallpaper
+            </a>
+
+        </div>
+
+
+        <!-- DESCRIPTION -->
+
+        <p class="description">
+            Want more
+            <strong>aesthetic, premium, and dark-themed anime wallpapers</strong>?
+            Join our Telegram channel to discover new wallpapers,
+            exclusive anime artwork, and fresh designs.
+        </p>
+
+
+        <!-- TELEGRAM BUTTON -->
+
+        <div class="btn-container">
+
+            <a
+                href="tg://resolve?domain=Saiyan_Mindset_Vault&post=68"
+                class="btn btn-telegram"
+            >
+                ✈️ Join Telegram Channel
+            </a>
+
+        </div>
+
+
+        <!-- FILE INFO -->
+
+        <div class="file-info">
+            ✦ Premium Anime Wallpaper • High Quality • Free Download ✦
+        </div>
+
+    </div>
+
+</body>
+</html>
