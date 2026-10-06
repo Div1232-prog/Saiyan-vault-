@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>4K Aesthetic Wallpaper Pack | Saiyan Mindset Vault</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, #30343a 0%, #14171b 35%, #070809 75%, #000000 100%);
+      color: #eeeeee;
+      min-height: 100vh;
+      padding: 28px 16px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    /* Main Card */
+    .card {
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.015));
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 24px;
+      padding: 26px 20px 30px;
+      box-shadow:
+        0 20px 70px rgba(0,0,0,0.65),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px);
+    }
+
+    /* Heading */
+    h1 {
+      text-align: center;
+      font-size: clamp(28px, 7vw, 46px);
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+
+      background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #e8e8e8 35%,
+        #aeb3b8 65%,
+        #ffffff 100%
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      text-shadow:
+        0 0 8px rgba(255,255,255,0.25),
+        0 0 25px rgba(210,215,220,0.12);
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #aeb2b7;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    /* Preview */
+    .preview-box {
+      width: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #0b0c0e;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow:
+        0 12px 40px rgba(0,0,0,0.55),
+        0 0 25px rgba(255,255,255,0.04);
+      margin-bottom: 24px;
+    }
+
+    .preview-box img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 620px;
+      object-fit: cover;
+    }
+
+    /* Description */
+    .description {
+      text-align: center;
+      color: #c6c9cc;
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 0 auto 22px;
+      max-width: 600px;
+    }
+
+    .highlight {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* Buttons */
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 56px;
+      padding: 15px 20px;
+      margin: 12px 0;
+      border-radius: 14px;
+
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .download-btn {
+      color: #08090a;
+      background: linear-gradient(
+        135deg,
+        #ffffff,
+        #d9dde1,
+        #aeb4ba
+      );
+
+      box-shadow:
+        0 8px 25px rgba(255,255,255,0.13),
+        inset 0 1px 0 rgba(255,255,255,0.9);
+    }
+
+    .download-btn:hover {
+      box-shadow:
+        0 12px 35px rgba(255,255,255,0.22),
+        inset 0 1px 0 rgba(255,255,255,1);
+    }
+
+    .telegram-btn {
+      color: #ffffff;
+      background: linear-gradient(
+        135deg,
+        #272b30,
+        #171a1e
+      );
+
+      border: 1px solid rgba(255,255,255,0.22);
+
+      box-shadow:
+        0 8px 28px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.07);
+    }
+
+    .telegram-btn:hover {
+      border-color: rgba(255,255,255,0.45);
+      box-shadow:
+        0 12px 35px rgba(255,255,255,0.08);
+    }
+
+    .pdf-btn {
+      color: #e7e9eb;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.16);
+
+      box-shadow:
+        0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    .pdf-btn:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    /* Small Telegram Description */
+    .telegram-note {
+      text-align: center;
+      color: #9da2a7;
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 24px auto 10px;
+      max-width: 570px;
+    }
+
+    .telegram-note strong {
+      color: #e8e9ea;
+    }
+
+    /* Pinterest Note */
+    .pinterest-note {
+      text-align: center;
+      margin-top: 24px;
+      padding: 16px 14px;
+      border-radius: 13px;
+
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.09);
+
+      color: #9fa4a9;
+      font-size: 12.5px;
+      line-height: 1.6;
+    }
+
+    .pinterest-note strong {
+      color: #dfe2e5;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      color: #666b70;
+      font-size: 11px;
+      margin-top: 24px;
+      letter-spacing: 0.4px;
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+
+      body {
+        padding: 16px 10px;
+      }
+
+      .card {
+        padding: 22px 14px 24px;
+        border-radius: 20px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .subtitle {
+        font-size: 13px;
+      }
+
+      .button {
+        min-height: 54px;
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <!-- Heading -->
+      <h1>4K Aesthetic Wallpaper Pack</h1>
+
+      <p class="subtitle">
+        Premium anime-inspired wallpapers for your phone.
+      </p>
+
+
+      <!-- Preview Image -->
+      <div class="preview-box">
+        <img
+          src="Preview.png"
+          alt="4K Aesthetic Wallpaper Pack Preview"
+        >
+      </div>
+
+
+      <!-- Description -->
+      <p class="description">
+        Upgrade your screen with a curated collection of
+        <span class="highlight">premium 4K aesthetic wallpapers</span>.
+        Download the complete wallpaper pack in one ZIP file or get the
+        printable PDF version for easy offline access.
+      </p>
+
+
+      <!-- ZIP DOWNLOAD -->
+      <a
+        class="button download-btn"
+        href="Wallpapers.zip"
+        download="Wallpapers.zip"
+      >
+        ↓ Download Wallpaper Pack
+      </a>
+
+
+      <!-- Telegram Description -->
+      <p class="telegram-note">
+        <strong>Want more premium wallpapers?</strong><br>
+        Join our Telegram channel for new aesthetic wallpapers,
+        exclusive anime artwork, dark-themed designs, and fresh releases.
+      </p>
+
+
+      <!-- TELEGRAM -->
+      <a
+        class="button telegram-btn"
+        href="tg://resolve?domain=Saiyan_Mindset_Vault&post=69"
+      >
+        ✈ Join Telegram
+      </a>
+
+
+      <!-- PRINTABLE PDF -->
+      <a
+        class="button pdf-btn"
+        href="4k_Aesthetic_wallpapers.pdf"
+        target="_blank"
+      >
+        ▣ View Printable PDF
+      </a>
+
+
+      <!-- Pinterest Note -->
+      <div class="pinterest-note">
+        <strong>Love aesthetic wallpapers?</strong><br>
+        Follow us on Pinterest for more premium wallpaper collections,
+        anime-inspired artwork, and new digital releases.
+      </div>
+
+
+      <!-- Footer -->
+      <div class="footer">
+        © Saiyan Mindset Vault · Premium Digital Wallpapers
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
