@@ -28,7 +28,7 @@
 
   <link rel="preload"
         as="image"
-        href="./Preview.jpg"
+        href="Preview.jpg"
         fetchpriority="high">
 
   <style>
@@ -104,9 +104,9 @@
       margin-bottom: 22px;
     }
 
+    /* Fixed Preview Section to fit Poster Aspect Ratio without cropping */
     .preview {
       width: 100%;
-      aspect-ratio: 9 / 16;
       overflow: hidden;
       border-radius: 18px;
       background: #111;
@@ -118,9 +118,9 @@
 
     .preview img {
       width: 100%;
-      height: 100%;
+      height: auto;
       display: block;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     .description {
@@ -291,9 +291,7 @@
       <div class="preview">
 
         <img
-          src="./Preview.jpg"
-          width="1080"
-          height="1920"
+          src="Preview.jpg"
           alt="4K Aesthetic Wallpaper Pack Preview"
           fetchpriority="high"
           decoding="async"
@@ -368,3 +366,4 @@
 
 </body>
 </html>
+
