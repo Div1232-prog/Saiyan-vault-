@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>4 Mentors - Lessons That Stay With You</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top, #30343a 0%, #14171b 35%, #070809 75%, #000000 100%);
+      color: #eeeeee;
+      min-height: 100vh;
+      padding: 24px 14px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.075),
+          rgba(255,255,255,0.015)
+        );
+
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 24px;
+      padding: 25px 18px 28px;
+
+      box-shadow:
+        0 20px 70px rgba(0,0,0,0.65),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+
+      backdrop-filter: blur(14px);
+    }
+
+    /* Main Heading */
+
+    h1 {
+      text-align: center;
+      font-size: clamp(28px, 7vw, 44px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: 0.8px;
+      margin-bottom: 9px;
+
+      background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #e7e9eb 35%,
+        #aeb3b8 65%,
+        #ffffff 100%
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      text-shadow:
+        0 0 8px rgba(255,255,255,0.24),
+        0 0 25px rgba(210,215,220,0.12);
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #b5b9bd;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 23px;
+    }
+
+    /* Preview */
+
+    .preview-box {
+      width: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+
+      background: #090a0c;
+      border: 1px solid rgba(255,255,255,0.13);
+
+      box-shadow:
+        0 12px 40px rgba(0,0,0,0.55),
+        0 0 25px rgba(255,255,255,0.04);
+
+      margin-bottom: 23px;
+    }
+
+    .preview-box img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Description */
+
+    .description {
+      text-align: center;
+      color: #c9cdd1;
+
+      font-size: 15px;
+      line-height: 1.75;
+
+      margin: 0 auto 22px;
+      max-width: 620px;
+    }
+
+    .description strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* Buttons */
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      min-height: 57px;
+
+      padding: 15px 18px;
+      margin: 12px 0;
+
+      border-radius: 14px;
+
+      text-decoration: none;
+
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.15px;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .button:active {
+      transform: scale(0.98);
+    }
+
+    /* Download Button */
+
+    .download-btn {
+      color: #08090a;
+
+      background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #e0e3e6 45%,
+        #aeb4ba 100%
+      );
+
+      border: 1px solid rgba(255,255,255,0.55);
+
+      box-shadow:
+        0 8px 25px rgba(255,255,255,0.13),
+        inset 0 1px 0 rgba(255,255,255,0.9);
+    }
+
+    .download-btn:hover {
+      box-shadow:
+        0 12px 35px rgba(255,255,255,0.22),
+        inset 0 1px 0 rgba(255,255,255,1);
+    }
+
+    /* Telegram Button */
+
+    .telegram-btn {
+      color: #ffffff;
+
+      background: linear-gradient(
+        135deg,
+        #292d32,
+        #16191d
+      );
+
+      border: 1px solid rgba(255,255,255,0.22);
+
+      box-shadow:
+        0 8px 28px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.07);
+    }
+
+    .telegram-btn:hover {
+      border-color: rgba(255,255,255,0.45);
+
+      box-shadow:
+        0 12px 35px rgba(255,255,255,0.08);
+    }
+
+    /* Telegram Description */
+
+    .telegram-note {
+      text-align: center;
+
+      color: #9fa4a9;
+
+      font-size: 14px;
+      line-height: 1.65;
+
+      margin: 24px auto 10px;
+      max-width: 600px;
+    }
+
+    .telegram-note strong {
+      color: #e9eaec;
+    }
+
+    /* Pinterest Note */
+
+    .pinterest-note {
+      text-align: center;
+
+      margin-top: 23px;
+      padding: 16px 14px;
+
+      border-radius: 13px;
+
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.09);
+
+      color: #a3a8ad;
+
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .pinterest-note strong {
+      color: #e0e2e4;
+    }
+
+    /* Footer */
+
+    .footer {
+      text-align: center;
+
+      color: #686d72;
+
+      font-size: 11px;
+
+      margin-top: 23px;
+
+      letter-spacing: 0.35px;
+    }
+
+    /* Mobile Optimization */
+
+    @media (max-width: 480px) {
+
+      body {
+        padding: 14px 9px;
+      }
+
+      .card {
+        padding: 21px 13px 24px;
+        border-radius: 20px;
+      }
+
+      h1 {
+        font-size: 29px;
+        letter-spacing: 0.5px;
+      }
+
+      .subtitle {
+        font-size: 13.5px;
+        margin-bottom: 20px;
+      }
+
+      .description {
+        font-size: 15px;
+        line-height: 1.78;
+      }
+
+      .button {
+        min-height: 56px;
+        font-size: 15.5px;
+      }
+
+      .telegram-note {
+        font-size: 13.5px;
+        line-height: 1.7;
+      }
+
+      .pinterest-note {
+        font-size: 12.8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <!-- MAIN HEADING -->
+      <h1>4 Mentors</h1>
+
+      <p class="subtitle">
+        Lessons That Stay With You
+      </p>
+
+
+      <!-- PREVIEW IMAGE -->
+      <div class="preview-box">
+        <img
+          src="Preview_1.png"
+          alt="4 Mentors - Lessons That Stay With You"
+        >
+      </div>
+
+
+      <!-- WALLPAPER DESCRIPTION -->
+      <p class="description">
+        Discover the timeless wisdom of four legendary anime mentors.
+        <strong>Jiraiya, Satoru Gojo, Silvers Rayleigh, and Askeladd</strong>
+        each represent a different lesson about growth, hardship, purpose,
+        freedom, and the journey of life.
+        <br><br>
+        Download this premium wallpaper and keep these lessons with you
+        wherever you go.
+      </p>
+
+
+      <!-- DIRECT IMAGE DOWNLOAD -->
+      <a
+        class="button download-btn"
+        href="./4_teaching_lessons.png"
+        download="4_teaching_lessons.png"
+      >
+        ↓ Download Wallpaper
+      </a>
+
+
+      <!-- TELEGRAM DESCRIPTION -->
+      <p class="telegram-note">
+        <strong>Want more premium anime wallpapers?</strong><br>
+        Join our Telegram channel for aesthetic wallpapers,
+        anime artwork, exclusive designs, and fresh releases.
+      </p>
+
+
+      <!-- TELEGRAM APP BUTTON -->
+      <a
+        class="button telegram-btn"
+        href="tg://resolve?domain=Saiyan_Mindset_Vault&post=70"
+      >
+        ✈ Join Telegram
+      </a>
+
+
+      <!-- PINTEREST NOTE -->
+      <div class="pinterest-note">
+        <strong>Enjoying the collection?</strong><br>
+        Follow us on Pinterest for more premium anime wallpapers,
+        aesthetic artwork, and new digital collections.
+      </div>
+
+
+      <!-- FOOTER -->
+      <div class="footer">
+        © Saiyan Mindset Vault · Premium Anime Wallpapers
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
