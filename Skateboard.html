@@ -2,35 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Skateboard Boy Wallpaper | Saiyan Mindset Vault</title>
-
-  <meta name="description"
-        content="Download a premium skateboard boy aesthetic wallpaper from Saiyan Mindset Vault. A clean, cinematic mobile wallpaper designed for modern phone screens.">
-
+  <meta name="description" content="Download a premium skateboard boy aesthetic wallpaper from Saiyan Mindset Vault. A clean, cinematic mobile wallpaper designed for modern phone screens.">
   <meta name="robots" content="index, follow">
-
   <meta name="theme-color" content="#080808">
 
   <!-- Open Graph -->
-  <meta property="og:title"
-        content="Skateboard Boy Wallpaper | Saiyan Mindset Vault">
-
-  <meta property="og:description"
-        content="Premium skateboard boy aesthetic wallpaper for your phone.">
-
+  <meta property="og:title" content="Skateboard Boy Wallpaper | Saiyan Mindset Vault">
+  <meta property="og:description" content="Premium skateboard boy aesthetic wallpaper for your phone.">
   <meta property="og:type" content="website">
-
-  <meta property="og:image"
-        content="https://div1232-prog.github.io/Saiyan-vault-/skateboard_preview.jpeg">
+  <meta property="og:image" content="https://div1232-prog.github.io/Saiyan-vault-/skateboard_preview.jpeg">
 
   <!-- Preload the main preview image -->
-  <link rel="preload"
-        as="image"
-        href="./skateboard_preview.jpeg"
-        fetchpriority="high">
+  <link rel="preload" as="image" href="./skateboard_preview.jpeg" fetchpriority="high">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     * {
@@ -41,26 +29,13 @@
 
     body {
       min-height: 100vh;
-
-      background:
-        radial-gradient(
-          circle at top,
-          #202020 0%,
-          #0c0c0c 38%,
-          #050505 100%
-        );
-
+      background: radial-gradient(circle at top, #242426 0%, #0c0c0e 40%, #050506 100%);
       color: #f2f2f2;
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       display: flex;
       justify-content: center;
-
-      padding: 28px 14px;
+      padding: 24px 14px;
+      overflow-x: hidden;
     }
 
     .container {
@@ -68,276 +43,394 @@
       max-width: 620px;
     }
 
+    /* Glassmorphic Dark Card */
     .card {
-      background: rgba(18, 18, 18, 0.94);
-
-      border: 1px solid rgba(210, 210, 210, 0.18);
-
-      border-radius: 24px;
-
-      padding: 24px;
-
-      box-shadow:
-        0 0 45px rgba(255, 255, 255, 0.06),
-        0 20px 70px rgba(0, 0, 0, 0.65);
-
-      backdrop-filter: blur(12px);
+      background: rgba(18, 18, 20, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 
+        0 0 50px rgba(255, 255, 255, 0.04),
+        0 25px 80px rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     }
 
+    /* Silver Badge */
     .badge {
-      display: inline-block;
-
-      padding: 7px 13px;
-
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
       border-radius: 999px;
-
-      border: 1px solid rgba(220, 220, 220, 0.25);
-
-      background: rgba(255, 255, 255, 0.06);
-
-      color: #cfcfcf;
-
-      font-size: 12px;
-
-      letter-spacing: 1.2px;
-
-      margin-bottom: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.07);
+      color: #d1d1d1;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #38ef7d;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #38ef7d;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; transform: scale(1.2); }
+      100% { opacity: 0.4; }
+    }
+
+    /* Metallic Title Gradient */
     h1 {
-      font-size: clamp(28px, 7vw, 42px);
-
-      line-height: 1.08;
-
-      margin-bottom: 10px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #ffffff,
-          #bcbcbc,
-          #ffffff,
-          #8f8f8f
-        );
-
+      font-size: clamp(28px, 6.5vw, 42px);
+      line-height: 1.1;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #ffffff 0%, #d8d8d8 40%, #999999 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-
       background-clip: text;
-
       font-weight: 800;
+      letter-spacing: -0.5px;
     }
 
     .subtitle {
-      color: #bdbdbd;
-
+      color: #a8a8a8;
       font-size: 15px;
-
-      line-height: 1.65;
-
-      margin-bottom: 22px;
+      line-height: 1.6;
+      margin-bottom: 24px;
     }
 
-    /* Preview */
-    .preview {
+    /* Phone Mockup Frame for Preview */
+    .phone-mockup {
+      position: relative;
       width: 100%;
-
-      aspect-ratio: 9 / 16;
-
+      max-width: 320px;
+      margin: 0 auto 24px auto;
+      aspect-ratio: 9 / 19.5;
+      border-radius: 38px;
+      background: #000;
+      border: 6px solid #28282e;
+      box-shadow: 
+        0 0 0 2px rgba(255,255,255,0.08),
+        0 20px 50px rgba(0, 0, 0, 0.85);
       overflow: hidden;
-
-      border-radius: 18px;
-
-      background: #111;
-
-      border: 1px solid rgba(255, 255, 255, 0.12);
-
-      margin-bottom: 22px;
-
-      box-shadow:
-        0 15px 45px rgba(0, 0, 0, 0.55);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .preview img {
+    .phone-mockup:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 
+        0 0 0 2px rgba(255,255,255,0.2),
+        0 25px 60px rgba(0, 0, 0, 0.9);
+    }
+
+    /* Notch */
+    .phone-notch {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 18px;
+      background: #000;
+      border-radius: 12px;
+      z-index: 10;
+    }
+
+    /* Lockscreen Time Overlay */
+    .lockscreen-time {
+      position: absolute;
+      top: 45px;
+      width: 100%;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 300;
+      z-index: 5;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+      pointer-events: none;
+    }
+
+    .lockscreen-time .time {
+      font-size: 38px;
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+
+    .lockscreen-time .date {
+      font-size: 11px;
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    .preview-img {
       width: 100%;
       height: 100%;
-
-      display: block;
-
       object-fit: cover;
+      display: block;
     }
 
-    .description {
-      color: #c7c7c7;
+    .zoom-hint {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(8px);
+      color: #e0e0e0;
+      padding: 5px 12px;
+      border-radius: 99px;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      border: 1px solid rgba(255,255,255,0.15);
+      z-index: 5;
+    }
 
-      font-size: 15px;
-
-      line-height: 1.75;
-
+    /* Specs Badge Strip */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
       margin-bottom: 22px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .spec-item {
+      text-align: center;
+    }
+
+    .spec-label {
+      font-size: 10px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .spec-value {
+      font-size: 13px;
+      font-weight: 700;
+      color: #eee;
+      margin-top: 2px;
+    }
+
+    /* Description */
+    .description {
+      color: #b5b5b5;
+      font-size: 14.5px;
+      line-height: 1.7;
+      margin-bottom: 24px;
     }
 
     .description strong {
-      color: #eeeeee;
+      color: #ffffff;
+    }
+
+    /* Buttons */
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     .button {
       display: flex;
-
       align-items: center;
       justify-content: center;
-
+      gap: 10px;
       width: 100%;
-
       min-height: 52px;
-
-      padding: 14px 18px;
-
-      margin-top: 12px;
-
-      border-radius: 14px;
-
+      padding: 14px 20px;
+      border-radius: 16px;
       text-decoration: none;
-
       font-size: 15px;
-
       font-weight: 700;
-
       letter-spacing: 0.2px;
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      user-select: none;
     }
 
-    .button:hover {
-      transform: translateY(-2px);
+    .button:active {
+      transform: scale(0.98);
     }
 
     /* Silver Download Button */
     .download {
-      color: #080808;
-
-      background:
-        linear-gradient(
-          135deg,
-          #ffffff,
-          #d5d5d5,
-          #a9a9a9
-        );
-
-      box-shadow:
-        0 8px 25px rgba(255, 255, 255, 0.12);
+      color: #050505;
+      background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #b0b0b0 100%);
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+      border: none;
     }
 
     .download:hover {
-      box-shadow:
-        0 10px 32px rgba(255, 255, 255, 0.2);
+      background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 50%, #c5c5c5 100%);
+      box-shadow: 0 10px 32px rgba(255, 255, 255, 0.28);
+      transform: translateY(-2px);
     }
 
     /* Telegram Button */
     .telegram {
-      color: #eeeeee;
-
-      background:
-        linear-gradient(
-          135deg,
-          #242424,
-          #141414
-        );
-
-      border: 1px solid rgba(220, 220, 220, 0.22);
+      color: #ffffff;
+      background: linear-gradient(135deg, #0088cc 0%, #0077b5 100%);
+      box-shadow: 0 8px 25px rgba(0, 136, 204, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .telegram:hover {
-      background:
-        linear-gradient(
-          135deg,
-          #303030,
-          #181818
-        );
+      background: linear-gradient(135deg, #0099e6 0%, #0088cc 100%);
+      box-shadow: 0 10px 32px rgba(0, 136, 204, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* Secondary Share Button */
+    .secondary-btn {
+      color: #cccccc;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .secondary-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.25);
     }
 
     .section-title {
-      margin-top: 26px;
-
+      margin-top: 30px;
       margin-bottom: 8px;
-
       font-size: 18px;
-
-      color: #eeeeee;
+      font-weight: 700;
+      color: #ffffff;
     }
 
     .telegram-text {
-      color: #a9a9a9;
-
+      color: #9e9e9e;
       font-size: 14px;
-
-      line-height: 1.7;
+      line-height: 1.65;
+      margin-bottom: 14px;
     }
 
     .note {
-      margin-top: 22px;
-
-      padding: 14px 15px;
-
-      border-left: 3px solid #bdbdbd;
-
-      border-radius: 10px;
-
-      background: rgba(255, 255, 255, 0.045);
-
-      color: #a9a9a9;
-
+      margin-top: 24px;
+      padding: 14px 16px;
+      border-left: 3px solid #888888;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      color: #9e9e9e;
       font-size: 13px;
-
       line-height: 1.65;
     }
 
     .footer {
       text-align: center;
-
-      margin-top: 22px;
-
-      color: #777;
-
+      margin-top: 28px;
+      color: #666666;
       font-size: 12px;
-
       line-height: 1.6;
     }
 
-    /* Mobile */
+    /* Lightbox Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(12px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-img {
+      max-width: 100%;
+      max-height: 85vh;
+      border-radius: 20px;
+      box-shadow: 0 0 50px rgba(0,0,0,0.9);
+      object-fit: contain;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .modal-close:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #1e1e24;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 99px;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      font-size: 13px;
+      font-weight: 600;
+      z-index: 200;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      pointer-events: none;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
     @media (max-width: 480px) {
-
       body {
-        padding: 14px 10px;
+        padding: 12px 8px;
       }
-
       .card {
-        padding: 18px;
-
-        border-radius: 20px;
+        padding: 20px 16px;
+        border-radius: 22px;
       }
-
       h1 {
         font-size: 30px;
       }
-
-      .subtitle {
-        font-size: 14px;
-      }
-
-      .description {
-        font-size: 14px;
-
-        line-height: 1.7;
-      }
-
-      .button {
-        min-height: 50px;
-
-        font-size: 14px;
+      .phone-mockup {
+        max-width: 280px;
       }
     }
   </style>
@@ -349,58 +442,97 @@
 
     <section class="card">
 
-      <!-- Category -->
+      <!-- Category Badge -->
       <div class="badge">
-        AESTHETIC WALLPAPER
+        <span class="pulse-dot"></span>
+        <span>Aesthetic Wallpaper</span>
       </div>
 
-
       <!-- Heading -->
-      <h1>
-        Skateboard Boy Wallpaper
-      </h1>
-
+      <h1>Skateboard Boy Wallpaper</h1>
 
       <!-- Subtitle -->
       <p class="subtitle">
-        Premium aesthetic wallpaper for your phone.
+        Premium high-resolution aesthetic wallpaper engineered for modern mobile OLED displays.
       </p>
 
+      <!-- Phone Mockup Preview -->
+      <div class="phone-mockup" id="previewContainer" title="Click to view full screen">
+        <div class="phone-notch"></div>
+        
+        <!-- Lock Screen Simulated Clock -->
+        <div class="lockscreen-time">
+          <div class="time" id="clockTime">09:41</div>
+          <div class="date" id="clockDate">Wednesday, October 7</div>
+        </div>
 
-      <!-- Preview -->
-      <div class="preview">
-
+        <!-- Preview Image -->
         <img
+          id="previewImage"
+          class="preview-img"
           src="./skateboard_preview.jpeg"
-          width="1080"
-          height="1920"
+          onerror="this.onerror=null; this.src='https://div1232-prog.github.io/Saiyan-vault-/skateboard_preview.jpeg';"
           alt="Skateboard Boy Aesthetic Wallpaper Preview"
           fetchpriority="high"
           decoding="async"
         >
 
+        <div class="zoom-hint">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+          Tap to Zoom
+        </div>
       </div>
 
+      <!-- Specs Grid -->
+      <div class="specs-grid">
+        <div class="spec-item">
+          <div class="spec-label">Resolution</div>
+          <div class="spec-value">1080 × 1920</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Format</div>
+          <div class="spec-value">PNG HD</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Aspect Ratio</div>
+          <div class="spec-value">9 : 16</div>
+        </div>
+      </div>
 
       <!-- Description -->
       <p class="description">
-        Discover a <strong>premium skateboard boy aesthetic wallpaper</strong>
-        created for a clean, cinematic and modern mobile look.
-        The artwork combines a stylish street atmosphere with a
-        minimal aesthetic, making it perfect for your phone
-        lock screen or home screen.
+        Discover a <strong>premium skateboard boy aesthetic wallpaper</strong> created for a clean, cinematic, and modern mobile look. The artwork combines a stylish street atmosphere with a minimal dark tone, optimized for home and lock screens.
       </p>
 
+      <!-- Action Buttons -->
+      <div class="button-group">
+        <!-- Main Wallpaper Download -->
+        <a
+          id="downloadBtn"
+          class="button download"
+          href="./Skateboard_boy_wallpaper.png"
+          download="Skateboard_boy_wallpaper.png"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download Wallpaper
+        </a>
 
-      <!-- Main Wallpaper Download -->
-      <a
-        class="button download"
-        href="./Skateboard_boy_wallpaper.png"
-        download
-      >
-        ↓ Download Wallpaper
-      </a>
-
+        <!-- Quick Copy Page Link -->
+        <button id="shareBtn" class="button secondary-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          Share Wallpaper Link
+        </button>
+      </div>
 
       <!-- Telegram Section -->
       <h2 class="section-title">
@@ -408,38 +540,148 @@
       </h2>
 
       <p class="telegram-text">
-        Join our Telegram channel for more premium anime wallpapers,
-        aesthetic collections, dark-themed artwork and exclusive drops.
+        Join our official Telegram channel for daily anime wallpapers, aesthetic collections, dark 4K renders, and exclusive drops.
       </p>
 
-
-      <!-- Telegram Post 72 -->
+      <!-- Telegram Direct App Launcher Button -->
       <a
+        id="telegramAppBtn"
         class="button telegram"
-        href="https://t.me/Saiyan_Mindset_Vault/72"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="tg://resolve?domain=Saiyan_Mindset_Vault&post=72"
       >
-        ✈ Join Telegram
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+        </svg>
+        Open Post in Telegram App
       </a>
-
 
       <!-- Pinterest Note -->
       <div class="note">
-        📌 Found this wallpaper on Pinterest?
-        Save this page and come back anytime to download the
-        full-resolution wallpaper.
+        📌 <strong>Found this on Pinterest?</strong> Save this page to your bookmarks and return anytime to redownload the full-resolution uncompressed wallpaper.
       </div>
-
 
       <!-- Footer -->
-      <div class="footer">
+      <footer class="footer">
         © 2026 Saiyan Mindset Vault · Premium Digital Wallpaper Collection
-      </div>
+      </footer>
 
     </section>
 
   </main>
 
+  <!-- Fullscreen Modal Preview -->
+  <div id="imageModal" class="modal">
+    <button id="closeModal" class="modal-close" aria-label="Close preview">&times;</button>
+    <img id="modalImg" class="modal-img" src="" alt="Wallpaper Full Preview">
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">Link copied to clipboard!</div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Telegram App Deep Linking Handler
+      const telegramBtn = document.getElementById('telegramAppBtn');
+      const tgAppUri = "tg://resolve?domain=Saiyan_Mindset_Vault&post=72";
+      const tgWebUrl = "https://t.me/Saiyan_Mindset_Vault/72";
+
+      telegramBtn.addEventListener('click', (e) => {
+        // Prevent default only to handle fallback timing
+        e.preventDefault();
+
+        // Attempt opening directly in Telegram App using custom protocol
+        const start = Date.now();
+        window.location.href = tgAppUri;
+
+        // Fallback to web link if Telegram app is not installed or fails to launch
+        setTimeout(() => {
+          // If the page remains visible and didn't blur/switch away to Telegram app
+          if (Date.now() - start < 1800) {
+            window.open(tgWebUrl, '_blank', 'noopener,noreferrer');
+          }
+        }, 1200);
+      });
+
+      // 2. Dynamic Real-time Clock on Mockup
+      function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        document.getElementById('clockTime').textContent = `${hours}:${minutes}`;
+
+        const options = { weekday: 'long', month: 'long', day: 'numeric' };
+        document.getElementById('clockDate').textContent = now.toLocaleDateString('en-US', options);
+      }
+      updateClock();
+      setInterval(updateClock, 30000);
+
+      // 3. Image Zoom Modal
+      const previewContainer = document.getElementById('previewContainer');
+      const previewImage = document.getElementById('previewImage');
+      const imageModal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImg');
+      const closeModal = document.getElementById('closeModal');
+
+      previewContainer.addEventListener('click', () => {
+        modalImg.src = previewImage.src;
+        imageModal.classList.add('active');
+      });
+
+      closeModal.addEventListener('click', () => {
+        imageModal.classList.remove('active');
+      });
+
+      imageModal.addEventListener('click', (e) => {
+        if (e.target === imageModal) {
+          imageModal.classList.remove('active');
+        }
+      });
+
+      // 4. Download Feedback
+      const downloadBtn = document.getElementById('downloadBtn');
+      downloadBtn.addEventListener('click', () => {
+        showToast('↓ Downloading high-res wallpaper...');
+      });
+
+      // 5. Share Button / Clipboard Action
+      const shareBtn = document.getElementById('shareBtn');
+      shareBtn.addEventListener('click', () => {
+        const pageUrl = window.location.href;
+        
+        // Execute fallback safe copy
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(pageUrl)
+            .then(() => showToast('Link copied to clipboard!'))
+            .catch(() => legacyCopy(pageUrl));
+        } else {
+          legacyCopy(pageUrl);
+        }
+      });
+
+      function legacyCopy(text) {
+        const tempInput = document.createElement('input');
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        try {
+          document.execCommand('copy');
+          showToast('Link copied to clipboard!');
+        } catch (err) {
+          showToast('Failed to copy link');
+        }
+        document.body.removeChild(tempInput);
+      }
+
+      function showToast(message) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2800);
+      }
+    });
+  </script>
 </body>
 </html>
+
