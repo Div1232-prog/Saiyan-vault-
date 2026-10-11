@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0f19">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Unlock the Ethereal Magical Elements Pack: five fantasy-inspired wallpapers from Saiyan Mindset Vault. Explore the collection, join the community, and discover more on Pinterest.">
+  <meta property="og:title" content="Ethereal Magical Elements Pack | Saiyan Mindset Vault">
+  <meta property="og:description" content="Five magical wallpapers. One little escape into another world.">
+  <meta property="og:type" content="website">
+  <title>Ethereal Magical Elements Pack | Saiyan Mindset Vault</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b0f19;
+      --panel: #111923;
+      --silver: #edf2f7;
+      --muted: #9ba8b8;
+      --green: #a6f5c5;
+      --green-dark: #173a2b;
+      --purple: #bda5ff;
+      --border: rgba(216, 229, 240, .14);
+      --page: 1120px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { min-width: 320px; scroll-behavior: smooth; scroll-padding-top: 82px; -webkit-text-size-adjust: 100%; }
+    body {
+      min-width: 320px; min-height: 100vh; margin: 0; overflow-x: hidden;
+      color: var(--silver);
+      background:
+        radial-gradient(ellipse at 10% 10%, rgba(25, 91, 65, .21), transparent 38%),
+        radial-gradient(ellipse at 94% 15%, rgba(106, 72, 161, .16), transparent 35%),
+        radial-gradient(ellipse at 50% 65%, rgba(35, 73, 106, .09), transparent 48%), var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    body.modal-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    a, button { -webkit-tap-highlight-color: transparent; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+    .container { width: min(var(--page), calc(100% - 38px)); margin-inline: auto; }
+
+    /* Slow, low-cost atmospheric background */
+    .ambient { position: fixed; z-index: -2; inset: 0; overflow: hidden; pointer-events: none; contain: strict; }
+    .glow { position: absolute; width: 350px; height: 350px; border-radius: 50%; filter: blur(95px); opacity: .11; }
+    .glow.g1 { top: 6%; left: -220px; background: #5bdc9c; }
+    .glow.g2 { top: 37%; right: -230px; background: #9f86ff; }
+    .glow.g3 { bottom: -230px; left: 35%; background: #4b9cff; opacity: .07; }
+    #particles { position: fixed; z-index: -1; inset: 0; overflow: hidden; pointer-events: none; contain: strict; }
+    .particle { position: absolute; bottom: -12px; width: var(--size); height: var(--size); border-radius: 50%; background: var(--c); box-shadow: 0 0 9px var(--c); opacity: 0; animation: floatUp var(--dur) var(--delay) linear infinite; will-change: transform, opacity; }
+    @keyframes floatUp {
+      0% { opacity: 0; transform: translate3d(0,0,0) scale(.7); }
+      12% { opacity: var(--op); }
+      55% { transform: translate3d(var(--drift),-55vh,0) scale(1); }
+      86% { opacity: var(--op); }
+      100% { opacity: 0; transform: translate3d(calc(var(--drift) * -.3),-110vh,0) scale(.5); }
+    }
+
+    header { position: relative; z-index: 4; border-bottom: 1px solid rgba(220,230,240,.07); background: rgba(7,11,17,.52); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+    .header-inner { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { min-width: 0; display: inline-flex; align-items: center; gap: 10px; }
+    .brand-mark { width: 39px; height: 39px; flex: 0 0 39px; display: grid; place-items: center; border: 1px solid rgba(204,238,215,.32); border-radius: 13px; color: #e7ffed; background: radial-gradient(circle at 32% 25%, #386e50, transparent 68%), linear-gradient(145deg,#1d3328,#111520 85%); box-shadow: 0 0 22px rgba(126,240,173,.08); font-size: 21px; }
+    .brand-name { display: block; font-size: 12px; font-weight: 850; letter-spacing: 1.35px; white-space: nowrap; }
+    .brand-sub { display: block; margin-top: 2px; color: #85938f; font-size: 9px; letter-spacing: 1.6px; text-transform: uppercase; }
+    .nav-link { min-height: 37px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 13px; border: 1px solid var(--border); border-radius: 99px; color: #d7dfe8; background: rgba(255,255,255,.035); font-size: 10px; font-weight: 800; letter-spacing: .8px; white-space: nowrap; transition: background .18s,border-color .18s; }
+    .nav-link span { color: var(--green); }
+    .nav-link:hover { border-color: rgba(166,245,197,.27); background: rgba(166,245,197,.06); }
+
+    .hero { padding-top: 59px; padding-bottom: 62px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0,1.06fr) minmax(0,.94fr); align-items: center; gap: 42px; }
+    .eyebrow { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 8px 13px; margin-bottom: 22px; border: 1px solid rgba(207,220,236,.16); border-radius: 99px; color: #cbd4df; background: rgba(255,255,255,.035); font-size: 10px; font-weight: 850; letter-spacing: 1.45px; text-transform: uppercase; }
+    .eyebrow-dot { width: 6px; height: 6px; flex: 0 0 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 12px rgba(166,245,197,.65); }
+    .gradient-text { color: #d9ffe5; background: linear-gradient(110deg,#f5fff7 0%,#a6f5c5 38%,#b6d2ff 70%,#d0baff 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    h1 { max-width: 660px; margin: 0 0 20px; font-size: clamp(43px,5.5vw,70px); font-weight: 880; line-height: 1.035; letter-spacing: -3.1px; text-wrap: balance; }
+    .title-line { display: block; }
+    .hero-description { max-width: 510px; margin: 0 0 22px; color: #a6b2c1; font-size: 14px; line-height: 1.95; }
+    .hero-description strong { color: #e5edf5; font-weight: 700; }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 25px; }
+    .badge { min-height: 31px; display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; border: 1px solid var(--border); border-radius: 8px; color: #cbd4df; background: rgba(255,255,255,.028); font-size: 9px; font-weight: 700; white-space: nowrap; }
+    .badge b { color: var(--green); font-size: 12px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn { position: relative; isolation: isolate; overflow: hidden; min-height: 49px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 16px; border: 1px solid transparent; border-radius: 12px; cursor: pointer; font-size: 11px; font-weight: 850; line-height: 1.35; text-align: center; transition: transform .18s,border-color .18s,box-shadow .18s,background .18s; touch-action: manipulation; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: scale(.98); }
+    .btn-primary { color: #09150d; border-color: rgba(230,255,235,.55); background: linear-gradient(110deg,#d9ffe4,#a6f5c5 48%,#dfffe2); box-shadow: 0 9px 28px rgba(74,219,135,.15); }
+    .btn-primary::before { position: absolute; z-index: -1; top: 0; bottom: 0; left: -85%; width: 42%; content: ""; background: linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent); transform: skewX(-22deg); transition: left .48s; }
+    .btn-primary:hover::before { left: 145%; }
+    .btn-primary:hover { box-shadow: 0 12px 33px rgba(74,219,135,.22); }
+    .btn-secondary { color: #e4eaf2; border-color: rgba(202,216,231,.17); background: rgba(255,255,255,.045); }
+    .btn-secondary:hover { border-color: rgba(166,245,197,.27); background: rgba(166,245,197,.055); }
+    .btn-icon { flex: 0 0 auto; font-size: 15px; }
+    .trust { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 18px; color: #8391a1; font-size: 10px; }
+    .trust .check { color: var(--green); }
+    .sep { width: 3px; height: 3px; flex: 0 0 3px; border-radius: 50%; background: #667586; }
+
+    /* Phone mockup and its interactive tilt */
+    .phone-stage { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 0; padding-top: 8px; perspective: 1000px; isolation: isolate; }
+    .phone-halo { position: absolute; z-index: -1; top: 48%; left: 50%; width: 350px; height: 410px; max-width: 120%; border-radius: 50%; background: radial-gradient(ellipse,rgba(95,204,139,.17),rgba(115,94,189,.09) 45%,transparent 72%); filter: blur(34px); transform: translate(-50%,-50%); pointer-events: none; }
+    .phone { position: relative; z-index: 1; width: min(268px,76vw); aspect-ratio: 9 / 19.35; padding: 7px; border: 1px solid rgba(235,241,249,.45); border-radius: 44px; background: linear-gradient(145deg,#bdc6cf 0%,#303742 16%,#151a23 42%,#090c12 70%,#8c98a8 100%); box-shadow: 0 38px 80px rgba(0,0,0,.54),0 14px 30px rgba(7,16,12,.3),inset 0 0 0 1px rgba(255,255,255,.15); transform: rotateX(0deg) rotateY(0deg); transform-style: preserve-3d; transition: transform .17s ease-out,box-shadow .2s; will-change: transform; touch-action: none; user-select: none; -webkit-user-select: none; }
+    .phone::before { position: absolute; top: 24%; left: -4px; width: 3px; height: 50px; content: ""; border-radius: 4px 0 0 4px; background: linear-gradient(#697582,#c6ced6,#3e4651); }
+    .phone::after { position: absolute; top: 31%; right: -4px; width: 3px; height: 65px; content: ""; border-radius: 0 4px 4px 0; background: linear-gradient(#5a6570,#b9c3ce,#414954); }
+    .screen { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 36px; background: #10251b; isolation: isolate; }
+    .fallback-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .preview-image { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .24s; pointer-events: none; }
+    .preview-image.loaded { opacity: 1; }
+    .screen-shade { position: absolute; z-index: 2; inset: 0; pointer-events: none; background: linear-gradient(180deg,rgba(3,7,10,.48),rgba(4,9,12,.13) 24%,transparent 45%,rgba(4,8,9,.03) 68%,rgba(4,8,9,.5)); }
+    .status { position: absolute; z-index: 5; top: 16px; left: 19px; right: 19px; display: flex; align-items: center; justify-content: space-between; color: #fff; font-size: 9px; font-weight: 800; line-height: 1; text-shadow: 0 1px 5px rgba(0,0,0,.5); pointer-events: none; }
+    .status-icons { display: flex; align-items: center; gap: 5px; }
+    .battery { position: relative; padding: 3px 4px; border: 1px solid rgba(255,255,255,.9); border-radius: 3px; font-size: 7px; }
+    .island { position: absolute; z-index: 6; top: 9px; left: 50%; width: 88px; height: 25px; border-radius: 99px; background: #030405; box-shadow: 0 1px 4px rgba(0,0,0,.35); transform: translateX(-50%); pointer-events: none; }
+    .lockscreen { position: absolute; z-index: 3; top: 22.5%; right: 8px; left: 8px; color: #fff; text-align: center; text-shadow: 0 2px 18px rgba(0,0,0,.4); transform: translateZ(12px); pointer-events: none; }
+    .lock-date { margin-bottom: 1px; font-size: 10px; font-weight: 650; }
+    .lock-time { font-size: clamp(54px,9vw,69px); font-weight: 300; line-height: 1.04; letter-spacing: -3px; font-variant-numeric: tabular-nums; }
+    .lock-caption { margin-top: 11px; font-size: 8px; font-weight: 650; letter-spacing: 2px; text-transform: uppercase; }
+    .widget { position: absolute; z-index: 3; right: 15px; bottom: 65px; left: 15px; display: flex; justify-content: center; pointer-events: none; }
+    .widget-pill { display: flex; align-items: center; gap: 7px; padding: 7px 11px; border: 1px solid rgba(255,255,255,.26); border-radius: 99px; color: white; background: rgba(3,9,7,.26); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); font-size: 8px; white-space: nowrap; }
+    .widget-dot { width: 5px; height: 5px; border-radius: 50%; background: #c8ffd8; box-shadow: 0 0 8px rgba(166,245,197,.65); }
+    .screen-controls { position: absolute; z-index: 4; right: 22px; bottom: 16px; left: 22px; display: flex; justify-content: space-between; pointer-events: none; }
+    .screen-control { display: grid; width: 29px; height: 29px; place-items: center; border: 1px solid rgba(255,255,255,.36); border-radius: 50%; color: white; background: rgba(0,0,0,.32); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); font-size: 12px; }
+    .home-indicator { position: absolute; z-index: 7; bottom: 7px; left: 50%; width: 84px; height: 3px; border-radius: 99px; background: rgba(255,255,255,.95); transform: translateX(-50%); pointer-events: none; }
+    .phone-caption { margin-top: 20px; color: #a9b6c2; font-size: 10px; font-weight: 750; letter-spacing: 1.4px; text-align: center; text-transform: uppercase; }
+    .phone-caption span { color: var(--green); }
+    .tilt-hint { margin-top: 6px; color: #708293; font-size: 9px; text-align: center; }
+
+    .stats { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); overflow: hidden; margin-top: 42px; border: 1px solid var(--border); border-radius: 17px; background: linear-gradient(115deg,rgba(255,255,255,.045),rgba(255,255,255,.018)); }
+    .stat { min-width: 0; padding: 18px 10px; text-align: center; }
+    .stat + .stat { border-left: 1px solid rgba(207,222,238,.09); }
+    .stat-value { display: block; color: #ecfff1; font-size: 19px; font-weight: 850; letter-spacing: -.4px; }
+    .stat-label { display: block; margin-top: 4px; color: #8997a7; font-size: 10px; }
+
+    .section { padding-top: 57px; padding-bottom: 57px; }
+    .kicker { display: block; margin-bottom: 12px; color: var(--green); font-size: 10px; font-weight: 850; letter-spacing: 2px; text-transform: uppercase; }
+    h2 { margin: 0 0 13px; font-size: clamp(28px,4vw,41px); line-height: 1.17; letter-spacing: -1.35px; font-weight: 850; text-wrap: balance; }
+    .section-copy { max-width: 660px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.95; }
+    .features { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; margin-top: 28px; }
+    .feature { min-height: 180px; padding: 22px; border: 1px solid var(--border); border-radius: 17px; background: linear-gradient(145deg,rgba(255,255,255,.047),rgba(255,255,255,.014)); transition: transform .2s,border-color .2s; }
+    .feature:hover { transform: translateY(-3px); border-color: rgba(166,245,197,.24); }
+    .feature-icon { display: grid; width: 43px; height: 43px; place-items: center; margin-bottom: 15px; border: 1px solid rgba(166,245,197,.19); border-radius: 13px; background: rgba(166,245,197,.065); font-size: 20px; }
+    .feature h3 { margin: 0 0 7px; font-size: 14px; font-weight: 800; }
+    .feature p { margin: 0; color: #98a6b5; font-size: 11px; line-height: 1.85; }
+
+    .download-section { padding-top: 11px; padding-bottom: 58px; }
+    .download-card { position: relative; display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 26px; padding: 31px; overflow: hidden; border: 1px solid rgba(166,245,197,.2); border-radius: 25px; background: radial-gradient(ellipse at 100% 0%,rgba(110,221,158,.13),transparent 49%),linear-gradient(120deg,rgba(18,38,29,.94),rgba(13,20,30,.95)); isolation: isolate; }
+    .download-card::after { position: absolute; z-index: -1; top: -110px; right: -80px; width: 245px; height: 245px; content: ""; border: 1px solid rgba(166,245,197,.12); border-radius: 50%; box-shadow: 0 0 0 26px rgba(166,245,197,.025),0 0 0 54px rgba(166,245,197,.018); pointer-events: none; }
+    .download-card h2 { max-width: 620px; font-size: clamp(25px,3.5vw,36px); }
+    .download-card p { max-width: 590px; margin: 0; color: #a4b5aa; font-size: 12px; line-height: 1.9; }
+    .download-action { display: flex; flex-direction: column; align-items: stretch; gap: 9px; }
+    .download-action .btn { min-width: 225px; }
+    .download-note { color: #81958a; font-size: 10px; text-align: center; }
+
+    .social-section { padding-top: 0; padding-bottom: 62px; }
+    .center-heading { text-align: center; }
+    .center-copy { max-width: 605px; margin: 0 auto; text-align: center; }
+    .social-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; margin-top: 28px; }
+    .social-card { display: flex; flex-direction: column; align-items: flex-start; min-height: 180px; padding: 22px; border: 1px solid var(--border); border-radius: 18px; background: linear-gradient(140deg,rgba(255,255,255,.05),rgba(255,255,255,.013)); transition: transform .18s,border-color .18s; }
+    .social-card:hover { transform: translateY(-3px); border-color: rgba(166,245,197,.27); }
+    .social-card.pinterest { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 24px; min-height: 210px; border-color: rgba(166,245,197,.20); background: radial-gradient(ellipse at 100% 0%,rgba(81,174,116,.15),transparent 50%),radial-gradient(ellipse at 0% 100%,rgba(151,113,230,.09),transparent 45%),linear-gradient(130deg,rgba(19,34,28,.97),rgba(13,20,30,.97)); }
+    .social-icon { display: grid; width: 43px; height: 43px; place-items: center; margin-bottom: 14px; border: 1px solid rgba(209,223,238,.14); border-radius: 13px; background: rgba(255,255,255,.045); font-size: 20px; }
+    .pinterest .social-icon { border-color: rgba(234,134,158,.2); background: rgba(221,88,118,.09); }
+    .social-card h3 { margin: 0 0 7px; font-size: 16px; font-weight: 850; line-height: 1.4; }
+    .social-card p { max-width: 500px; margin: 0 0 17px; color: #9ca9b8; font-size: 11px; line-height: 1.85; }
+    .social-card .btn { min-height: 42px; margin-top: auto; padding: 10px 13px; font-size: 10px; }
+    .pin-action { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .pin-action .btn { min-width: 220px; }
+    .pin-note { color: #879a8e; font-size: 10px; text-align: center; }
+
+    footer { border-top: 1px solid rgba(207,222,238,.075); background: rgba(6,9,15,.35); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 22px; padding-bottom: 24px; }
+    .footer-brand { color: #c6d0dc; font-size: 10px; font-weight: 850; letter-spacing: 1px; }
+    .footer-copy { margin-top: 4px; color: #758394; font-size: 10px; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 16px; color: #91a0b0; font-size: 10px; }
+    .footer-links a:hover { color: var(--green); }
+
+    /* Modal */
+    .modal-backdrop { position: fixed; z-index: 1000; inset: 0; display: grid; place-items: center; padding: 18px; overflow-y: auto; background: rgba(3,6,11,.79); backdrop-filter: blur(13px); -webkit-backdrop-filter: blur(13px); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .22s,visibility .22s; }
+    .modal-backdrop.visible { opacity: 1; visibility: visible; pointer-events: auto; }
+    .modal { position: relative; width: min(440px,100%); padding: 30px 25px 24px; overflow: hidden; border: 1px solid rgba(184,228,198,.26); border-radius: 25px; background: radial-gradient(ellipse at 100% 0%,rgba(108,193,140,.15),transparent 48%),radial-gradient(ellipse at 0% 100%,rgba(146,105,222,.1),transparent 40%),#101720; box-shadow: 0 35px 120px rgba(0,0,0,.56),inset 0 1px 0 rgba(255,255,255,.055); transform: translateY(15px) scale(.97); transition: transform .25s cubic-bezier(.2,.8,.2,1); }
+    .modal-backdrop.visible .modal { transform: translateY(0) scale(1); }
+    .modal-ring { position: absolute; top: -70px; right: -55px; width: 175px; height: 175px; border: 1px solid rgba(166,245,197,.10); border-radius: 50%; box-shadow: 0 0 0 22px rgba(166,245,197,.025),0 0 0 45px rgba(166,245,197,.018); pointer-events: none; }
+    .modal-emblem { position: relative; display: grid; width: 56px; height: 56px; place-items: center; margin-bottom: 19px; border: 1px solid rgba(166,245,197,.26); border-radius: 17px; color: #d8ffe4; background: rgba(166,245,197,.075); box-shadow: 0 0 30px rgba(166,245,197,.08); font-size: 26px; }
+    .modal-kicker { margin: 0 0 8px; color: var(--green); font-size: 10px; font-weight: 850; letter-spacing: 1.8px; text-transform: uppercase; }
+    .modal h2 { position: relative; margin-bottom: 12px; font-size: clamp(26px,7vw,33px); letter-spacing: -1px; }
+    .modal-copy { margin: 0 0 22px; color: #a2afbe; font-size: 12px; line-height: 1.9; }
+    .modal-copy strong { color: #d9f9e1; }
+    .modal .btn { width: 100%; min-height: 50px; }
+    .modal-foot { margin-top: 13px; color: #738293; font-size: 10px; text-align: center; }
+
+    /* Click sparks + toast */
+    #spark-layer { position: fixed; z-index: 1200; inset: 0; overflow: hidden; pointer-events: none; contain: strict; }
+    .spark { position: absolute; left: var(--x); top: var(--y); width: var(--s); height: var(--s); border-radius: 50%; background: var(--c); box-shadow: 0 0 9px var(--c); animation: sparkFly var(--t) cubic-bezier(.13,.65,.24,1) forwards; }
+    .spark.star { width: auto; height: auto; border-radius: 0; background: transparent; box-shadow: none; color: var(--c); font-size: var(--s); line-height: 1; animation: starFly var(--t) cubic-bezier(.13,.65,.24,1) forwards; }
+    @keyframes sparkFly { 0% { opacity: 0; transform: translate(0,0) scale(.2); } 12% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--dx),var(--dy)) scale(.15); } }
+    @keyframes starFly { 0% { opacity: 0; transform: translate(0,0) rotate(0) scale(.2); } 15% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--dx),var(--dy)) rotate(130deg) scale(.1); } }
+    .toast { position: fixed; z-index: 1300; right: max(17px,env(safe-area-inset-right)); bottom: max(18px,env(safe-area-inset-bottom)); left: max(17px,env(safe-area-inset-left)); width: max-content; max-width: min(440px,calc(100% - 34px)); min-height: 57px; display: flex; align-items: center; gap: 11px; margin-inline: auto; padding: 12px 16px; border: 1px solid rgba(166,245,197,.25); border-radius: 15px; background: rgba(17,26,23,.97); box-shadow: 0 15px 55px rgba(0,0,0,.42); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity .2s,transform .2s,visibility .2s; pointer-events: none; }
+    .toast.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .toast-icon { display: grid; width: 33px; height: 33px; flex: 0 0 33px; place-items: center; border: 1px solid rgba(166,245,197,.2); border-radius: 10px; color: #c9ffda; background: rgba(166,245,197,.09); }
+    .toast-title { display: block; color: #f0fff4; font-size: 12px; font-weight: 850; }
+    .toast-text { display: block; margin-top: 2px; color: #a8bbae; font-size: 10px; line-height: 1.5; }
+
+    @media (min-width: 1200px) { .hero { padding-top: 72px; } }
+    @media (max-width: 850px) {
+      .hero { padding-top: 44px; padding-bottom: 46px; }
+      .hero-grid { grid-template-columns: minmax(0,1fr) minmax(0,.78fr); gap: 22px; }
+      h1 { font-size: clamp(39px,6vw,54px); letter-spacing: -2px; }
+      .hero-description { font-size: 12px; }
+      .btn { font-size: 10px; }
+      .hero-actions .btn { padding-inline: 12px; }
+      .phone { width: min(240px,100%); }
+      .download-card { grid-template-columns: 1fr; gap: 21px; }
+      .download-action { align-items: flex-start; }
+    }
+    @media (max-width: 640px) {
+      .container { width: calc(100% - 32px); }
+      .header-inner { min-height: 66px; gap: 8px; }
+      .brand { gap: 8px; }
+      .brand-mark { width: 35px; height: 35px; flex-basis: 35px; border-radius: 11px; font-size: 19px; }
+      .brand-name { font-size: 9px; letter-spacing: .8px; }
+      .brand-sub { font-size: 7px; letter-spacing: 1px; }
+      .nav-link { min-height: 34px; gap: 5px; padding: 7px 9px; font-size: 8px; letter-spacing: .2px; }
+      .hero { padding-top: 38px; padding-bottom: 41px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 34px; }
+      .hero-copy { text-align: center; }
+      .eyebrow { margin-bottom: 18px; font-size: 8px; letter-spacing: 1px; }
+      h1 { max-width: 500px; margin-inline: auto; font-size: clamp(39px,10vw,54px); letter-spacing: -1.9px; }
+      .hero-description { max-width: 480px; margin: 18px auto 20px; font-size: 12px; line-height: 1.85; }
+      .badges { justify-content: center; gap: 7px; margin-bottom: 22px; }
+      .badge { min-height: 29px; padding: 6px 8px; font-size: 8px; }
+      .actions { flex-direction: column; align-items: stretch; gap: 9px; max-width: 420px; margin-inline: auto; }
+      .actions .btn { width: 100%; min-height: 50px; padding: 13px 11px; font-size: 11px; }
+      .trust { justify-content: center; gap: 7px; margin-top: 15px; font-size: 8px; }
+      .phone { width: min(252px,75vw); }
+      .phone-caption { font-size: 9px; letter-spacing: 1.1px; }
+      .stats { grid-template-columns: repeat(2,minmax(0,1fr)); margin-top: 35px; }
+      .stat { padding: 14px 8px; }
+      .stat:nth-child(3) { border-left: 0; border-top: 1px solid rgba(207,222,238,.09); }
+      .stat:nth-child(4) { border-top: 1px solid rgba(207,222,238,.09); }
+      .stat-value { font-size: 17px; }
+      .stat-label { font-size: 9px; }
+      .section { padding-top: 43px; padding-bottom: 43px; }
+      h2 { font-size: clamp(27px,7.3vw,35px); letter-spacing: -.9px; }
+      .section-copy { font-size: 12px; }
+      .features { grid-template-columns: 1fr; gap: 10px; margin-top: 22px; }
+      .feature { display: grid; grid-template-columns: 42px minmax(0,1fr); column-gap: 13px; row-gap: 4px; min-height: auto; padding: 16px; }
+      .feature-icon { grid-row: 1 / span 2; width: 42px; height: 42px; margin-bottom: 0; font-size: 18px; }
+      .feature h3 { align-self: end; margin: 0; font-size: 13px; }
+      .feature p { font-size: 10px; }
+      .download-section { padding-top: 6px; padding-bottom: 45px; }
+      .download-card { gap: 19px; padding: 23px 18px; border-radius: 20px; }
+      .download-card h2 { font-size: 27px; }
+      .download-card p { font-size: 11px; }
+      .download-action { align-items: stretch; }
+      .download-action .btn { width: 100%; min-width: 0; }
+      .download-note { font-size: 9px; }
+      .social-section { padding-bottom: 42px; }
+      .social-grid { grid-template-columns: 1fr; gap: 11px; margin-top: 22px; }
+      .social-card { min-height: 164px; padding: 19px; border-radius: 16px; }
+      .social-card.pinterest { grid-column: auto; grid-template-columns: 1fr; gap: 17px; min-height: auto; padding: 21px 19px; }
+      .social-icon { width: 40px; height: 40px; margin-bottom: 12px; font-size: 18px; }
+      .social-card h3 { font-size: 15px; }
+      .social-card p { font-size: 10px; }
+      .pin-action { align-items: stretch; }
+      .pin-action .btn { width: 100%; min-width: 0; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 14px; padding-top: 20px; padding-bottom: 22px; }
+      .footer-links { justify-content: flex-start; gap: 14px; }
+      .modal { padding: 26px 21px 22px; border-radius: 22px; }
+      .modal-emblem { width: 51px; height: 51px; margin-bottom: 17px; }
+      .modal-copy { font-size: 11px; }
+    }
+    @media (max-width: 360px) {
+      .container { width: calc(100% - 26px); }
+      .brand-name { font-size: 8px; letter-spacing: .6px; }
+      .brand-sub { font-size: 6px; }
+      .nav-link { padding-inline: 7px; font-size: 7px; }
+      h1 { font-size: 37px; }
+      .badge { font-size: 7px; padding-inline: 6px; }
+      .trust { font-size: 7px; gap: 5px; }
+    }
+    @media (hover: none), (pointer: coarse) {
+      .feature:hover, .social-card:hover, .btn:hover { transform: none; }
+      .btn-primary::before { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .particle { display: none; }
+      .phone { transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"><span class="glow g1"></span><span class="glow g2"></span><span class="glow g3"></span></div>
+  <div id="particles" aria-hidden="true"></div>
+  <div id="spark-layer" aria-hidden="true"></div>
+
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Saiyan Mindset Vault home">
+        <span class="brand-mark" aria-hidden="true">✧</span>
+        <span><span class="brand-name">SAIYAN MINDSET VAULT</span><span class="brand-sub">A World Beyond Ordinary</span></span>
+      </a>
+      <a class="nav-link" href="#collection"><span aria-hidden="true">✦</span> EXPLORE THE VAULT</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="container hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> SILVER EDITION <span aria-hidden="true">•</span> VAULT #79</div>
+          <h1><span class="title-line">Ethereal</span><span class="title-line">Magical</span><span class="title-line gradient-text">Elements Pack.</span></h1>
+          <p class="hero-description">Enter a world where <strong>enchanted nature, glowing details, and dreamlike landscapes</strong> meet. Explore five fantasy-inspired wallpapers designed to turn your everyday screen into a little escape from reality.</p>
+          <div class="badges">
+            <span class="badge"><b aria-hidden="true">✧</b> OLED Optimized</span>
+            <span class="badge"><b aria-hidden="true">▯</b> 9:16 Vertical Ratio</span>
+            <span class="badge"><b aria-hidden="true">◇</b> Original-Quality Files</span>
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary download-link" href="https://drive.google.com/drive/folders/1czor26wyUC5H8bowb71rurmJwNQTuFC6" target="_blank" rel="noopener noreferrer"><span class="btn-icon" aria-hidden="true">🎁</span> Download Free Magical Pack (5 Images) <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-secondary" href="https://t.me/Saiyan_Mindset_Vault/80?single" target="_blank" rel="noopener noreferrer"><span class="btn-icon" aria-hidden="true">✈</span> View Telegram Post</a>
+          </div>
+          <div class="trust"><span><span class="check">✓</span> Free Collection</span><span class="sep"></span><span><span class="check">✓</span> No Sign-Up Required</span><span class="sep"></span><span><span class="check">✓</span> Mobile Friendly</span></div>
+        </div>
+
+        <div class="phone-stage" id="phoneStage">
+          <div class="phone-halo" aria-hidden="true"></div>
+          <div class="phone" id="phoneMockup" aria-label="Interactive iPhone-style fantasy wallpaper preview">
+            <div class="screen">
+              <!-- Attractive built-in artwork is shown immediately. For the exact artwork, place Preview_80.jpeg beside this HTML. -->
+              <svg class="fallback-art" viewBox="0 0 360 780" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#11152d"/><stop offset=".36" stop-color="#243c4b"/><stop offset=".68" stop-color="#285940"/><stop offset="1" stop-color="#081710"/></linearGradient>
+                  <radialGradient id="moon"><stop stop-color="#e5ffe9" stop-opacity=".8"/><stop offset=".38" stop-color="#9ef3bf" stop-opacity=".28"/><stop offset="1" stop-color="#9ef3bf" stop-opacity="0"/></radialGradient>
+                  <linearGradient id="rock" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#61845c"/><stop offset=".5" stop-color="#254934"/><stop offset="1" stop-color="#091610"/></linearGradient>
+                  <linearGradient id="trunk" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#3b2b24"/><stop offset=".5" stop-color="#91704c"/><stop offset="1" stop-color="#352820"/></linearGradient>
+                  <filter id="blur"><feGaussianBlur stdDeviation="17"/></filter>
+                  <filter id="soft"><feGaussianBlur stdDeviation="4"/></filter>
+                </defs>
+                <rect width="360" height="780" fill="url(#sky)"/>
+                <circle cx="260" cy="180" r="100" fill="url(#moon)"/><circle cx="260" cy="180" r="31" fill="#efffed" opacity=".83"/>
+                <g fill="#e5ffe9"><circle cx="45" cy="111" r="1.5"/><circle cx="92" cy="161" r="1"/><circle cx="139" cy="87" r="1.3"/><circle cx="195" cy="120" r="1"/><circle cx="312" cy="92" r="1.3"/><circle cx="321" cy="210" r="1.2"/><circle cx="63" cy="237" r="1"/><circle cx="165" cy="223" r="1.5"/><circle cx="289" cy="274" r="1"/></g>
+                <path d="M0 376 42 290 77 344 128 260 186 350 237 279 286 340 322 288 360 348V487H0Z" fill="#3a6064" opacity=".8"/>
+                <path d="M0 429 53 369 99 419 154 344 198 412 252 355 298 414 336 376 360 408V539H0Z" fill="#173b32"/>
+                <ellipse cx="170" cy="483" rx="156" ry="41" fill="#a1f5ce" opacity=".14" filter="url(#blur)"/>
+                <path d="M0 473Q50 430 109 466T217 460T360 460V780H0Z" fill="#0b1b17"/>
+                <path d="M153 540c7-50-11-86 0-129 5-22-1-49 12-79 9 44 5 70 16 95 12 23 7 63 22 113Z" fill="url(#trunk)"/>
+                <path d="M167 405c-34-29-56-44-74-70 35 12 58 32 74 50Zm6-22c33-28 62-55 75-86-8 48-34 80-72 117Zm-11-18c-15-37-12-67-32-90 30 23 41 50 42 77Z" fill="#6c5037"/>
+                <g><ellipse cx="166" cy="294" rx="91" ry="77" fill="#143d30"/><circle cx="112" cy="297" r="55" fill="#1e553b"/><circle cx="147" cy="258" r="54" fill="#225f40"/><circle cx="194" cy="258" r="60" fill="#164a36"/><circle cx="227" cy="306" r="47" fill="#174932"/><circle cx="161" cy="319" r="59" fill="#205538"/><circle cx="120" cy="271" r="34" fill="#458555" opacity=".52"/><circle cx="170" cy="233" r="36" fill="#4e9560" opacity=".55"/><circle cx="208" cy="286" r="37" fill="#32704b" opacity=".55"/></g>
+                <rect x="147" y="430" width="19" height="21" rx="3" fill="#16372c"/><rect x="151" y="434" width="11" height="13" rx="2" fill="#ffd58b"/><rect x="183" y="448" width="18" height="20" rx="3" fill="#1a3028"/><rect x="187" y="452" width="10" height="12" rx="2" fill="#ffbd70"/>
+                <path d="M21 499q32-21 70-9l22 14-12 27-59 4-24-18Z" fill="url(#rock)"/><path d="M42 534q14 7 22 44l8 22-9-21-10-29Z" fill="#65c5ad" opacity=".75"/>
+                <path d="M257 487q34-18 71 0l13 20-19 22-49-3-21-16Z" fill="url(#rock)"/><path d="M286 526q6 19-2 44l-8 19 13-20 7-28Z" fill="#65c5ad" opacity=".65"/>
+                <g fill="#b8ffcc"><circle cx="76" cy="394" r="2.1"/><circle cx="76" cy="394" r="8" opacity=".2" filter="url(#soft)"/><circle cx="252" cy="376" r="1.8"/><circle cx="229" cy="432" r="2"/><circle cx="120" cy="455" r="1.7"/><circle cx="304" cy="444" r="1.6"/><circle cx="91" cy="363" r="1.5"/><circle cx="267" cy="332" r="1.7"/></g>
+                <path d="M0 633q55-20 108 4t111-12 141 13" fill="none" stroke="#7dcba2" opacity=".2"/>
+                <g fill="#bcf9d4" opacity=".56"><circle cx="28" cy="667" r="1.1"/><circle cx="89" cy="716" r="1.5"/><circle cx="307" cy="693" r="1.2"/><circle cx="260" cy="735" r="1"/><circle cx="178" cy="685" r="1.1"/></g>
+              </svg>
+              <img class="preview-image" id="previewImage" src="./Preview_80.jpeg" alt="Fantasy wallpaper pack preview" fetchpriority="high">
+              <div class="screen-shade"></div>
+              <div class="status"><span id="statusTime">9:41</span><span class="status-icons" aria-hidden="true"><span>●●●</span><span>◆</span><span class="battery">100</span></span></div>
+              <div class="island" aria-hidden="true"></div>
+              <div class="lockscreen"><div class="lock-date" id="lockDate">Sunday, October 11</div><div class="lock-time" id="lockTime">9:41</div><div class="lock-caption">Find Your Otherworld</div></div>
+              <div class="widget"><div class="widget-pill"><span class="widget-dot"></span> A little magic, every day</div></div>
+              <div class="screen-controls" aria-hidden="true"><span class="screen-control">◉</span><span class="screen-control">⌁</span></div>
+              <div class="home-indicator" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="phone-caption"><span>✦</span> Your Screen, Your Sanctuary <span>✦</span></div>
+          <div class="tilt-hint">Touch and drag the phone to tilt it</div>
+        </div>
+      </div>
+
+      <div class="stats" aria-label="Pack details">
+        <div class="stat"><span class="stat-value">05</span><span class="stat-label">Magical Images</span></div>
+        <div class="stat"><span class="stat-value">9:16</span><span class="stat-label">Vertical Format</span></div>
+        <div class="stat"><span class="stat-value">HD+</span><span class="stat-label">High-Resolution Art</span></div>
+        <div class="stat"><span class="stat-value">FREE</span><span class="stat-label">Download the Pack</span></div>
+      </div>
+    </section>
+
+    <section class="container section" id="collection">
+      <span class="kicker">Beyond Ordinary Wallpapers</span>
+      <h2>A Little Magic in Every Pixel.</h2>
+      <p class="section-copy">Explore artwork inspired by enchanted forests, glowing landscapes, peaceful fantasy worlds, and the quiet beauty of nature. Make your phone feel personal, immersive, and wonderfully different.</p>
+      <div class="features">
+        <article class="feature"><div class="feature-icon" aria-hidden="true">🌿</div><h3>Magical Nature Aesthetics</h3><p>Discover enchanted environments, luminous greenery, and fantasy landscapes that bring wonder to your everyday screen.</p></article>
+        <article class="feature"><div class="feature-icon" aria-hidden="true">🌙</div><h3>Made for Dark-Mode Lovers</h3><p>Atmospheric artwork pairs deep shadows with glowing details and rich contrast for an immersive lock-screen look.</p></article>
+        <article class="feature"><div class="feature-icon" aria-hidden="true">✨</div><h3>Your Personal Fantasy Vault</h3><p>Explore five wallpapers and create a dreamy screen aesthetic inspired by magical worlds and peaceful escapes.</p></article>
+      </div>
+    </section>
+
+    <section class="container download-section" id="download">
+      <div class="download-card">
+        <div><span class="kicker">Your Free Gift Awaits</span><h2>Unlock Your Next <span class="gradient-text">Favorite Wallpaper.</span></h2><p>Get the five-image Ethereal Magical Elements Pack from the collection. Add a little fantasy to your lock screen and discover your favorite artwork.</p></div>
+        <div class="download-action"><a class="btn btn-primary download-link" href="https://drive.google.com/drive/folders/1czor26wyUC5H8bowb71rurmJwNQTuFC6" target="_blank" rel="noopener noreferrer"><span class="btn-icon" aria-hidden="true">🎁</span> Download Free Magical Pack (5 Images) <span aria-hidden="true">↗</span></a><div class="download-note">Five fantasy wallpapers · Free collection</div></div>
+      </div>
+    </section>
+
+    <section class="container social-section" id="community">
+      <div class="center-heading"><span class="kicker">Continue Your Journey</span><h2>Explore More <span class="gradient-text">Magical Worlds.</span></h2><p class="section-copy center-copy">Find fresh artwork, save inspiration, and join a creative community built around fantasy aesthetics and beautiful digital wallpapers.</p></div>
+      <div class="social-grid">
+        <article class="social-card"><div class="social-icon" aria-hidden="true">✈</div><h3>Join the Telegram Community</h3><p>Open the original wallpaper post, explore new releases, and stay connected with Saiyan Mindset Vault.</p><a class="btn btn-secondary" href="https://t.me/Saiyan_Mindset_Vault/80?single" target="_blank" rel="noopener noreferrer">Open Telegram Post <span aria-hidden="true">↗</span></a></article>
+        <article class="social-card"><div class="social-icon" aria-hidden="true">🎨</div><h3>Explore the DeviantArt Gallery</h3><p>Discover more visual experiments, digital illustrations, and creative artwork from Krish Arts.</p><a class="btn btn-secondary" href="https://www.deviantart.com/krisharts1110" target="_blank" rel="noopener noreferrer">Explore Gallery <span aria-hidden="true">↗</span></a></article>
+        <article class="social-card pinterest"><div><div class="social-icon" aria-hidden="true">📌</div><h3>Discover More on Pinterest</h3><p>Immerse yourself in thousands of curated aesthetic anime and fantasy wallpapers. Save your favorite vibes, join our visual journey, and stay updated with daily drops on our Pinterest Hub!</p></div><div class="pin-action"><a class="btn btn-primary" href="https://www.pinterest.com/krishArts1110/" target="_blank" rel="noopener noreferrer"><span class="btn-icon" aria-hidden="true">📌</span> Follow &amp; Explore Pinterest Hub <span aria-hidden="true">↗</span></a><span class="pin-note">Wallpapers, aesthetics &amp; creative inspiration</span></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><div><div class="footer-brand">SAIYAN MINDSET VAULT</div><div class="footer-copy">Crafted for fantasy lovers and wallpaper enthusiasts.</div></div><nav class="footer-links" aria-label="Footer navigation"><a href="#collection">Collection</a><a href="#download">Download</a><a href="https://t.me/Saiyan_Mindset_Vault/80?single" target="_blank" rel="noopener noreferrer">Telegram</a><a href="https://www.pinterest.com/krishArts1110/" target="_blank" rel="noopener noreferrer">Pinterest</a></nav></div></footer>
+
+  <div class="modal-backdrop" id="welcomeBackdrop" aria-hidden="true">
+    <section class="modal" id="welcomeModal" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle" aria-describedby="welcomeCopy" tabindex="-1">
+      <div class="modal-ring" aria-hidden="true"></div><div class="modal-emblem" aria-hidden="true">✨</div>
+      <p class="modal-kicker">A Secret Has Been Unlocked</p>
+      <h2 id="welcomeTitle">Welcome, Traveler!</h2>
+      <p class="modal-copy" id="welcomeCopy">✨ You've unlocked the secret fantasy wallpaper vault. Explore enchanting landscapes, discover your next favorite aesthetic, and <strong>claim your free gift below!</strong></p>
+      <button class="btn btn-primary" id="claimButton" type="button">Claim Gift <span aria-hidden="true">✦</span></button>
+      <div class="modal-foot">Your magical journey begins here.</div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"><div class="toast-icon" id="toastIcon" aria-hidden="true">✓</div><div><span class="toast-title" id="toastTitle">Magic Unlocked!</span><span class="toast-text" id="toastText">Your next adventure is waiting.</span></div></div>
+
+  <script>
+    "use strict";
+
+    const $ = (selector) => document.querySelector(selector);
+    const backdrop = $("#welcomeBackdrop");
+    const modal = $("#welcomeModal");
+    const claimButton = $("#claimButton");
+    const toast = $("#toast");
+    const toastIcon = $("#toastIcon");
+    const toastTitle = $("#toastTitle");
+    const toastText = $("#toastText");
+    const sparkLayer = $("#spark-layer");
+    const phone = $("#phoneMockup");
+    let previousFocus = null;
+    let toastTimer = 0;
+    let modalWasOpened = false;
+    let audioContext = null;
+    let tiltRaf = 0;
+    let draggingPhone = false;
+    let lastPointer = null;
+
+    /* Small ambient particles: CSS animates them, JavaScript only creates them once. */
+    function createParticles() {
+      const holder = $("#particles");
+      if (!holder || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const count = window.innerWidth <= 640 ? 12 : 23;
+      const colors = ["rgba(166,245,197,.9)", "rgba(173,206,255,.85)", "rgba(200,177,255,.8)"];
+      const fragment = document.createDocumentFragment();
+      for (let i = 0; i < count; i++) {
+        const particle = document.createElement("span");
+        particle.className = "particle";
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.setProperty("--size", `${1 + Math.random() * 2}px`);
+        particle.style.setProperty("--dur", `${14 + Math.random() * 14}s`);
+        particle.style.setProperty("--delay", `${Math.random() * -24}s`);
+        particle.style.setProperty("--drift", `${Math.round(Math.random() * 100 - 50)}px`);
+        particle.style.setProperty("--op", (0.14 + Math.random() * 0.32).toFixed(2));
+        particle.style.setProperty("--c", colors[Math.floor(Math.random() * colors.length)]);
+        fragment.appendChild(particle);
+      }
+      holder.appendChild(fragment);
+    }
+
+    /* Use the real preview file when present; otherwise the built-in SVG remains visible. */
+    function setupPreviewImage() {
+      const img = $("#previewImage");
+      if (!img) return;
+      img.addEventListener("load", () => {
+        if (img.naturalWidth > 0) img.classList.add("loaded");
+      });
+      img.addEventListener("error", () => img.classList.remove("loaded"));
+      if (img.complete && img.naturalWidth > 0) img.classList.add("loaded");
+    }
+
+    /* The clock and date on the mock phone reflect the visitor's local time. */
+    function updateClock() {
+      const now = new Date();
+      const time = new Intl.DateTimeFormat("en-US", { hour: "numeric", minute: "2-digit", hour12: false }).format(now);
+      $("#lockTime").textContent = time;
+      $("#statusTime").textContent = time;
+      $("#lockDate").textContent = new Intl.DateTimeFormat("en-US", { weekday: "long", month: "long", day: "numeric" }).format(now);
+    }
+
+    function showToast(title, message, icon = "✓", duration = 3000) {
+      window.clearTimeout(toastTimer);
+      toastTitle.textContent = title;
+      toastText.textContent = message;
+      toastIcon.textContent = icon;
+      toast.classList.add("visible");
+      toastTimer = window.setTimeout(() => toast.classList.remove("visible"), duration);
+    }
+
+    function openModal() {
+      if (modalWasOpened) return;
+      modalWasOpened = true;
+      previousFocus = document.activeElement;
+      backdrop.classList.add("visible");
+      backdrop.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      window.setTimeout(() => modal.focus({ preventScroll: true }), 80);
+    }
+
+    function closeModal(scrollToDownload = true) {
+      backdrop.classList.remove("visible");
+      backdrop.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+      if (!scrollToDownload && previousFocus && typeof previousFocus.focus === "function") {
+        previousFocus.focus({ preventScroll: true });
+      }
+      if (scrollToDownload) {
+        showToast("Welcome, Traveler!", "Your magical wallpaper collection awaits.", "✦", 2800);
+        window.setTimeout(() => $("#download").scrollIntoView({
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+          block: "center"
+        }), 170);
+      }
+    }
+
+    claimButton.addEventListener("click", () => closeModal(true));
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && backdrop.classList.contains("visible")) closeModal(false);
+    });
+
+    /* Synthesised twinkle + soft whoosh. No remote audio file or download required. */
+    function playMagicSound() {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      try {
+        if (!audioContext) audioContext = new AudioCtx();
+        if (audioContext.state === "suspended") audioContext.resume().catch(() => {});
+        const ctx = audioContext;
+        const now = ctx.currentTime;
+        const master = ctx.createGain();
+        master.gain.setValueAtTime(0.0001, now);
+        master.gain.exponentialRampToValueAtTime(0.12, now + 0.025);
+        master.gain.exponentialRampToValueAtTime(0.0001, now + 0.9);
+        master.connect(ctx.destination);
+
+        /* Three gentle, bell-like notes. */
+        [880, 1174.66, 1567.98].forEach((frequency, index) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          const start = now + index * 0.075;
+          osc.type = index === 1 ? "sine" : "triangle";
+          osc.frequency.setValueAtTime(frequency, start);
+          gain.gain.setValueAtTime(0.0001, start);
+          gain.gain.exponentialRampToValueAtTime(index === 0 ? 0.38 : 0.22, start + 0.018);
+          gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.48);
+          osc.connect(gain);
+          gain.connect(master);
+          osc.start(start);
+          osc.stop(start + 0.52);
+        });
+
+        /* Short, very soft low-pass whoosh adds a treasure-box flourish. */
+        const duration = 0.28;
+        const buffer = ctx.createBuffer(1, Math.floor(ctx.sampleRate * duration), ctx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < data.length; i++) data[i] = (Math.random() * 2 - 1) * (1 - i / data.length);
+        const noise = ctx.createBufferSource();
+        const filter = ctx.createBiquadFilter();
+        const noiseGain = ctx.createGain();
+        noise.buffer = buffer;
+        filter.type = "lowpass";
+        filter.frequency.setValueAtTime(1600, now);
+        filter.frequency.exponentialRampToValueAtTime(450, now + duration);
+        noiseGain.gain.setValueAtTime(0.0001, now);
+        noiseGain.gain.exponentialRampToValueAtTime(0.035, now + 0.035);
+        noiseGain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+        noise.connect(filter);
+        filter.connect(noiseGain);
+        noiseGain.connect(ctx.destination);
+        noise.start(now);
+        noise.stop(now + duration);
+      } catch (error) {
+        /* Audio is an enhancement only; navigation still works if it is unavailable. */
+      }
+    }
+
+    /* Burst tiny stars and sparks around the clicked button using viewport coordinates. */
+    function createParticleBurst(button) {
+      if (!sparkLayer || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const rect = button.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const colors = ["#d8ffe4", "#a6f5c5", "#b7d5ff", "#d1baff", "#ffffff"];
+      const fragment = document.createDocumentFragment();
+      const count = window.innerWidth <= 640 ? 19 : 28;
+      for (let i = 0; i < count; i++) {
+        const star = document.createElement("span");
+        const isStar = i % 4 === 0;
+        const angle = (Math.PI * 2 * i / count) + (Math.random() * 0.28);
+        const distance = 35 + Math.random() * Math.min(115, rect.width * 0.25 + 55);
+        star.className = isStar ? "spark star" : "spark";
+        star.style.setProperty("--x", `${cx}px`);
+        star.style.setProperty("--y", `${cy}px`);
+        star.style.setProperty("--dx", `${Math.cos(angle) * distance}px`);
+        star.style.setProperty("--dy", `${Math.sin(angle) * distance - 12}px`);
+        star.style.setProperty("--s", isStar ? `${10 + Math.random() * 7}px` : `${2 + Math.random() * 3}px`);
+        star.style.setProperty("--t", `${460 + Math.random() * 430}ms`);
+        star.style.setProperty("--c", colors[Math.floor(Math.random() * colors.length)]);
+        if (isStar) star.textContent = Math.random() > 0.5 ? "✦" : "✧";
+        fragment.appendChild(star);
+        star.addEventListener("animationend", () => star.remove(), { once: true });
+      }
+      sparkLayer.appendChild(fragment);
+    }
+
+    /* Every Drive download CTA opens the provided Drive folder in a new tab. */
+    document.querySelectorAll(".download-link").forEach((button) => {
+      button.addEventListener("click", () => {
+        playMagicSound();
+        createParticleBurst(button);
+        showToast("Your Magical Gift Is Opening!", "The five-image pack is opening in Google Drive.", "✦", 2800);
+        /* Let the normal anchor navigation proceed; this avoids popup blockers. */
+      });
+    });
+
+    /* Interactive 3D tilt: mouse hover and touch/pen drag are supported. */
+    function setupTilt() {
+      if (!phone || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const maxTilt = 10;
+      function applyTilt(event) {
+        if (event.pointerType === "touch" && !draggingPhone) return;
+        const rect = phone.getBoundingClientRect();
+        const x = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
+        const y = Math.max(0, Math.min(1, (event.clientY - rect.top) / rect.height));
+        const ry = (x - 0.5) * maxTilt * 2;
+        const rx = (0.5 - y) * maxTilt * 2;
+        if (tiltRaf) cancelAnimationFrame(tiltRaf);
+        tiltRaf = requestAnimationFrame(() => {
+          phone.style.transform = `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg)`;
+          phone.style.boxShadow = `${-ry * 1.1}px ${38 + Math.abs(rx) * 1.2}px 80px rgba(0,0,0,.53), 0 14px 30px rgba(7,16,12,.3), inset 0 0 0 1px rgba(255,255,255,.15)`;
+        });
+      }
+      function resetTilt() {
+        draggingPhone = false;
+        lastPointer = null;
+        if (tiltRaf) cancelAnimationFrame(tiltRaf);
+        phone.style.transform = "rotateX(0deg) rotateY(0deg)";
+        phone.style.boxShadow = "";
+      }
+      phone.addEventListener("pointerdown", (event) => {
+        if (event.pointerType === "touch" || event.pointerType === "pen") {
+          draggingPhone = true;
+          lastPointer = { x: event.clientX, y: event.clientY };
+          try { phone.setPointerCapture(event.pointerId); } catch (error) {}
+          applyTilt(event);
+        }
+      });
+      phone.addEventListener("pointermove", (event) => {
+        if (event.pointerType === "mouse" || draggingPhone) applyTilt(event);
+        if (draggingPhone) lastPointer = { x: event.clientX, y: event.clientY };
+      });
+      phone.addEventListener("pointerup", resetTilt);
+      phone.addEventListener("pointercancel", resetTilt);
+      phone.addEventListener("lostpointercapture", resetTilt);
+      phone.addEventListener("pointerleave", (event) => { if (event.pointerType === "mouse") resetTilt(); });
+    }
+
+    function initialize() {
+      createParticles();
+      setupPreviewImage();
+      setupTilt();
+      updateClock();
+      window.setInterval(updateClock, 30000);
+      window.setTimeout(openModal, 180);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initialize, { once: true });
+    } else {
+      initialize();
+    }
+  </script>
+</body>
+</html>
