@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#05050a">
+<meta name="description" content="PROJECT NEXUS — explore anime-inspired digital art, creative collections, and exclusive wallpapers.">
+<title>PROJECT NEXUS — Where Anime Meets Digital Art</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#05050a;--panel:rgba(18,19,30,.78);--text:#f5f7ff;--muted:#a6a9bc;--cyan:#37e8f5;--violet:#9862ff;--line:rgba(255,255,255,.105);--radius:20px}
+*{box-sizing:border-box}
+html{min-height:100%;scroll-behavior:smooth}
+body{margin:0;min-height:100vh;min-height:100svh;overflow-x:clip;background:radial-gradient(ellipse at 50% -12%,rgba(0,216,240,.13),transparent 48%),radial-gradient(ellipse at 100% 82%,rgba(127,55,245,.10),transparent 34%),var(--bg);color:var(--text);font-family:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit}
+.ambient{position:fixed;z-index:-1;pointer-events:none;width:20rem;height:20rem;border-radius:50%;filter:blur(75px);opacity:.15;contain:strict}
+.ambient.cyan{top:-12rem;left:calc(50% - 10rem);background:#00e5f5}.ambient.violet{right:-13rem;bottom:-10rem;background:#823cff}
+.page{width:min(calc(100% - 32px),480px);min-height:100vh;min-height:100svh;margin:auto;padding:max(30px,env(safe-area-inset-top)) 0 max(24px,env(safe-area-inset-bottom));display:flex;flex-direction:column;position:relative}
+.brand{text-align:center;display:flex;flex-direction:column;align-items:center;margin:0 0 30px;animation:arrive .65s ease-out both}
+.logo-wrap{width:112px;height:112px;padding:2px;border-radius:25px;margin-bottom:19px;background:linear-gradient(140deg,rgba(55,232,245,.9),rgba(152,98,255,.75),rgba(255,255,255,.12));box-shadow:0 0 34px rgba(55,232,245,.13)}
+.logo{display:block;width:100%;height:100%;object-fit:cover;border-radius:23px;background:#10111a}
+.brand-name{margin:0;font-size:clamp(1.55rem,7vw,2rem);line-height:1.12;font-weight:700;letter-spacing:.105em;text-transform:uppercase;background:linear-gradient(100deg,#fff 20%,#c8faff 68%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tagline{margin:10px 0 0;color:var(--muted);font-size:.92rem;line-height:1.5;letter-spacing:.025em}
+.intro{margin:9px 0 0;color:#858aa0;font-size:.78rem;line-height:1.5}
+.links{display:grid;gap:13px;width:100%}
+.card{display:flex;align-items:center;gap:13px;min-width:0;padding:15px;position:relative;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);box-shadow:0 9px 28px rgba(0,0,0,.18);text-decoration:none;-webkit-tap-highlight-color:transparent;transition:border-color .2s ease,background-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.card:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+.card:hover{border-color:rgba(55,232,245,.42);background:rgba(22,25,39,.92);box-shadow:0 12px 32px rgba(0,0,0,.24),0 0 22px rgba(55,232,245,.06);transform:translateY(-2px)}
+.card:active{transform:scale(.99)}
+.icon{width:47px;height:47px;flex:0 0 47px;border-radius:14px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.09)}
+.icon svg{width:23px;height:23px;display:block}
+.da{color:#8ee7a2;background:rgba(70,190,105,.10)}.pin{color:#ff858e;background:rgba(235,55,75,.10)}.tg{color:#031016;background:linear-gradient(135deg,#48f0f4,#69aaff 65%,#9d6bff);border-color:transparent}
+.copy{min-width:0;flex:1}.title-row{display:flex;align-items:center;flex-wrap:wrap;gap:7px}
+.title{margin:0;color:#f7f8ff;font-size:.98rem;font-weight:600;line-height:1.35}
+.desc{display:block;margin:4px 0 0;color:var(--muted);font-size:.78rem;line-height:1.45;overflow-wrap:anywhere}
+.arrow{flex:0 0 auto;color:#888da4;transition:color .2s ease,transform .2s ease}.arrow svg{width:19px;height:19px;display:block}
+.card:hover .arrow{color:var(--cyan);transform:translateX(2px)}
+.badge{display:inline-flex;align-items:center;min-height:19px;padding:2px 7px;border-radius:99px;border:1px solid rgba(55,232,245,.25);background:rgba(55,232,245,.10);color:#8af6ff;font-size:.59rem;line-height:1.2;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.featured{border-color:rgba(55,232,245,.30);background:linear-gradient(110deg,rgba(0,226,240,.075),transparent 52%,rgba(137,77,255,.075)),var(--panel)}
+.featured:before{content:"";position:absolute;top:0;left:18px;right:18px;height:1px;background:linear-gradient(90deg,transparent,rgba(55,232,245,.55),transparent);pointer-events:none}
+footer{margin-top:auto;padding-top:31px;text-align:center;color:#74788b;font-size:.73rem;line-height:1.7}footer p{margin:0}.footer-note{color:#565b70}
+.toast{position:fixed;z-index:5;left:50%;bottom:max(18px,env(safe-area-inset-bottom));width:max-content;max-width:calc(100vw - 32px);display:flex;align-items:center;gap:10px;padding:12px 15px;border:1px solid rgba(55,232,245,.24);border-radius:14px;background:rgba(15,17,27,.96);box-shadow:0 12px 35px rgba(0,0,0,.35);color:#e9faff;font-size:.82rem;line-height:1.35;opacity:0;visibility:hidden;transform:translate(-50%,10px);transition:opacity .18s ease,transform .18s ease,visibility .18s;pointer-events:none;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.toast.visible{opacity:1;visibility:visible;transform:translate(-50%,0)}.dot{width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:var(--cyan)}
+@keyframes arrive{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:600px){.page{padding-top:46px;padding-bottom:30px}.brand{margin-bottom:34px}.logo-wrap{width:124px;height:124px}.card{padding:17px}}
+@media(max-width:360px){.page{width:calc(100% - 24px);padding-top:24px}.logo-wrap{width:96px;height:96px;border-radius:22px}.logo{border-radius:20px}.card{gap:10px;padding:12px;border-radius:17px}.icon{width:42px;height:42px;flex-basis:42px;border-radius:12px}.title{font-size:.91rem}.desc{font-size:.74rem}.brand{margin-bottom:24px}}
+@media(hover:none){.card:hover{transform:none;box-shadow:0 9px 28px rgba(0,0,0,.18)}.card:hover .arrow{transform:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="ambient cyan" aria-hidden="true"></div><div class="ambient violet" aria-hidden="true"></div>
+<main class="page">
+<header class="brand">
+  <div class="logo-wrap"><img class="logo" src="Project_Nexus.jpg" alt="PROJECT NEXUS logo" width="400" height="400"></div>
+  <h1 class="brand-name">PROJECT NEXUS</h1>
+  <p class="tagline">Where Anime Meets Digital Art.</p>
+  <p class="intro">Explore art. Discover inspiration. Find your next wallpaper.</p>
+</header>
+<nav class="links" aria-label="Official PROJECT NEXUS links">
+<a class="card" href="https://www.deviantart.com/krisharts1110" target="_blank" rel="noopener noreferrer" data-toast="Opening DeviantArt — AI Art Gallery">
+  <span class="icon da" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.816 5.378h-3.923l-1.42 3.298h3.922l3.924-3.298zm-14.832 13.244h3.923l1.42-3.298H5.405l-1.421 3.298zm17.654-9.336L20.19 12h-3.923l1.42-3.298h3.923zm-19.276 5.438l1.421-3.298H7.78L6.36 14.72l-.396.936zm7.25-13.622h-3.923l4.319 10.026h3.923L9.62 1.624zm4.76 20.752h3.923l-4.319-10.026h-3.923l4.319 10.026z"/></svg></span>
+  <span class="copy"><span class="title-row"><span class="title">AI Art Gallery</span></span><span class="desc">Explore digital artwork and original visual concepts.</span></span>
+  <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/></svg></span>
+</a>
+<a class="card" href="https://www.pinterest.com/krishArts1110/" target="_blank" rel="noopener noreferrer" data-toast="Opening Pinterest — Anime Art Collection">
+  <span class="icon pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.291 1.199-.331 1.363-.053.225-.177.273-.408.165-1.523-.709-2.477-2.937-2.477-4.729 0-3.847 2.795-7.38 8.056-7.38 4.232 0 7.525 3.018 7.525 7.052 0 4.207-2.65 7.595-6.327 7.595-1.235 0-2.396-.642-2.793-1.399l-.762 2.905c-.276 1.057-1.022 2.382-1.522 3.191C10.091 23.864 11.029 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg></span>
+  <span class="copy"><span class="title-row"><span class="title">Anime Art Collection</span></span><span class="desc">Discover anime-inspired artwork and visual inspiration.</span></span>
+  <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/></svg></span>
+</a>
+<a class="card featured" href="https://t.me/Saiyan_Mindset_Vault" target="_blank" rel="noopener noreferrer" data-toast="Opening Telegram — Exclusive Wallpapers">
+  <span class="icon tg" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.14-.261.26-.536.26l.192-3.05 5.548-5.012c.24-.213-.054-.334-.373-.121l-6.857 4.318-2.956-.924c-.642-.2-.655-.642.135-.954l11.566-4.458c.538-.196 1.006.128.832.957z"/></svg></span>
+  <span class="copy"><span class="title-row"><span class="title">Exclusive Wallpapers</span><span class="badge">Featured</span></span><span class="desc">Find anime wallpapers and selected digital artwork.</span></span>
+  <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/></svg></span>
+</a>
+</nav>
+<footer><p>PROJECT NEXUS &copy; <span id="year">2026</span></p><p class="footer-note">Created for anime and digital art enthusiasts.</p></footer>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"><span class="dot" aria-hidden="true"></span><span id="toast-message">Opening link…</span></div>
+<script>
+(() => {
+  const toast = document.getElementById('toast');
+  const message = document.getElementById('toast-message');
+  let timer;
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('[data-toast]').forEach(link => {
+    link.addEventListener('click', () => {
+      message.textContent = link.dataset.toast;
+      toast.classList.add('visible');
+      clearTimeout(timer);
+      timer = setTimeout(() => toast.classList.remove('visible'), 1800);
+    }, {passive:true});
+  });
+})();
+</script>
+</body>
+</html>
