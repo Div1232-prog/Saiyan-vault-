@@ -419,30 +419,32 @@
 
     <footer class="site-footer"><span class="footer-brand">NEXUS WALLPAPERS</span><span>Made for anime fans. Built for your screen. © <span id="year"></span></span></footer>
   </div>
-
   <script>
     (() => {
       "use strict";
       const searchInput = document.getElementById("wallpaper-search");
       const clearButton = document.getElementById("clear-search");
       const categoryButtons = [...document.querySelectorAll(".category-pill")];
-      const cards = [...document.querySelectorAll(".wallpaper-card")];
       const resultCount = document.getElementById("result-count");
       const emptyState = document.getElementById("empty-state");
       const grid = document.getElementById("wallpaper-grid");
       let activeCategory = "All";
 
-      // Cache searchable text once so filtering stays fast while typing.
-      // Function to get all cards dynamically so newly added ones work instantly
-function getSearchableCards() {
-  return [...document.querySelectorAll(".wallpaper-card")].map((card) => ({
-    element: card,
-    category: card.dataset.category || "",
-    text: `${card.dataset.search || ""} ${card.textContent}`.toLocaleLowerCase()
-  }));
-}
+      // Dynamic function to get all cards including newly added ones instantly
+      function getSearchableCards() {
+        const cards = [...document.querySelectorAll(".wallpaper-card")];
+        return cards.map((card) => ({
+          element: card,
+          category: card.dataset.category || "",
+          text: `${card.dataset.search || ""} ${card.textContent}`.toLocaleLowerCase()
+        }));
+      }
 
+      function updateWallpapers() {
+        const query = searchInput.value.trim().toLocaleLowerCase();
         let visibleCount = 0;
+        const searchableCards = getSearchableCards();
+
         searchableCards.forEach(({ element, category, text }) => {
           const matchesCategory = activeCategory === "All" || category === activeCategory;
           const matchesSearch = !query || text.includes(query);
@@ -450,13 +452,13 @@ function getSearchableCards() {
           element.hidden = !visible;
           if (visible) visibleCount += 1;
         });
+
         resultCount.textContent = `Showing ${visibleCount} ${visibleCount === 1 ? "wallpaper" : "wallpapers"}`;
         emptyState.classList.toggle("is-visible", visibleCount === 0);
         grid.hidden = visibleCount === 0;
         clearButton.classList.toggle("is-visible", searchInput.value.length > 0);
       }
 
-      // Event delegation handles all category pills with one listener.
       document.querySelector(".category-nav").addEventListener("click", (event) => {
         const button = event.target.closest(".category-pill");
         if (!button) return;
@@ -472,7 +474,6 @@ function getSearchableCards() {
         searchInput.focus();
       });
 
-      // Display a simple fallback if a preview file is missing.
       grid.addEventListener("error", (event) => {
         const image = event.target;
         if (!(image instanceof HTMLImageElement) || !image.matches(".wallpaper-media img")) return;
@@ -485,5 +486,6 @@ function getSearchableCards() {
       updateWallpapers();
     })();
   </script>
+function>
 </body>
 </html>
