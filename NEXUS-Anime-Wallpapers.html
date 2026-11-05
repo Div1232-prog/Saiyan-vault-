@@ -433,14 +433,15 @@
       let activeCategory = "All";
 
       // Cache searchable text once so filtering stays fast while typing.
-      const searchableCards = cards.map((card) => ({
-        element: card,
-        category: card.dataset.category || "",
-        text: `${card.dataset.search || ""} ${card.textContent}`.toLocaleLowerCase()
-      }));
+      // Function to get all cards dynamically so newly added ones work instantly
+function getSearchableCards() {
+  return [...document.querySelectorAll(".wallpaper-card")].map((card) => ({
+    element: card,
+    category: card.dataset.category || "",
+    text: `${card.dataset.search || ""} ${card.textContent}`.toLocaleLowerCase()
+  }));
+}
 
-      function updateWallpapers() {
-        const query = searchInput.value.trim().toLocaleLowerCase();
         let visibleCount = 0;
         searchableCards.forEach(({ element, category, text }) => {
           const matchesCategory = activeCategory === "All" || category === activeCategory;
