@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="#000000" name="theme-color"/>
-<meta content="Download free 4K anime wallpapers and 9:16 vertical mobile backgrounds. Explore Gojo, Sukuna, Rengoku, Tanjiro, Asta, Killua, Denji, L Lawliet, Sung Jin-Woo and Ichigo in cinematic dark anime aesthetics." name="description"/>
+<meta content="Explore free 4K anime wallpapers, vertical 9:16 mobile backgrounds, curated aesthetic collections and practical psychology PDFs from NEXUS Wallpapers." name="description"/>
 <meta content="free 4K anime wallpapers, mobile backgrounds, dark Saiyan aesthetic, Goku, Gojo, Sukuna, 9:16 vertical wallpapers, Rengoku, Tanjiro, Asta, Killua, Denji, L Lawliet, Sung Jin-Woo, Ichigo" name="keywords"/>
 <meta content="index, follow" name="robots"/>
 <meta content="NEXUS Wallpapers" name="author"/>
@@ -217,24 +217,174 @@
   .load-more-wrap { padding-bottom: 46px; }
   .back-to-top { bottom: 92px; right: 14px; width: 42px; height: 42px; }
 }
+
+/* =====================================================================
+   NEXUS NEXT LEVEL — SOCIAL, MIND HUB, ACCOUNT AND MOBILE EDITING
+   ===================================================================== */
+.header-actions { display:flex; align-items:center; justify-content:flex-end; gap:12px; }
+.social-link { display:inline-flex; align-items:center; gap:8px; min-height:38px; padding:5px 11px; border:1px solid var(--line); border-radius:999px; background:rgba(15,23,42,.48); color:#d9d4ee; font-size:.74rem; font-weight:700; }
+.social-link:hover { border-color:rgba(167,139,250,.62); background:rgba(124,58,237,.15); color:#fff; }
+.social-mark { display:grid; width:23px; height:23px; place-items:center; border-radius:50%; background:linear-gradient(140deg,#f43f5e,#be123c); color:#fff; font-size:.84rem; font-weight:900; }
+.account-button { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:40px; padding:0 13px; border:1px solid rgba(103,232,249,.28); border-radius:12px; background:rgba(8,22,30,.72); color:#d9f7fb; cursor:pointer; font-size:.72rem; font-weight:750; }
+.account-button:hover { border-color:rgba(103,232,249,.65); background:rgba(8,45,54,.62); }
+.account-button svg { width:17px; height:17px; }
+.pill-count { display:inline-grid; min-width:18px; height:18px; place-items:center; margin-left:6px; padding:0 4px; border-radius:99px; background:rgba(148,163,184,.13); color:#cbd5e1; font-size:.62rem; line-height:1; }
+.category-pill[data-filter="Ghibli Aesthetic"] .pill-count { color:#fcd34d; }
+.category-pill[data-filter="Dark Minimalist"] .pill-count { color:#c4b5fd; }
+.category-pill[data-filter="Lo-Fi & Cozy"] .pill-count { color:#f9a8d4; }
+.category-pill[data-filter="Nature & Architecture"] .pill-count { color:#86efac; }
+
+.mind-hub { margin:48px 0 36px; padding:clamp(18px,3vw,30px); border:1px solid rgba(167,139,250,.22); border-radius:24px; background:linear-gradient(135deg,rgba(25,22,43,.78),rgba(8,12,21,.94) 58%,rgba(11,25,34,.76)); }
+.mind-hub-heading { margin-top:0; }
+.mind-hub-kicker { margin:0 0 7px; color:#a99ad9; font-size:.64rem; font-weight:850; letter-spacing:.17em; }
+.mind-card-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+.mind-card { display:flex; min-width:0; flex-direction:column; padding:17px; border:1px solid rgba(148,163,184,.17); border-radius:17px; background:rgba(2,6,23,.52); transition:border-color 160ms ease, transform 160ms ease; }
+.mind-card:hover { border-color:rgba(167,139,250,.48); transform:translateY(-2px); }
+.mind-card-icon { display:grid; width:42px; height:42px; place-items:center; margin-bottom:15px; border:1px solid rgba(167,139,250,.24); border-radius:13px; background:rgba(124,58,237,.14); font-size:1.25rem; }
+.mind-card-meta { display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px; color:#a99ad9; font-size:.58rem; font-weight:800; letter-spacing:.09em; }
+.mind-card h3 { margin:10px 0 8px; color:#f2efff; font-size:1rem; line-height:1.35; }
+.mind-card p { flex:1; margin:0 0 18px; color:var(--muted); font-size:.78rem; line-height:1.65; }
+.mind-download,.mind-coming-label { display:flex; min-height:42px; align-items:center; justify-content:space-between; gap:10px; padding:0 13px; border:1px solid rgba(167,139,250,.35); border-radius:10px; background:rgba(124,58,237,.16); color:#eee9ff; font-size:.74rem; font-weight:750; }
+.mind-download:hover { border-color:rgba(196,181,253,.75); background:rgba(124,58,237,.27); }
+.mind-card-coming { border-style:dashed; background:rgba(15,23,42,.32); }
+.mind-coming-label { justify-content:center; border-color:var(--line); background:rgba(148,163,184,.07); color:#9ca3af; }
+.mind-hub-note { margin:17px 0 0; color:#7f8999; font-size:.68rem; }
+.mind-hub-note code { color:#c4b5fd; }
+
+.account-dialog { width:min(460px,calc(100% - 22px)); max-width:none; max-height:min(90dvh,720px); padding:0; overflow:auto; border:1px solid rgba(103,232,249,.3); border-radius:20px; background:#080b12; color:var(--text); box-shadow:0 24px 90px rgba(0,0,0,.72); }
+.account-dialog::backdrop { background:rgba(0,0,0,.84); backdrop-filter:blur(7px); }
+.account-dialog-shell { padding:clamp(17px,4vw,25px); }
+.account-dialog-header { display:flex; align-items:center; justify-content:space-between; gap:14px; }
+.account-dialog-header h2 { margin:0; font-size:1.15rem; }
+.account-status { margin:18px 0; padding:12px 13px; border:1px solid rgba(103,232,249,.18); border-radius:12px; background:rgba(8,22,30,.58); color:#bcd8df; font-size:.78rem; line-height:1.6; }
+.account-form { display:grid; gap:9px; }
+.account-form label { margin-top:5px; color:#cbd5e1; font-size:.74rem; font-weight:700; }
+.account-form input { width:100%; min-height:46px; padding:0 13px; border:1px solid var(--line-strong); border-radius:10px; background:#0d121d; color:#f1f5f9; }
+.account-form input:focus-visible { outline:2px solid var(--accent-2); outline-offset:2px; }
+.account-form-actions { display:grid; grid-template-columns:1fr 1fr; gap:9px; margin-top:10px; }
+.account-submit { min-height:43px; border:1px solid rgba(103,232,249,.38); border-radius:10px; background:rgba(8,145,178,.18); color:#d9f7fb; cursor:pointer; font-size:.75rem; font-weight:800; }
+.account-submit:hover { border-color:rgba(103,232,249,.75); background:rgba(8,145,178,.28); }
+.account-create { border-color:rgba(167,139,250,.38); background:rgba(124,58,237,.18); color:#eee9ff; }
+.account-signout { width:100%; margin-top:15px; }
+.account-email { margin:16px 0 3px; color:#f1f5f9; font-weight:750; overflow-wrap:anywhere; }
+.account-sync-note,.account-footnote { color:#8791a2; font-size:.7rem; line-height:1.6; }
+.account-footnote { margin:17px 0 0; }
+
+.site-footer { flex-wrap:wrap; }
+.footer-brand-wrap { display:flex; flex-direction:column; gap:5px; }
+.footer-tagline { color:#737d8e; font-size:.68rem; }
+.footer-copy { margin-left:auto; }
+.footer-social { min-height:34px; }
+@media (max-width:900px) { .mind-card-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:700px) {
+  .header-actions { gap:7px; }
+  .header-note { display:none; }
+  .header-social { padding:4px 8px; }
+  .header-social .social-label { display:none; }
+  .account-button { min-height:38px; padding:0 9px; font-size:0; gap:0; }
+  .account-button svg { width:19px; height:19px; }
+  .mind-hub { margin:34px 0 28px; padding:14px; border-radius:18px; }
+  .mind-card-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+  .mind-card { padding:12px; border-radius:14px; }
+  .mind-card-icon { width:36px; height:36px; margin-bottom:11px; font-size:1.1rem; }
+  .mind-card-meta { font-size:.52rem; }
+  .mind-card h3 { font-size:.86rem; }
+  .mind-card p { font-size:.7rem; line-height:1.55; }
+  .mind-download,.mind-coming-label { min-height:39px; padding:0 9px; font-size:.67rem; }
+  .footer-copy { margin-left:0; }
+  .site-footer { align-items:flex-start; }
+}
+@media (max-width:390px) {
+  .mind-card-grid { gap:8px; }
+  .mind-card { padding:10px; }
+  .mind-card h3 { font-size:.8rem; }
+  .mind-card-meta { letter-spacing:.04em; }
+  .social-mark { width:21px; height:21px; }
+}
+
 </style>
 </head>
 <body>
+<!--
+===================================================================
+🧩 NEW WALLPAPER CARD TEMPLATE — COPY, PASTE, THEN EDIT THE VALUES
+Keep data-category exactly equal to an existing anime filter pill.
+Use data-tags for optional mood filters, separated with | characters.
+Do not remove this comment wrapper; it keeps the sample out of the live grid.
+
+<article class="wallpaper-card"
+         data-category="Naruto"
+         data-tags="Dark Minimalist"
+         data-search="character anime mood keywords 4k 9:16 mobile wallpaper"
+         data-wallpaper-id="wp-your-unique-id"
+         id="wp-your-unique-id">
+  <div class="wallpaper-media" data-action="preview" role="button" tabindex="0"
+       aria-label="Preview Character Name wallpaper">
+    <img src="wallpapers/EXACT-PREVIEW-FILENAME.webp"
+         alt="Short, accurate description of the artwork"
+         width="900" height="1600" loading="lazy" decoding="async">
+    <div class="image-placeholder" hidden>
+      Preview unavailable. Check the exact filename in the wallpapers/ folder.
+    </div>
+    <span class="quality-tag">4K ORIGINAL</span>
+  </div>
+  <div class="card-content">
+    <div class="card-topline">
+      <span class="card-category">Naruto</span>
+      <span class="file-type">WEBP / PNG</span>
+    </div>
+    <h3 class="card-title">Character Name</h3>
+    <a class="download-button" data-download="true"
+       href="wallpapers/EXACT-ORIGINAL-FILENAME.png"
+       download="EXACT-ORIGINAL-FILENAME.png">
+      <span aria-hidden="true">↓</span> Download 4K
+    </a>
+    <div class="card-tools" aria-label="Actions for Character Name">
+      <button class="card-action" data-action="favorite" type="button"
+              aria-label="Save Character Name to favourites" aria-pressed="false">
+        <span class="action-glyph" aria-hidden="true">♡</span>
+        <span class="action-label">Save</span>
+      </button>
+      <button class="card-action" data-action="share" type="button">↗ Share</button>
+      <button class="card-action" data-action="whatsapp-share" type="button">WA</button>
+      <button class="card-action" data-action="pinterest-share" type="button">P</button>
+      <button class="card-action" data-action="copy-tags" type="button"># Tags</button>
+    </div>
+  </div>
+</article>
+
+END WALLPAPER CARD TEMPLATE
+===================================================================
+-->
 <div class="site-shell">
+<!-- ============================ HEADER ============================= -->
 <header class="site-header">
 <a aria-label="NEXUS Wallpapers home" class="brand" href="#top"><span aria-hidden="true" class="brand-mark">N</span><span>NEXUS WALLPAPERS</span></a>
-<div class="header-note"><span aria-hidden="true" class="status-dot"></span>The 4K wallpaper archive</div>
+<div class="header-actions">
+  <div class="header-note"><span aria-hidden="true" class="status-dot"></span>The 4K wallpaper archive</div>
+  <a class="social-link header-social" href="https://pin.it/1bXoRQY5S"
+     target="_blank" rel="noopener noreferrer" aria-label="Visit NEXUS on Pinterest">
+    <span class="social-mark" aria-hidden="true">P</span><span class="social-label">Pinterest</span>
+  </a>
+  <button class="account-button" id="account-open" type="button" aria-haspopup="dialog" aria-controls="account-dialog">
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="8" r="4"></circle><path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path>
+    </svg><span id="account-label">Account sync</span>
+  </button>
+</div>
 </header>
 <main id="top">
+<!-- ============================== HERO ============================== -->
 <section aria-labelledby="page-title" class="hero">
 <p class="eyebrow">Curated for your screen</p>
 <h1 id="page-title">Anime in <span class="gradient-text">Every Pixel.</span></h1>
-<p class="hero-description">Explore free 4K anime wallpapers and vertical 9:16 mobile backgrounds featuring iconic characters. Preview each design and download the original full-resolution file in one click.</p>
+<p class="hero-description">Explore cinematic 4K anime wallpapers, aesthetic collections and practical psychology guides. Preview each design and download original wallpaper and PDF files in one tap.</p>
 <div aria-label="Collection features" class="collection-meta">
 <span class="meta-chip">4K original downloads</span><span class="meta-chip">Vertical 9:16 format</span><span class="meta-chip">Instant downloads</span>
 </div>
 </section>
 
+<!-- ======================== FEATURED WALLPAPERS ====================== -->
 <section aria-labelledby="featured-title" class="featured-section">
 <div class="section-heading featured-heading">
 <div><h2 id="featured-title">Featured wallpapers</h2><p>A rotating selection from the existing NEXUS collection.</p></div>
@@ -248,6 +398,7 @@
 <div aria-label="Choose featured wallpaper" class="featured-pagination" id="featured-pagination"></div>
 </section>
 
+<!-- ======================= SEARCH & CATEGORY FILTERS ================== -->
 <section aria-label="Wallpaper search and categories">
 <div class="toolbar">
 <div class="search-wrap">
@@ -268,7 +419,7 @@
 <p aria-live="polite" class="result-count" id="result-count">Showing 50 wallpapers</p>
 </div>
 </div>
-<nav aria-label="Filter by anime series" class="category-nav">
+<nav aria-label="Filter wallpapers by anime series and aesthetic" class="category-nav">
 <button aria-pressed="true" class="category-pill" data-filter="All" type="button">All</button>
 <button aria-pressed="false" class="category-pill" data-filter="Jujutsu Kaisen" type="button">Jujutsu Kaisen</button>
 <button aria-pressed="false" class="category-pill" data-filter="Naruto" type="button">Naruto</button>
@@ -285,21 +436,29 @@
 <button aria-pressed="false" class="category-pill" data-filter="Bleach" type="button">Bleach</button>
 <button aria-pressed="false" class="category-pill" data-filter="Anime Mix" type="button">Anime Mix</button>
 <button aria-pressed="false" class="category-pill" data-filter="Dragon Ball" type="button">Dragon Ball</button>
+<button aria-pressed="false" class="category-pill" data-filter="Ghibli Aesthetic" type="button">Ghibli Aesthetic</button>
+<button aria-pressed="false" class="category-pill" data-filter="Dark Minimalist" type="button">Dark Minimalist</button>
+<button aria-pressed="false" class="category-pill" data-filter="Lo-Fi &amp; Cozy" type="button">Lo-Fi &amp; Cozy</button>
+<button aria-pressed="false" class="category-pill" data-filter="Nature &amp; Architecture" type="button">Nature &amp; Architecture</button>
 <button aria-pressed="false" class="category-pill favorites-filter" data-filter="Favorites" id="favorites-filter" type="button">♡ Favorites <span class="favorites-count" id="favorites-count">0</span></button>
 </nav>
 </section>
 
+<!-- =========================== RECENTLY VIEWED ======================= -->
 <section aria-labelledby="recent-title" class="recent-section" id="recent-section" hidden>
 <div class="section-heading"><div><h2 id="recent-title">Recently viewed</h2><p>Jump back into a wallpaper you previewed.</p></div></div>
 <div class="recent-strip" id="recent-strip"></div>
 </section>
 
+<!-- ========================= WALLPAPER COLLECTION ==================== -->
 <section aria-labelledby="collection-title">
 <div class="section-heading"><div><h2 id="collection-title">Explore the collection</h2><p>Choose a wallpaper and save the original file directly to your device.</p></div></div>
-<!-- Keep the ten WEBP previews and ten original JPG/PNG files in the wallpapers/ directory. -->
+<!-- ASSET AUDIT: all 50 wallpaper cards were matched against the exact GitHub tree at commit 4ab131b86b639a104609c25fc829434cdcdbc8a9. -->
+<!-- GitHub Pages is case-sensitive: preserve the exact uppercase/lowercase spelling and the exact extension shown in the repository. -->
+<!-- Every preview uses its real WEBP file; every download points to the matching original JPG, PNG, or WEBP file that actually exists. -->
 <div class="wallpaper-grid" id="wallpaper-grid">
 
-<article class="wallpaper-card" data-category="Hunter x Hunter" data-search="killua zoldyck hunter x hunter night city rooftop stars headphones blue aesthetic 9:16 mobile wallpaper Killua &mdash; Midnight Skyline Hunter x Hunter" data-wallpaper-id="wp-killua-midnight-skyline" data-featured="4" id="wp-killua-midnight-skyline">
+<article class="wallpaper-card" data-category="Hunter x Hunter" data-search="killua zoldyck hunter x hunter night city rooftop stars headphones blue aesthetic 9:16 mobile wallpaper Killua &mdash; Midnight Skyline Hunter x Hunter" data-wallpaper-id="wp-killua-midnight-skyline" data-featured="4" id="wp-killua-midnight-skyline" data-tags="Nature & Architecture">
 <div aria-label="Preview Killua &mdash; Midnight Skyline wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Killua Zoldyck enjoying a peaceful night above a glowing city" decoding="async" height="1600" loading="lazy" src="wallpapers/killua-zoldyck-night-city-rooftop-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>killua-zoldyck-night-city-rooftop-wallpaper.webp</span></div>
@@ -315,7 +474,7 @@
 <div aria-label="Actions for Killua &mdash; Midnight Skyline" class="card-tools"><button aria-label="Save Killua &mdash; Midnight Skyline to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Killua &mdash; Midnight Skyline wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Killua &mdash; Midnight Skyline on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Killua &mdash; Midnight Skyline on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Killua &mdash; Midnight Skyline" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
-<article class="wallpaper-card" data-category="Naruto" data-search="kakashi hatake naruto icha icha paradise cafe rainy window coffee cozy lofi shinobi wallpaper Kakashi &mdash; Rainy Cafe Naruto" data-wallpaper-id="wp-kakashi-rainy-cafe" id="wp-kakashi-rainy-cafe">
+<article class="wallpaper-card" data-category="Naruto" data-search="kakashi hatake naruto icha icha paradise cafe rainy window coffee cozy lofi shinobi wallpaper Kakashi &mdash; Rainy Cafe Naruto" data-wallpaper-id="wp-kakashi-rainy-cafe" id="wp-kakashi-rainy-cafe" data-tags="Lo-Fi & Cozy">
 <div aria-label="Preview Kakashi &mdash; Rainy Cafe wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Kakashi Hatake reading Icha Icha Paradise in a cozy rainy cafe" decoding="async" height="1600" loading="lazy" src="wallpapers/kakashi-hatake-icha-icha-cafe-rain-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>kakashi-hatake-icha-icha-cafe-rain-wallpaper.webp</span></div>
@@ -363,7 +522,7 @@
 <div aria-label="Actions for Madara Uchiha &mdash; Perfect Susanoo" class="card-tools"><button aria-label="Save Madara Uchiha &mdash; Perfect Susanoo to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Madara Uchiha &mdash; Perfect Susanoo wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Madara Uchiha &mdash; Perfect Susanoo on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Madara Uchiha &mdash; Perfect Susanoo on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Madara Uchiha &mdash; Perfect Susanoo" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
-<article class="wallpaper-card" data-category="Jujutsu Kaisen" data-search="megumi fushiguro jujutsu kaisen rainy lofi room headphones window night city calm aesthetic wallpaper Megumi &mdash; Rainy Lofi Room Jujutsu Kaisen" data-wallpaper-id="wp-megumi-rainy-lofi-room" id="wp-megumi-rainy-lofi-room">
+<article class="wallpaper-card" data-category="Jujutsu Kaisen" data-search="megumi fushiguro jujutsu kaisen rainy lofi room headphones window night city calm aesthetic wallpaper Megumi &mdash; Rainy Lofi Room Jujutsu Kaisen" data-wallpaper-id="wp-megumi-rainy-lofi-room" id="wp-megumi-rainy-lofi-room" data-tags="Lo-Fi & Cozy">
 <div aria-label="Preview Megumi &mdash; Rainy Lofi Room wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Megumi Fushiguro listening to music beside a rainy window" decoding="async" height="1600" loading="lazy" src="wallpapers/megumi-fushiguro-rainy-lofi-room-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>megumi-fushiguro-rainy-lofi-room-wallpaper.webp</span></div>
@@ -402,9 +561,9 @@
 <span class="quality-tag">9:16 MOBILE</span>
 </div>
 <div class="card-content">
-<div class="card-topline"><span class="card-category">Solo Leveling</span><span class="file-type">JPG</span></div>
+<div class="card-topline"><span class="card-category">Solo Leveling</span><span class="file-type">WEBP</span></div>
 <h3 class="card-title">Solo Leveling &mdash; Golden Sword</h3>
-<a aria-label="Download Solo Leveling Golden Sword wallpaper" class="download-button" data-download="true" download="Solo-leveling-golden-sword-aesthetic-wallpaper.jpg" href="wallpapers/Solo-leveling-golden-sword-aesthetic-wallpaper.jpg">
+<a aria-label="Download Solo Leveling Golden Sword wallpaper" class="download-button" data-download="true" download="Solo-leveling-golden-sword-aesthetic-wallpaper.webp" href="wallpapers/Solo-leveling-golden-sword-aesthetic-wallpaper.webp">
 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
       Download Wallpaper
     </a>
@@ -418,9 +577,9 @@
 <span class="quality-tag">9:16 MOBILE</span>
 </div>
 <div class="card-content">
-<div class="card-topline"><span class="card-category">Anime Mix</span><span class="file-type">JPG</span></div>
+<div class="card-topline"><span class="card-category">Anime Mix</span><span class="file-type">WEBP / PNG</span></div>
 <h3 class="card-title">The Rise of Queens</h3>
-<a aria-label="Download The Rise of Queens anime wallpaper" class="download-button" data-download="true" download="the-rise-of-queens-anime-girls-4k-wallpaper.jpg" href="wallpapers/the-rise-of-queens-anime-girls-4k-wallpaper.jpg">
+<a aria-label="Download The Rise of Queens anime wallpaper" class="download-button" data-download="true" download="the-rise-of-queens-anime-girls-4k-wallpaper.png" href="wallpapers/the-rise-of-queens-anime-girls-4k-wallpaper.png">
 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
       Download Wallpaper
     </a>
@@ -434,16 +593,17 @@
 <span class="quality-tag">9:16 MOBILE</span>
 </div>
 <div class="card-content">
-<div class="card-topline"><span class="card-category">Anime Mix</span><span class="file-type">JPG</span></div>
+<div class="card-topline"><span class="card-category">Anime Mix</span><span class="file-type">WEBP / PNG</span></div>
 <h3 class="card-title">Three Stages of Growth</h3>
-<a aria-label="Download Three Stages of Growth anime wallpaper" class="download-button" data-download="true" download="three-stages-of-growth-shonen-anime-4k-wallpaper.jpg" href="wallpapers/three-stages-of-growth-shonen-anime-4k-wallpaper.jpg">
+<a aria-label="Download Three Stages of Growth anime wallpaper" class="download-button" data-download="true" download="three-stages-of-growth-shonen-anime-4k-wallpaper.png" href="wallpapers/three-stages-of-growth-shonen-anime-4k-wallpaper.png">
 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
       Download Wallpaper
     </a>
 <div aria-label="Actions for Three Stages of Growth" class="card-tools"><button aria-label="Save Three Stages of Growth to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Three Stages of Growth wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Three Stages of Growth on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Three Stages of Growth on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Three Stages of Growth" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
-<article class="wallpaper-card" data-category="Demon Slayer" data-search="zenitsu agatsuma demon slayer autumn maple leaves headphones lofi peaceful japanese garden orange aesthetic wallpaper Zenitsu &mdash; Autumn Lofi Demon Slayer" data-wallpaper-id="wp-zenitsu-autumn-lofi" id="wp-zenitsu-autumn-lofi">
+<!-- ================= WALLPAPER CARDS 11–20 ================= -->
+<article class="wallpaper-card" data-category="Demon Slayer" data-search="zenitsu agatsuma demon slayer autumn maple leaves headphones lofi peaceful japanese garden orange aesthetic wallpaper Zenitsu &mdash; Autumn Lofi Demon Slayer" data-wallpaper-id="wp-zenitsu-autumn-lofi" id="wp-zenitsu-autumn-lofi" data-tags="Lo-Fi & Cozy|Nature & Architecture">
 <div aria-label="Preview Zenitsu &mdash; Autumn Lofi wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Zenitsu Agatsuma relaxing beneath an autumn maple tree" decoding="async" height="1600" loading="lazy" src="wallpapers/zenitsu-agatsuma-autumn-maple-lofi-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>zenitsu-agatsuma-autumn-maple-lofi-wallpaper.webp</span></div>
@@ -537,7 +697,7 @@
 <div aria-label="Actions for Killua Zoldyck" class="card-tools"><button aria-label="Save Killua Zoldyck to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Killua Zoldyck wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Killua Zoldyck on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Killua Zoldyck on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Killua Zoldyck" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
-<article class="wallpaper-card" data-category="Chainsaw Man" data-search="Denji Chainsaw Man Tokyo sunset orange cinematic city anime 4K 9:16 mobile wallpaper Denji Chainsaw Man" data-wallpaper-id="wp-denji" id="wp-denji">
+<article class="wallpaper-card" data-category="Chainsaw Man" data-search="Denji Chainsaw Man Tokyo sunset orange cinematic city anime 4K 9:16 mobile wallpaper Denji Chainsaw Man" data-wallpaper-id="wp-denji" id="wp-denji" data-tags="Nature & Architecture">
 <div aria-label="Preview Denji wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Denji from Chainsaw Man against a cinematic Tokyo sunset &mdash; WEBP wallpaper preview, vertical 9:16" decoding="async" height="1600" loading="lazy" src="wallpapers/denji-chainsaw-man-tokyo-sunset-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden="">Preview unavailable. Check <code>wallpapers/denji-chainsaw-man-tokyo-sunset-wallpaper.webp</code>.</div>
@@ -550,16 +710,16 @@
 <div aria-label="Actions for Denji" class="card-tools"><button aria-label="Save Denji to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Denji wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Denji on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Denji on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Denji" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
-<article class="wallpaper-card" data-category="Death Note" data-search="L Lawliet Death Note minimalist detective aesthetic chess 4K 9:16 mobile wallpaper L Lawliet Death Note" data-wallpaper-id="wp-l-lawliet" id="wp-l-lawliet">
+<article class="wallpaper-card" data-category="Death Note" data-search="L Lawliet Death Note minimalist detective aesthetic chess 4K 9:16 mobile wallpaper L Lawliet Death Note" data-wallpaper-id="wp-l-lawliet" id="wp-l-lawliet" data-tags="Dark Minimalist">
 <div aria-label="Preview L Lawliet wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="L Lawliet from Death Note in a minimalist detective-inspired composition &mdash; WEBP wallpaper preview, vertical 9:16" decoding="async" height="1600" loading="lazy" src="wallpapers/l-lawliet-death-note-aesthetic-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden="">Preview unavailable. Check <code>wallpapers/l-lawliet-death-note-aesthetic-wallpaper.webp</code>.</div>
 <span class="quality-tag">4K ORIGINAL</span>
 </div>
 <div class="card-content">
-<div class="card-topline"><span class="card-category">Death Note</span><span class="file-type">WEBP / JPG</span></div>
+<div class="card-topline"><span class="card-category">Death Note</span><span class="file-type">WEBP / PNG</span></div>
 <h3 class="card-title">L Lawliet</h3>
-<a aria-label="Download L Lawliet original 4K wallpaper as JPG" class="download-button" data-download="true" download="l-lawliet-death-note-aesthetic-wallpaper.jpg" href="wallpapers/l-lawliet-death-note-aesthetic-wallpaper.jpg"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg><span>Download 4K</span></a>
+<a aria-label="Download L Lawliet original 4K wallpaper as JPG" class="download-button" data-download="true" download="l-lawliet-death-note-aesthetic-wallpaper.png" href="wallpapers/l-lawliet-death-note-aesthetic-wallpaper.png"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg><span>Download 4K</span></a>
 <div aria-label="Actions for L Lawliet" class="card-tools"><button aria-label="Save L Lawliet to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share L Lawliet wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share L Lawliet on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share L Lawliet on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for L Lawliet" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
@@ -576,6 +736,7 @@
 <div aria-label="Actions for Sung Jin-Woo" class="card-tools"><button aria-label="Save Sung Jin-Woo to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Sung Jin-Woo wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Sung Jin-Woo on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Sung Jin-Woo on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Sung Jin-Woo" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
+<!-- ================= WALLPAPER CARDS 21–30 ================= -->
 <article class="wallpaper-card" data-category="Bleach" data-search="Ichigo Kurosaki Bleach Bankai black sword red energy 4K 9:16 mobile wallpaper Ichigo Kurosaki Bleach" data-wallpaper-id="wp-ichigo-kurosaki" id="wp-ichigo-kurosaki">
 <div aria-label="Preview Ichigo Kurosaki wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Ichigo Kurosaki from Bleach in Bankai form with a dramatic energy effect &mdash; WEBP wallpaper preview, vertical 9:16" decoding="async" height="1600" loading="lazy" src="wallpapers/ichigo-kurosaki-bankai-bleach-wallpaper.webp" width="900"/>
@@ -589,7 +750,7 @@
 <div aria-label="Actions for Ichigo Kurosaki" class="card-tools"><button aria-label="Save Ichigo Kurosaki to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Ichigo Kurosaki wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Ichigo Kurosaki on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Ichigo Kurosaki on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Ichigo Kurosaki" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
-<article class="wallpaper-card" data-category="Black Clover" data-search="Yuno Grinbell Black Clover forest anime wallpaper green nature 4K 9:16 mobile Yuno Grinbell Black Clover" data-wallpaper-id="wp-yuno-grinbell" id="wp-yuno-grinbell">
+<article class="wallpaper-card" data-category="Black Clover" data-search="Yuno Grinbell Black Clover forest anime wallpaper green nature 4K 9:16 mobile Yuno Grinbell Black Clover" data-wallpaper-id="wp-yuno-grinbell" id="wp-yuno-grinbell" data-tags="Nature & Architecture">
 <div aria-label="Preview Yuno Grinbell wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Yuno Grinbell from Black Clover standing in a peaceful forest &mdash; WEBP wallpaper preview, vertical 9:16" decoding="async" height="1600" loading="lazy" src="wallpapers/yuno-grinbell-black-clover-forest-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden="">Preview unavailable. Check <code>wallpapers/yuno-grinbell-black-clover-forest-wallpaper.webp</code>.</div>
@@ -604,8 +765,8 @@
 
 <article class="wallpaper-card" data-category="Naruto" data-search="Might Guy Naruto red chakra Eight Inner Gates taijutsu 4K 9:16 mobile Might Guy Naruto" data-wallpaper-id="wp-might-guy" data-featured="6" id="wp-might-guy">
 <div aria-label="Preview Might Guy wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
-<img alt="Might Guy from Naruto surrounded by red chakra and the Eight Inner Gates &mdash; WEBP wallpaper preview, vertical 9:16" decoding="async" height="1600" loading="lazy" src="wallpapers/Might-guy-naruto-red-chakra-gates-wallpaper.webp" width="900"/>
-<div class="image-placeholder" hidden="">Preview unavailable. Check <code>wallpapers/Might-guy-naruto-red-chakra-gates-wallpaper.webp</code>.</div>
+<img alt="Might Guy from Naruto surrounded by red chakra and the Eight Inner Gates &mdash; WEBP wallpaper preview, vertical 9:16" decoding="async" height="1600" loading="lazy" src="wallpapers/Might-guy-naruto-red-chakra-gates-wallpaper.jpg.webp" width="900"/>
+<div class="image-placeholder" hidden="">Preview unavailable. Check <code>wallpapers/Might-guy-naruto-red-chakra-gates-wallpaper.jpg.webp</code>.</div>
 <span class="quality-tag">4K ORIGINAL</span>
 </div>
 <div class="card-content">
@@ -654,7 +815,7 @@
 <div aria-label="Actions for Yuta Okkotsu" class="card-tools"><button aria-label="Save Yuta Okkotsu to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Yuta Okkotsu wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Yuta Okkotsu on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Yuta Okkotsu on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Yuta Okkotsu" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
-<article class="wallpaper-card" data-category="My Hero Academia" data-search="Izuku Midoriya Deku My Hero Academia lofi aesthetic cozy 4K 9:16 mobile Izuku Midoriya My Hero Academia" data-wallpaper-id="wp-izuku-midoriya" id="wp-izuku-midoriya">
+<article class="wallpaper-card" data-category="My Hero Academia" data-search="Izuku Midoriya Deku My Hero Academia lofi aesthetic cozy 4K 9:16 mobile Izuku Midoriya My Hero Academia" data-wallpaper-id="wp-izuku-midoriya" id="wp-izuku-midoriya" data-tags="Lo-Fi & Cozy">
 <div aria-label="Preview Izuku Midoriya wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Izuku Midoriya (Deku) from My Hero Academia in a lofi aesthetic setting &mdash; WEBP wallpaper preview, vertical 9:16" decoding="async" height="1600" loading="lazy" src="wallpapers/izuku-midoriya-deku-my-hero-academia-lofi-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden="">Preview unavailable. Check <code>wallpapers/izuku-midoriya-deku-my-hero-academia-lofi-wallpaper.webp</code>.</div>
@@ -667,7 +828,7 @@
 <div aria-label="Actions for Izuku Midoriya" class="card-tools"><button aria-label="Save Izuku Midoriya to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Izuku Midoriya wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Izuku Midoriya on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Izuku Midoriya on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Izuku Midoriya" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
-<article class="wallpaper-card" data-category="One Piece" data-search="Tony Tony Chopper One Piece cafe aesthetic cozy 4K 9:16 mobile Tony Tony Chopper One Piece" data-wallpaper-id="wp-tony-tony-chopper" id="wp-tony-tony-chopper">
+<article class="wallpaper-card" data-category="One Piece" data-search="Tony Tony Chopper One Piece cafe aesthetic cozy 4K 9:16 mobile Tony Tony Chopper One Piece" data-wallpaper-id="wp-tony-tony-chopper" id="wp-tony-tony-chopper" data-tags="Lo-Fi & Cozy">
 <div aria-label="Preview Tony Tony Chopper wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Tony Tony Chopper from One Piece in a cozy cafe aesthetic &mdash; WEBP wallpaper preview, vertical 9:16" decoding="async" height="1600" loading="lazy" src="wallpapers/tony-tony-chopper-one-piece-cafe-aesthetic-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden="">Preview unavailable. Check <code>wallpapers/tony-tony-chopper-one-piece-cafe-aesthetic-wallpaper.webp</code>.</div>
@@ -680,7 +841,7 @@
 <div aria-label="Actions for Tony Tony Chopper" class="card-tools"><button aria-label="Save Tony Tony Chopper to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Tony Tony Chopper wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Tony Tony Chopper on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Tony Tony Chopper on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Tony Tony Chopper" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
-<article class="wallpaper-card" data-category="Spy x Family" data-search="Anya Forger Spy x Family cozy room cute aesthetic 4K 9:16 mobile Anya Forger Spy x Family" data-wallpaper-id="wp-anya-forger" id="wp-anya-forger">
+<article class="wallpaper-card" data-category="Spy x Family" data-search="Anya Forger Spy x Family cozy room cute aesthetic 4K 9:16 mobile Anya Forger Spy x Family" data-wallpaper-id="wp-anya-forger" id="wp-anya-forger" data-tags="Lo-Fi & Cozy">
 <div aria-label="Preview Anya Forger wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Anya Forger from Spy x Family relaxing in a cozy room &mdash; WEBP wallpaper preview, vertical 9:16" decoding="async" height="1600" loading="lazy" src="wallpapers/anya-forger-spy-x-family-cozy-room-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden="">Preview unavailable. Check <code>wallpapers/anya-forger-spy-x-family-cozy-room-wallpaper.webp</code>.</div>
@@ -693,7 +854,7 @@
 <div aria-label="Actions for Anya Forger" class="card-tools"><button aria-label="Save Anya Forger to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Anya Forger wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Anya Forger on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Anya Forger on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Anya Forger" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
-<article class="wallpaper-card" data-category="Naruto" data-search="Hinata Hyuga Naruto cozy room window purple hair 4K 9:16 mobile Hinata Hyuga Naruto" data-wallpaper-id="wp-hinata-hyuga" id="wp-hinata-hyuga">
+<article class="wallpaper-card" data-category="Naruto" data-search="Hinata Hyuga Naruto cozy room window purple hair 4K 9:16 mobile Hinata Hyuga Naruto" data-wallpaper-id="wp-hinata-hyuga" id="wp-hinata-hyuga" data-tags="Lo-Fi & Cozy">
 <div aria-label="Preview Hinata Hyuga wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Hinata Hyuga from Naruto sitting by a window in a cozy room &mdash; WEBP wallpaper preview, vertical 9:16" decoding="async" height="1600" loading="lazy" src="wallpapers/hinata-hyuga-naruto-cozy-room-window-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden="">Preview unavailable. Check <code>wallpapers/hinata-hyuga-naruto-cozy-room-window-wallpaper.webp</code>.</div>
@@ -706,6 +867,7 @@
 <div aria-label="Actions for Hinata Hyuga" class="card-tools"><button aria-label="Save Hinata Hyuga to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Hinata Hyuga wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Hinata Hyuga on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Hinata Hyuga on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Hinata Hyuga" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
+<!-- ================= WALLPAPER CARDS 31–40 ================= -->
 <article class="wallpaper-card" data-category="Haikyuu!!" data-search="Shoyo Hinata Haikyuu Karasuno bench orange hair volleyball 4K 9:16 mobile Shoyo Hinata Haikyuu!!" data-wallpaper-id="wp-shoyo-hinata" id="wp-shoyo-hinata">
 <div aria-label="Preview Shoyo Hinata wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Shoyo Hinata from Haikyuu!! sitting on the Karasuno bench &mdash; WEBP wallpaper preview, vertical 9:16" decoding="async" height="1600" loading="lazy" src="wallpapers/shoyo-hinata-haikyuu-karasuno-bench-wallpaper.webp" width="900"/>
@@ -718,7 +880,7 @@
 <a aria-label="Download Shoyo Hinata original 4K wallpaper as PNG" class="download-button" data-download="true" download="shoyo-hinata-haikyuu-karasuno-bench-wallpaper.png" href="wallpapers/shoyo-hinata-haikyuu-karasuno-bench-wallpaper.png"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg><span>Download 4K</span></a>
 <div aria-label="Actions for Shoyo Hinata" class="card-tools"><button aria-label="Save Shoyo Hinata to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Shoyo Hinata wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Shoyo Hinata on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Shoyo Hinata on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Shoyo Hinata" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
-<article class="wallpaper-card" data-category="Chainsaw Man" data-search="aki hayakawa chainsaw man rainy cafe coffee window aesthetic 4k 9:16 mobile vertical wallpaper Aki Hayakawa &mdash; Rainy Cafe Chainsaw Man" data-wallpaper-id="wp-aki-hayakawa-rainy-cafe" id="wp-aki-hayakawa-rainy-cafe">
+<article class="wallpaper-card" data-category="Chainsaw Man" data-search="aki hayakawa chainsaw man rainy cafe coffee window aesthetic 4k 9:16 mobile vertical wallpaper Aki Hayakawa &mdash; Rainy Cafe Chainsaw Man" data-wallpaper-id="wp-aki-hayakawa-rainy-cafe" id="wp-aki-hayakawa-rainy-cafe" data-tags="Lo-Fi & Cozy">
 <div aria-label="Preview Aki Hayakawa &mdash; Rainy Cafe wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Aki Hayakawa from Chainsaw Man in a rainy cafe aesthetic with coffee and a rainy window &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/aki-hayakawa-rainy-cafe-aesthetic-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>aki-hayakawa-rainy-cafe-aesthetic-wallpaper.webp</span></div>
@@ -734,7 +896,7 @@
 <div aria-label="Actions for Aki Hayakawa &mdash; Rainy Cafe" class="card-tools"><button aria-label="Save Aki Hayakawa &mdash; Rainy Cafe to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Aki Hayakawa &mdash; Rainy Cafe wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Aki Hayakawa &mdash; Rainy Cafe on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Aki Hayakawa &mdash; Rainy Cafe on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Aki Hayakawa &mdash; Rainy Cafe" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
-<article class="wallpaper-card" data-category="Spy x Family" data-search="anya forger spy x family cozy room study desk lamp books warm aesthetic 4k 9:16 mobile vertical wallpaper Anya Forger &mdash; Cozy Study Room Spy x Family" data-wallpaper-id="wp-anya-forger-cozy-study" id="wp-anya-forger-cozy-study">
+<article class="wallpaper-card" data-category="Spy x Family" data-search="anya forger spy x family cozy room study desk lamp books warm aesthetic 4k 9:16 mobile vertical wallpaper Anya Forger &mdash; Cozy Study Room Spy x Family" data-wallpaper-id="wp-anya-forger-cozy-study" id="wp-anya-forger-cozy-study" data-tags="Lo-Fi & Cozy">
 <div aria-label="Preview Anya Forger &mdash; Cozy Study Room wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Anya Forger from Spy x Family studying in a cozy warm-lit room &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/anya-forger-cozy-room-study-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>anya-forger-cozy-room-study-wallpaper.webp</span></div>
@@ -750,7 +912,7 @@
 <div aria-label="Actions for Anya Forger &mdash; Cozy Study Room" class="card-tools"><button aria-label="Save Anya Forger &mdash; Cozy Study Room to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Anya Forger &mdash; Cozy Study Room wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Anya Forger &mdash; Cozy Study Room on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Anya Forger &mdash; Cozy Study Room on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Anya Forger &mdash; Cozy Study Room" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
-<article class="wallpaper-card" data-category="Naruto" data-search="hinata hyuga naruto cherry blossom sakura walk spring pink petals gentle aesthetic 4k 9:16 mobile vertical wallpaper Hinata Hyuga &mdash; Cherry Blossom Walk Naruto" data-wallpaper-id="wp-hinata-cherry-blossom-walk" id="wp-hinata-cherry-blossom-walk">
+<article class="wallpaper-card" data-category="Naruto" data-search="hinata hyuga naruto cherry blossom sakura walk spring pink petals gentle aesthetic 4k 9:16 mobile vertical wallpaper Hinata Hyuga &mdash; Cherry Blossom Walk Naruto" data-wallpaper-id="wp-hinata-cherry-blossom-walk" id="wp-hinata-cherry-blossom-walk" data-tags="Nature & Architecture">
 <div aria-label="Preview Hinata Hyuga &mdash; Cherry Blossom Walk wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Hinata Hyuga from Naruto walking beneath blooming cherry blossom trees &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/hinata-hyuga-cherry-blossom-walk-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>hinata-hyuga-cherry-blossom-walk-wallpaper.webp</span></div>
@@ -766,7 +928,7 @@
 <div aria-label="Actions for Hinata Hyuga &mdash; Cherry Blossom Walk" class="card-tools"><button aria-label="Save Hinata Hyuga &mdash; Cherry Blossom Walk to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Hinata Hyuga &mdash; Cherry Blossom Walk wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Hinata Hyuga &mdash; Cherry Blossom Walk on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Hinata Hyuga &mdash; Cherry Blossom Walk on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Hinata Hyuga &mdash; Cherry Blossom Walk" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
-<article class="wallpaper-card" data-category="Naruto" data-search="iruka sensei naruto sunset ramen bowl warm golden hour konoha aesthetic 4k 9:16 mobile vertical wallpaper Iruka Sensei &mdash; Sunset Ramen Naruto" data-wallpaper-id="wp-iruka-sensei-sunset-ramen" id="wp-iruka-sensei-sunset-ramen">
+<article class="wallpaper-card" data-category="Naruto" data-search="iruka sensei naruto sunset ramen bowl warm golden hour konoha aesthetic 4k 9:16 mobile vertical wallpaper Iruka Sensei &mdash; Sunset Ramen Naruto" data-wallpaper-id="wp-iruka-sensei-sunset-ramen" id="wp-iruka-sensei-sunset-ramen" data-tags="Lo-Fi & Cozy">
 <div aria-label="Preview Iruka Sensei &mdash; Sunset Ramen wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Iruka Sensei from Naruto enjoying a bowl of ramen at sunset with warm golden light &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/iruka-sensei-sunset-ramen-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>iruka-sensei-sunset-ramen-wallpaper.webp</span></div>
@@ -782,7 +944,7 @@
 <div aria-label="Actions for Iruka Sensei &mdash; Sunset Ramen" class="card-tools"><button aria-label="Save Iruka Sensei &mdash; Sunset Ramen to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Iruka Sensei &mdash; Sunset Ramen wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Iruka Sensei &mdash; Sunset Ramen on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Iruka Sensei &mdash; Sunset Ramen on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Iruka Sensei &mdash; Sunset Ramen" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
-<article class="wallpaper-card" data-category="My Hero Academia" data-search="izuku midoriya deku my hero academia rainy day cozy window umbrella warm aesthetic 4k 9:16 mobile vertical wallpaper Izuku Midoriya &mdash; Rainy Day Cozy My Hero Academia" data-wallpaper-id="wp-izuku-rainy-day-cozy" id="wp-izuku-rainy-day-cozy">
+<article class="wallpaper-card" data-category="My Hero Academia" data-search="izuku midoriya deku my hero academia rainy day cozy window umbrella warm aesthetic 4k 9:16 mobile vertical wallpaper Izuku Midoriya &mdash; Rainy Day Cozy My Hero Academia" data-wallpaper-id="wp-izuku-rainy-day-cozy" id="wp-izuku-rainy-day-cozy" data-tags="Lo-Fi & Cozy">
 <div aria-label="Preview Izuku Midoriya &mdash; Rainy Day Cozy wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Izuku Midoriya (Deku) from My Hero Academia in a cozy rainy day scene by a window &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/izuku-midoriya-rainy-day-cozy-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>izuku-midoriya-rainy-day-cozy-wallpaper.webp</span></div>
@@ -798,7 +960,7 @@
 <div aria-label="Actions for Izuku Midoriya &mdash; Rainy Day Cozy" class="card-tools"><button aria-label="Save Izuku Midoriya &mdash; Rainy Day Cozy to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Izuku Midoriya &mdash; Rainy Day Cozy wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Izuku Midoriya &mdash; Rainy Day Cozy on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Izuku Midoriya &mdash; Rainy Day Cozy on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Izuku Midoriya &mdash; Rainy Day Cozy" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
-<article class="wallpaper-card" data-category="One Piece" data-search="monkey d luffy one piece beach summer ocean straw hat sunny anime 4k 9:16 mobile vertical wallpaper Monkey D. Luffy &mdash; Beach Summer One Piece" data-wallpaper-id="wp-luffy-beach-summer" id="wp-luffy-beach-summer">
+<article class="wallpaper-card" data-category="One Piece" data-search="monkey d luffy one piece beach summer ocean straw hat sunny anime 4k 9:16 mobile vertical wallpaper Monkey D. Luffy &mdash; Beach Summer One Piece" data-wallpaper-id="wp-luffy-beach-summer" id="wp-luffy-beach-summer" data-tags="Nature & Architecture">
 <div aria-label="Preview Monkey D. Luffy &mdash; Beach Summer wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Monkey D. Luffy from One Piece on a sunny beach with straw hat and ocean backdrop &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/monkey-d-luffy-beach-summer-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>monkey-d-luffy-beach-summer-wallpaper.webp</span></div>
@@ -862,7 +1024,8 @@
 <div aria-label="Actions for Ochaco Uraraka &mdash; Cafe Aesthetic" class="card-tools"><button aria-label="Save Ochaco Uraraka &mdash; Cafe Aesthetic to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Ochaco Uraraka &mdash; Cafe Aesthetic wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Ochaco Uraraka &mdash; Cafe Aesthetic on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Ochaco Uraraka &mdash; Cafe Aesthetic on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Ochaco Uraraka &mdash; Cafe Aesthetic" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
-<article class="wallpaper-card" data-category="Naruto" data-search="shikamaru nara naruto relaxing grass cloud watching lazy ninja green nature aesthetic 4k 9:16 mobile vertical wallpaper Shikamaru Nara &mdash; Relaxing Grass Naruto" data-wallpaper-id="wp-shikamaru-relaxing-grass" id="wp-shikamaru-relaxing-grass">
+<!-- ================= WALLPAPER CARDS 41–50 ================= -->
+<article class="wallpaper-card" data-category="Naruto" data-search="shikamaru nara naruto relaxing grass cloud watching lazy ninja green nature aesthetic 4k 9:16 mobile vertical wallpaper Shikamaru Nara &mdash; Relaxing Grass Naruto" data-wallpaper-id="wp-shikamaru-relaxing-grass" id="wp-shikamaru-relaxing-grass" data-tags="Nature & Architecture">
 <div aria-label="Preview Shikamaru Nara &mdash; Relaxing Grass wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Shikamaru Nara from Naruto relaxing on green grass while cloud watching &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/shikamaru-nara-relaxing-grass-wallpaper.webp" width="900"/>
 <div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>shikamaru-nara-relaxing-grass-wallpaper.webp</span></div>
@@ -1022,6 +1185,7 @@
 <div aria-label="Actions for Might Guy &mdash; Discipline &amp; Hardwork" class="card-tools"><button aria-label="Save Might Guy &mdash; Discipline &amp; Hardwork to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Might Guy &mdash; Discipline &amp; Hardwork wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Might Guy &mdash; Discipline &amp; Hardwork on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Might Guy &mdash; Discipline &amp; Hardwork on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Might Guy &mdash; Discipline &amp; Hardwork" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
 </article>
 
+<!-- ================= WALLPAPER CARDS 51–50 ================= -->
 <article class="wallpaper-card" data-category="Naruto" data-search="itachi uchiha silence red moon naruto sharingan akatsuki uchiha clan dark aesthetic 4k anime 9:16 mobile vertical wallpaper Itachi Uchiha &mdash; Silence Red Moon Naruto" data-wallpaper-id="wp-itachi-uchiha-silence-red-moon" id="wp-itachi-uchiha-silence-red-moon">
 <div aria-label="Preview Itachi Uchiha &mdash; Silence Red Moon wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
 <img alt="Itachi Uchiha from Naruto in a silent red moon scene with Sharingan and Akatsuki cloak &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/itachi-uchiha-silence-red-moon-wallpaper.webp" width="900"/>
@@ -1045,8 +1209,90 @@
 
 <div class="empty-state" id="empty-state" role="status"><h3 id="empty-title">No wallpapers found</h3><p id="empty-message">Try another keyword or select a different category.</p></div>
 </section>
+
+
+<!-- =================================================================== -->
+<!-- 🚀 PDF & MIND HUB — Upload these exact files into the repository's PDF/ folder. -->
+<section aria-labelledby="mind-hub-title" class="mind-hub" id="mind-hub">
+  <div class="section-heading mind-hub-heading">
+    <div>
+      <p class="mind-hub-kicker">NEXUS KNOWLEDGE SPACE</p>
+      <h2 id="mind-hub-title">PDF &amp; Mind Hub</h2>
+      <p>Practical psychology notes, reflection tools and productivity guides.</p>
+    </div>
+    <span class="featured-kicker">READ • REFLECT • GROW</span>
+  </div>
+
+  <div class="mind-card-grid">
+    <article class="mind-card">
+      <div class="mind-card-icon" aria-hidden="true">🧠</div>
+      <div class="mind-card-meta"><span>PSYCHOLOGY GUIDE</span><span>PDF · 3 PAGES</span></div>
+      <h3>Analysis Paralysis Guide</h3>
+      <p>Understand over-analysis and use a practical toolkit to make a thoughtful next move.</p>
+      <a class="mind-download" href="PDF/Analysis_Paralysis_Guide_krish_NXT.pdf"
+         download="Analysis_Paralysis_Guide_krish_NXT.pdf">Download PDF <span aria-hidden="true">↓</span></a>
+    </article>
+
+    <article class="mind-card">
+      <div class="mind-card-icon" aria-hidden="true">⚡</div>
+      <div class="mind-card-meta"><span>FOCUS &amp; HABITS</span><span>PDF · GUIDE</span></div>
+      <h3>Dopamine Reset Guide</h3>
+      <p>A seven-day behaviour and attention reset focused on reducing mindless stimulation.</p>
+      <a class="mind-download" href="PDF/Dopamine_Reset_Guide_Mobile.pdf"
+         download="Dopamine_Reset_Guide_Mobile.pdf">Download PDF <span aria-hidden="true">↓</span></a>
+    </article>
+
+    <article class="mind-card">
+      <div class="mind-card-icon" aria-hidden="true">🧭</div>
+      <div class="mind-card-meta"><span>DECISION-MAKING</span><span>PDF · QUICK START</span></div>
+      <h3>Solomon’s Decision Lab</h3>
+      <p>A five-step practice for examining a personal decision from a more balanced perspective.</p>
+      <a class="mind-download" href="PDF/Solomons_Decision_Lab_Quick_Start_Guide.pdf"
+         download="Solomons_Decision_Lab_Quick_Start_Guide.pdf">Download Guide <span aria-hidden="true">↓</span></a>
+    </article>
+
+    <article class="mind-card">
+      <div class="mind-card-icon" aria-hidden="true">📝</div>
+      <div class="mind-card-meta"><span>WORKSHEET</span><span>PDF · 1 PAGE</span></div>
+      <h3>Solomon’s Decision Lab Worksheet</h3>
+      <p>A printable reflection sheet to define a decision, compare options and choose a next step.</p>
+      <a class="mind-download" href="PDF/Solomons_Decision_Lab_Worksheet.pdf"
+         download="Solomons_Decision_Lab_Worksheet.pdf">Download Worksheet <span aria-hidden="true">↓</span></a>
+    </article>
+
+    <article class="mind-card">
+      <div class="mind-card-icon" aria-hidden="true">🔬</div>
+      <div class="mind-card-meta"><span>RESEARCH BRIEF</span><span>PDF · 6 PAGES</span></div>
+      <h3>The Zeigarnik Effect</h3>
+      <p>A research-led explanation in English and Hindi, with historical context and evidence limitations.</p>
+      <a class="mind-download" href="PDF/The_Zeigarnik_Effect_Research_Report.pdf"
+         download="The_Zeigarnik_Effect_Research_Report.pdf">Download Report <span aria-hidden="true">↓</span></a>
+    </article>
+
+    <article class="mind-card mind-card-coming">
+      <div class="mind-card-icon" aria-hidden="true">▤</div>
+      <div class="mind-card-meta"><span>WORKSPACE TOOLS</span><span>COMING SOON</span></div>
+      <h3>Notion Templates</h3>
+      <p>Study dashboards, reading lists and simple project-planning templates are planned for a future update.</p>
+      <span class="mind-coming-label">In the making</span>
+    </article>
+  </div>
+  <p class="mind-hub-note">Upload the five supplied PDF files into the repository’s <code>PDF/</code> folder using the exact filenames linked above.</p>
+</section>
+
 </main>
-<footer class="site-footer"><span class="footer-brand">NEXUS WALLPAPERS</span><span>Made for anime fans. Built for your screen. &copy; <span id="year"></span></span></footer>
+<!-- ============================== FOOTER ============================== -->
+<footer class="site-footer">
+  <div class="footer-brand-wrap">
+    <span class="footer-brand">NEXUS WALLPAPERS</span>
+    <span class="footer-tagline">Made for your screen. Built for your mood.</span>
+  </div>
+  <span class="footer-copy">&copy; <span id="year"></span> NEXUS Wallpapers</span>
+  <a class="social-link footer-social" href="https://pin.it/1bXoRQY5S"
+     target="_blank" rel="noopener noreferrer" aria-label="Visit NEXUS on Pinterest">
+    <span class="social-mark" aria-hidden="true">P</span><span class="social-label">Pinterest</span>
+  </a>
+</footer>
 </div>
 
 <button aria-label="Back to top" class="back-to-top" id="back-to-top" type="button">&uarr;</button>
@@ -1077,6 +1323,42 @@
 </div>
 </dialog>
 
+
+<!-- =================================================================== -->
+<!-- 🔐 OPTIONAL ACCOUNT & CROSS-DEVICE FAVOURITES SYNC -->
+<dialog class="account-dialog" id="account-dialog" aria-labelledby="account-title">
+  <div class="account-dialog-shell">
+    <div class="account-dialog-header">
+      <div>
+        <p class="lightbox-eyebrow">NEXUS CLOUD SYNC</p>
+        <h2 id="account-title">Your NEXUS account</h2>
+      </div>
+      <button class="lightbox-close" id="account-close" type="button" aria-label="Close account dialog">&times;</button>
+    </div>
+    <p class="account-status" id="account-status" aria-live="polite">
+      Local favourites work without an account. Add Firebase settings to enable cross-device sync.
+    </p>
+    <div class="account-signed-in" id="account-signed-in" hidden>
+      <p class="account-email" id="account-email"></p>
+      <p class="account-sync-note">Your saved wallpapers are linked to this account.</p>
+      <button class="account-submit account-signout" id="account-signout" type="button">Sign out</button>
+    </div>
+    <form id="account-form" class="account-form">
+      <label for="account-email-input">Email address</label>
+      <input id="account-email-input" name="email" type="email" autocomplete="email"
+             placeholder="you@example.com" required>
+      <label for="account-password-input">Password</label>
+      <input id="account-password-input" name="password" type="password"
+             autocomplete="current-password" minlength="6" placeholder="At least 6 characters" required>
+      <div class="account-form-actions">
+        <button class="account-submit" type="submit" value="signin" name="auth-mode" id="account-signin">Sign in</button>
+        <button class="account-submit account-create" type="submit" value="create" name="auth-mode" id="account-create">Create account</button>
+      </div>
+    </form>
+    <p class="account-footnote">Your password is handled by Firebase Authentication. NEXUS stores only wallpaper IDs in your private account favourites document.</p>
+  </div>
+</dialog>
+
 <div aria-atomic="true" aria-live="polite" class="toast-region" id="toast-region">
 <div class="toast" id="site-toast" role="status"></div>
 </div>
@@ -1097,6 +1379,69 @@
 
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+  /*
+   * OPTIONAL CLOUD FAVOURITES SETUP
+   * 1) Create a Firebase project and add a Web App.
+   * 2) Enable Authentication > Email/Password and create a Cloud Firestore database.
+   * 3) Paste the Web App config values below (never use Admin SDK/service-account keys here).
+   * 4) Add your GitHub Pages domain under Firebase Authentication > Settings > Authorized domains.
+   * 5) Publish the Firestore rules included in the comments at the end of this setup block.
+   *
+   * Firestore rules:
+   * rules_version = '2';
+   * service cloud.firestore {
+   *   match /databases/{database}/documents {
+   *     match /users/{userId}/favorites/{documentId} {
+   *       allow read: if request.auth != null
+   *                   && request.auth.uid == userId
+   *                   && documentId == "main";
+   *       allow create, update: if request.auth != null
+   *                             && request.auth.uid == userId
+   *                             && documentId == "main"
+   *                             && request.resource.data.keys().hasOnly(["ids", "updatedAt"])
+   *                             && request.resource.data.ids is list
+   *                             && request.resource.data.ids.size() <= 500;
+   *       allow delete: if false;
+   *     }
+   *   }
+   * }
+   *
+   * Cloud sync is opt-in and loads only when the Account button is used.
+   * Without config, local favourites continue working on this device.
+   */
+  const FIREBASE_CONFIG = {
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    appId: ""
+  };
+  const FIREBASE_SDK_VERSION = "13.2.0";
+
+  const accountDialog = $("#account-dialog");
+  const accountOpen = $("#account-open");
+  const accountClose = $("#account-close");
+  const accountLabel = $("#account-label");
+  const accountStatus = $("#account-status");
+  const accountForm = $("#account-form");
+  const accountEmailInput = $("#account-email-input");
+  const accountPasswordInput = $("#account-password-input");
+  const accountSignIn = $("#account-signin");
+  const accountCreate = $("#account-create");
+  const accountSignedIn = $("#account-signed-in");
+  const accountEmail = $("#account-email");
+  const accountSignOut = $("#account-signout");
+
+  let firebaseApp = null;
+  let firebaseAuth = null;
+  let firebaseDb = null;
+  let firebaseAuthApi = null;
+  let firebaseFirestoreApi = null;
+  let firebaseLoadPromise = null;
+  let cloudUser = null;
+  let cloudReady = false;
+  let cloudHydratedUid = null;
+  let cloudSaveTimer = 0;
 
   const FAV_KEY = "nexus-wallpapers-favorites-v1";
   const RECENT_KEY = "nexus-wallpapers-recent-v1";
@@ -1223,11 +1568,12 @@
       id: card.dataset.wallpaperId || card.id || title,
       title,
       category,
+      tags: (card.dataset.tags || "").split("|").map(tag => tag.trim()).filter(Boolean),
       image: img ? (img.getAttribute("src") || "") : "",
       alt: img ? (img.getAttribute("alt") || title) : title,
       download: link ? (link.getAttribute("href") || "") : "",
       downloadName: link ? (link.getAttribute("download") || "") : "",
-      haystack: (title + " " + category + " " + (card.dataset.search || "")).toLowerCase()
+      haystack: (title + " " + category + " " + (card.dataset.tags || "").replace(/\|/g, " ") + " " + (card.dataset.search || "")).toLowerCase()
     };
     metaCache.set(card, data);
     return data;
@@ -1385,6 +1731,7 @@
     }
 
     refreshFavoriteUI();
+    queueCloudSave();
 
     if (state.category === "Favorites") {
       state.limit = BATCH;
@@ -1392,6 +1739,240 @@
     }
 
     showToast(wasSaved ? "Removed from favourites." : "Saved to favourites.", wasSaved ? "info" : "success");
+  }
+
+  /* ---------------- OPTIONAL FIREBASE ACCOUNT SYNC ---------------- */
+  function firebaseConfigReady() {
+    return ["apiKey", "authDomain", "projectId", "appId"].every(key => {
+      const value = FIREBASE_CONFIG[key];
+      return typeof value === "string" && value.trim().length > 0;
+    });
+  }
+
+  function updateAccountUI() {
+    const configured = firebaseConfigReady();
+    if (accountLabel) accountLabel.textContent = cloudUser ? "Synced account" : "Account sync";
+    if (accountStatus) {
+      if (cloudUser) {
+        accountStatus.textContent = "Signed in. Your favourites are synced to your NEXUS account.";
+      } else if (!configured) {
+        accountStatus.textContent = "Local favourites are active on this device. To sync across phones and computers, complete the Firebase setup in the code comments, then add your Firebase Web App config.";
+      } else {
+        accountStatus.textContent = "Sign in or create an account to sync your favourites across devices.";
+      }
+    }
+    if (accountSignedIn) accountSignedIn.hidden = !cloudUser;
+    if (accountForm) accountForm.hidden = Boolean(cloudUser);
+    if (accountEmail) accountEmail.textContent = cloudUser ? (cloudUser.email || "Signed-in NEXUS member") : "";
+    if (accountSignIn) accountSignIn.disabled = !configured;
+    if (accountCreate) accountCreate.disabled = !configured;
+    if (accountPasswordInput) accountPasswordInput.disabled = !configured;
+    if (accountEmailInput) accountEmailInput.disabled = !configured;
+  }
+
+  async function ensureFirebase() {
+    if (!firebaseConfigReady()) {
+      throw new Error("Cloud sync is not configured yet. Add your Firebase Web App config in the setup section of this HTML file.");
+    }
+    if (firebaseLoadPromise) return firebaseLoadPromise;
+
+    firebaseLoadPromise = (async () => {
+      const base = "https://www.gstatic.com/firebasejs/" + FIREBASE_SDK_VERSION + "/";
+      const [appApi, authApi, firestoreApi] = await Promise.all([
+        import(base + "firebase-app.js"),
+        import(base + "firebase-auth.js"),
+        import(base + "firebase-firestore.js")
+      ]);
+      firebaseApp = appApi.getApps().length ? appApi.getApp() : appApi.initializeApp(FIREBASE_CONFIG);
+      firebaseAuthApi = authApi;
+      firebaseFirestoreApi = firestoreApi;
+      firebaseAuth = authApi.getAuth(firebaseApp);
+      firebaseDb = firestoreApi.getFirestore(firebaseApp);
+
+      authApi.onAuthStateChanged(firebaseAuth, async user => {
+        cloudUser = user || null;
+        cloudReady = false;
+        cloudHydratedUid = null;
+        updateAccountUI();
+        if (!user) return;
+
+        try {
+          await syncFavoritesFromCloud(user);
+        } catch (error) {
+          console.warn("NEXUS: cloud favourites could not be loaded", error);
+          showToast("Signed in, but cloud favourites could not be loaded. Check Firestore rules and connection.", "warn", 4200);
+        }
+      });
+
+      updateAccountUI();
+      return { auth: firebaseAuth, authApi: firebaseAuthApi };
+    })();
+
+    try {
+      return await firebaseLoadPromise;
+    } catch (error) {
+      firebaseLoadPromise = null;
+      throw error;
+    }
+  }
+
+  function favoritesDocument(user) {
+    return firebaseFirestoreApi.doc(firebaseDb, "users", user.uid, "favorites", "main");
+  }
+
+  async function syncFavoritesFromCloud(user) {
+    if (!user || !firebaseDb || !firebaseFirestoreApi || cloudHydratedUid === user.uid) return;
+    cloudReady = false;
+
+    const docRef = favoritesDocument(user);
+    const snapshot = await firebaseFirestoreApi.getDoc(docRef);
+
+    if (snapshot.exists()) {
+      const data = snapshot.data() || {};
+      const ids = Array.isArray(data.ids) ? data.ids.filter(id => typeof id === "string") : [];
+      // An existing cloud document is authoritative, so removed favourites stay removed on every device.
+      state.favorites = new Set(ids);
+      saveSet(FAV_KEY, state.favorites);
+    } else {
+      // First sign-in: migrate this device's local favourites to the new cloud account.
+      await firebaseFirestoreApi.setDoc(docRef, {
+        ids: Array.from(state.favorites),
+        updatedAt: firebaseFirestoreApi.serverTimestamp()
+      });
+    }
+
+    cloudHydratedUid = user.uid;
+    cloudReady = true;
+    refreshFavoriteUI();
+    updateWallpapers();
+    showToast("Favourites synced with your account.", "success");
+  }
+
+  function queueCloudSave() {
+    if (!cloudUser || !cloudReady || !firebaseFirestoreApi || !firebaseDb) return;
+    window.clearTimeout(cloudSaveTimer);
+    cloudSaveTimer = window.setTimeout(async () => {
+      const user = cloudUser;
+      if (!user || !cloudReady) return;
+      try {
+        await firebaseFirestoreApi.setDoc(favoritesDocument(user), {
+          ids: Array.from(state.favorites),
+          updatedAt: firebaseFirestoreApi.serverTimestamp()
+        }, { merge: true });
+      } catch (error) {
+        console.warn("NEXUS: cloud favourites could not be saved", error);
+        showToast("Saved on this device, but cloud sync failed. Check your connection.", "warn", 4200);
+      }
+    }, 500);
+  }
+
+  function friendlyAuthError(error) {
+    const code = error && error.code ? error.code : "";
+    const messages = {
+      "auth/email-already-in-use": "That email already has an account. Try signing in.",
+      "auth/invalid-email": "Enter a valid email address.",
+      "auth/invalid-credential": "Email or password is incorrect.",
+      "auth/user-not-found": "No account was found for that email.",
+      "auth/wrong-password": "Email or password is incorrect.",
+      "auth/weak-password": "Use a stronger password with at least 6 characters.",
+      "auth/too-many-requests": "Too many attempts. Please try again later.",
+      "auth/network-request-failed": "Network error. Check your internet connection.",
+      "auth/operation-not-allowed": "Email/password sign-in is not enabled in Firebase Authentication."
+    };
+    return messages[code] || (error && error.message) || "Account action failed. Please try again.";
+  }
+
+  if (accountOpen && accountDialog) {
+    accountOpen.addEventListener("click", async () => {
+      updateAccountUI();
+      if (typeof accountDialog.showModal === "function" && !accountDialog.open) {
+        accountDialog.showModal();
+      } else {
+        accountDialog.setAttribute("open", "");
+      }
+      if (firebaseConfigReady()) {
+        try {
+          await ensureFirebase();
+        } catch (error) {
+          if (accountStatus) accountStatus.textContent = friendlyAuthError(error);
+        }
+      }
+    });
+  }
+
+  if (accountClose && accountDialog) {
+    accountClose.addEventListener("click", () => {
+      if (typeof accountDialog.close === "function") accountDialog.close();
+      else accountDialog.removeAttribute("open");
+    });
+  }
+
+  if (accountDialog) {
+    accountDialog.addEventListener("click", event => {
+      if (event.target === accountDialog && typeof accountDialog.close === "function") accountDialog.close();
+    });
+  }
+
+  if (accountForm) {
+    accountForm.addEventListener("submit", async event => {
+      event.preventDefault();
+      const email = accountEmailInput ? accountEmailInput.value.trim() : "";
+      const password = accountPasswordInput ? accountPasswordInput.value : "";
+      const mode = event.submitter && event.submitter.value === "create" ? "create" : "signin";
+
+      if (!email || !password) {
+        showToast("Enter your email and password.", "warn");
+        return;
+      }
+
+      if (!firebaseConfigReady()) {
+        updateAccountUI();
+        showToast("Add Firebase settings in the setup section to enable cloud accounts.", "warn", 4200);
+        return;
+      }
+
+      if (accountSignIn) accountSignIn.disabled = true;
+      if (accountCreate) accountCreate.disabled = true;
+      if (accountStatus) accountStatus.textContent = mode === "create" ? "Creating your account…" : "Signing in…";
+
+      try {
+        const { auth, authApi } = await ensureFirebase();
+        if (mode === "create") {
+          await authApi.createUserWithEmailAndPassword(auth, email, password);
+        } else {
+          await authApi.signInWithEmailAndPassword(auth, email, password);
+        }
+        if (accountPasswordInput) accountPasswordInput.value = "";
+        if (accountDialog && typeof accountDialog.close === "function") accountDialog.close();
+      } catch (error) {
+        if (accountStatus) accountStatus.textContent = friendlyAuthError(error);
+        showToast(friendlyAuthError(error), "error", 4200);
+      } finally {
+        updateAccountUI();
+      }
+    });
+  }
+
+  if (accountSignOut) {
+    accountSignOut.addEventListener("click", async () => {
+      if (!firebaseAuth || !firebaseAuthApi) return;
+      try {
+        await firebaseAuthApi.signOut(firebaseAuth);
+        window.clearTimeout(cloudSaveTimer);
+        cloudUser = null;
+        cloudReady = false;
+        cloudHydratedUid = null;
+        // Clear the previous account's local cache to prevent it being imported into a different account on a shared device.
+        state.favorites = new Set();
+        saveSet(FAV_KEY, state.favorites);
+        refreshFavoriteUI();
+        if (state.category === "Favorites") updateWallpapers();
+        updateAccountUI();
+        showToast("Signed out. Your cloud favourites will return when you sign in again.", "success");
+      } catch (error) {
+        showToast(friendlyAuthError(error), "error", 4200);
+      }
+    });
   }
 
   /* ---------------- RECENTLY VIEWED ---------------- */
@@ -1450,7 +2031,7 @@
 
       if (state.category === "Favorites") {
         if (!state.favorites.has(m.id)) return false;
-      } else if (state.category !== "All" && m.category !== state.category) {
+      } else if (state.category !== "All" && m.category !== state.category && !m.tags.includes(state.category)) {
         return false;
       }
 
@@ -1529,6 +2110,11 @@
           emptyMessage.textContent = "Tap the heart on any wallpaper to keep it here for your next visit.";
         } else if (state.query) {
           emptyMessage.textContent = "No results for “" + state.query + "”. Try another keyword or category.";
+        } else if (state.category !== "All" && !allCards.some(card => {
+          const item = meta(card);
+          return item.category === state.category || item.tags.includes(state.category);
+        })) {
+          emptyMessage.textContent = "This collection is being curated. Add matching wallpapers with the card template near the top of this HTML file.";
         } else {
           emptyMessage.textContent = "Try another keyword or select a different category.";
         }
@@ -1552,6 +2138,26 @@
         loadMoreWrap.hidden = true;
       }
     }
+  }
+
+  function refreshCategoryCounts() {
+    if (!categoryNav) return;
+    $$(".category-pill", categoryNav).forEach(button => {
+      const category = button.dataset.filter || "";
+      if (!category || category === "All" || category === "Favorites") return;
+      let count = $(".pill-count", button);
+      if (!count) {
+        count = document.createElement("span");
+        count.className = "pill-count";
+        button.appendChild(count);
+      }
+      const total = allCards.filter(card => {
+        const item = meta(card);
+        return item.category === category || item.tags.includes(category);
+      }).length;
+      count.textContent = String(total);
+      count.setAttribute("aria-label", total + " wallpapers");
+    });
   }
 
   /* ---------------- LIGHTBOX ---------------- */
@@ -1951,6 +2557,8 @@
 
   initFeatured();
   refreshFavoriteUI();
+  refreshCategoryCounts();
+  updateAccountUI();
   renderRecent();
   updateWallpapers();
 })();
