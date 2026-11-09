@@ -363,6 +363,287 @@
   .consent-banner,.legal-accordion { scroll-behavior:auto !important; transition:none !important; }
 }
 
+
+/* =====================================================================
+   NEXUS FEATURE PACK — LOCAL REACTIONS / TALLY FEEDBACK / MYSTERY SCRATCH
+   ===================================================================== */
+.reaction-bar {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:6px;
+  margin-top:10px;
+  padding-top:10px;
+  border-top:1px solid rgba(148,163,184,.13);
+}
+.reaction-button {
+  display:flex;
+  min-width:0;
+  min-height:48px;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  padding:5px 3px;
+  border:1px solid rgba(148,163,184,.16);
+  border-radius:10px;
+  background:rgba(2,6,23,.48);
+  color:#cbd2df;
+  cursor:pointer;
+  transition:border-color 150ms ease,background 150ms ease,transform 150ms ease;
+}
+.reaction-button:hover:not(:disabled) {
+  border-color:rgba(167,139,250,.58);
+  background:rgba(124,58,237,.15);
+  transform:translateY(-1px);
+}
+.reaction-button[aria-pressed="true"] {
+  border-color:rgba(103,232,249,.55);
+  background:rgba(8,145,178,.14);
+  color:#e0fbff;
+  box-shadow:inset 0 0 0 1px rgba(103,232,249,.08);
+}
+.reaction-button:disabled { cursor:default; opacity:.86; }
+.reaction-emoji { font-size:1.05rem; line-height:1.1; }
+.reaction-label { overflow:hidden; max-width:100%; color:#98a3b5; font-size:.57rem; font-weight:750; text-overflow:ellipsis; white-space:nowrap; }
+.reaction-count { color:#e6e8ef; font-size:.64rem; font-weight:850; font-variant-numeric:tabular-nums; }
+.reaction-local-note { margin:6px 0 0; color:#788395; font-size:.57rem; text-align:center; }
+
+.feedback-cta {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin:18px 0 12px;
+  padding:13px 15px;
+  border:1px solid rgba(103,232,249,.2);
+  border-radius:14px;
+  background:linear-gradient(110deg,rgba(8,40,52,.45),rgba(15,23,42,.38));
+}
+.feedback-cta-copy { min-width:0; }
+
+.site-footer .feedback-cta { flex:0 0 100%; order:5; margin:6px 0 2px; }
+@media (max-width:700px) {
+  .site-footer .feedback-cta { width:100%; }
+}
+
+.feedback-cta-title { margin:0 0 4px; color:#e5fbff; font-size:.82rem; font-weight:800; }
+.feedback-cta-text { margin:0; color:#9ba8b8; font-size:.7rem; line-height:1.5; }
+.feedback-cta-link {
+  display:inline-flex;
+  flex:0 0 auto;
+  min-height:40px;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:0 14px;
+  border:1px solid rgba(103,232,249,.42);
+  border-radius:10px;
+  background:rgba(8,145,178,.16);
+  color:#d9f7fb;
+  font-size:.73rem;
+  font-weight:800;
+}
+.feedback-cta-link:hover { border-color:rgba(103,232,249,.76); background:rgba(8,145,178,.27); }
+
+.mystery-section {
+  margin:42px 0 38px;
+  padding:clamp(17px,3vw,28px);
+  overflow:hidden;
+  border:1px solid rgba(103,232,249,.25);
+  border-radius:23px;
+  background:
+    radial-gradient(ellipse at 10% 0%,rgba(124,58,237,.17),transparent 48%),
+    linear-gradient(145deg,rgba(8,22,34,.96),rgba(7,8,15,.98) 58%,rgba(28,12,40,.8));
+  box-shadow:0 18px 50px rgba(0,0,0,.24);
+}
+.mystery-header {
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:17px;
+}
+.mystery-kicker {
+  margin:0 0 7px;
+  color:#67e8f9;
+  font-size:.64rem;
+  font-weight:850;
+  letter-spacing:.17em;
+}
+.mystery-header h2 {
+  margin:0;
+  color:#f3f7ff;
+  font-size:clamp(1.2rem,3vw,1.65rem);
+  letter-spacing:-.035em;
+}
+.mystery-header p {
+  max-width:520px;
+  margin:7px 0 0;
+  color:#9aa7b8;
+  font-size:.77rem;
+  line-height:1.6;
+}
+.mystery-tries {
+  flex:0 0 auto;
+  padding:8px 11px;
+  border:1px solid rgba(103,232,249,.28);
+  border-radius:999px;
+  background:rgba(8,145,178,.1);
+  color:#baf5ff;
+  font-size:.7rem;
+  font-weight:850;
+  font-variant-numeric:tabular-nums;
+}
+.mystery-layout {
+  display:grid;
+  grid-template-columns:minmax(0,260px) minmax(0,1fr);
+  align-items:center;
+  justify-content:center;
+  gap:clamp(18px,4vw,34px);
+}
+.mystery-card-shell {
+  position:relative;
+  width:100%;
+  max-width:260px;
+  margin:0 auto;
+}
+.mystery-stage {
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  aspect-ratio:9/16;
+  border:1px solid rgba(103,232,249,.38);
+  border-radius:17px;
+  background:#050811;
+  box-shadow:0 16px 38px rgba(0,0,0,.45),0 0 26px rgba(103,232,249,.08);
+  isolation:isolate;
+}
+.mystery-stage img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:#03050a;
+}
+.mystery-stage canvas {
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  cursor:crosshair;
+  touch-action:none;
+  user-select:none;
+  -webkit-user-select:none;
+}
+.mystery-stage.is-revealed canvas {
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 240ms ease;
+}
+.mystery-stage.is-revealed { border-color:rgba(134,239,172,.42); }
+.mystery-status {
+  min-height:22px;
+  margin:9px 0 0;
+  color:#9eacbd;
+  font-size:.68rem;
+  line-height:1.5;
+  text-align:center;
+}
+.mystery-copy { min-width:0; }
+.mystery-badge {
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:6px 9px;
+  border:1px solid rgba(167,139,250,.32);
+  border-radius:999px;
+  background:rgba(124,58,237,.13);
+  color:#d9cbff;
+  font-size:.62rem;
+  font-weight:850;
+  letter-spacing:.09em;
+}
+.mystery-copy h3 {
+  margin:13px 0 7px;
+  color:#f1f4ff;
+  font-size:clamp(1.05rem,2.5vw,1.45rem);
+  line-height:1.25;
+}
+.mystery-copy p {
+  max-width:490px;
+  margin:0 0 16px;
+  color:#9ba7b7;
+  font-size:.78rem;
+  line-height:1.7;
+}
+.mystery-controls { display:flex; flex-wrap:wrap; gap:9px; }
+.mystery-button {
+  display:inline-flex;
+  min-height:44px;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:0 16px;
+  border:1px solid rgba(103,232,249,.43);
+  border-radius:11px;
+  background:linear-gradient(110deg,rgba(8,145,178,.22),rgba(124,58,237,.19));
+  color:#e4fbff;
+  cursor:pointer;
+  font-size:.76rem;
+  font-weight:850;
+}
+.mystery-button:hover:not(:disabled) {
+  border-color:rgba(103,232,249,.78);
+  background:linear-gradient(110deg,rgba(8,145,178,.34),rgba(124,58,237,.28));
+}
+.mystery-button:disabled { cursor:not-allowed; opacity:.45; }
+.mystery-button-secondary {
+  border-color:rgba(167,139,250,.32);
+  background:rgba(124,58,237,.1);
+  color:#e2d9ff;
+}
+.mystery-footnote {
+  margin:14px 0 0;
+  color:#768396;
+  font-size:.65rem;
+  line-height:1.6;
+}
+.mystery-progress {
+  display:flex;
+  gap:5px;
+  margin-top:12px;
+}
+.mystery-progress span {
+  display:block;
+  width:26px;
+  height:4px;
+  border-radius:99px;
+  background:rgba(148,163,184,.2);
+}
+.mystery-progress span.is-used { background:linear-gradient(90deg,#67e8f9,#a78bfa); }
+@media (max-width:700px) {
+  .reaction-bar { gap:4px; margin-top:8px; padding-top:8px; }
+  .reaction-button { min-height:45px; border-radius:9px; }
+  .reaction-emoji { font-size:1rem; }
+  .reaction-label { font-size:.53rem; }
+  .reaction-count { font-size:.61rem; }
+  .feedback-cta { align-items:stretch; flex-direction:column; gap:10px; padding:12px; }
+  .feedback-cta-link { width:100%; }
+  .mystery-section { margin:30px 0 28px; padding:14px; border-radius:18px; }
+  .mystery-header { align-items:flex-start; flex-direction:column; gap:10px; }
+  .mystery-layout { grid-template-columns:minmax(0,1fr); gap:16px; }
+  .mystery-card-shell { max-width:min(72vw,245px); }
+  .mystery-copy { text-align:center; }
+  .mystery-copy p { margin-right:auto; margin-left:auto; }
+  .mystery-controls { justify-content:center; }
+  .mystery-button { flex:1 1 145px; }
+  .mystery-progress { justify-content:center; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .reaction-button,.feedback-cta-link,.mystery-button,.mystery-stage.is-revealed canvas { transition:none !important; }
+}
+
 </style>
 </head>
 <body>
@@ -434,6 +715,12 @@ END WALLPAPER CARD TEMPLATE
   </button>
 </div>
 </header>
+<!-- 🚀 NEW FEATURE ANNOUNCEMENT --><a href="#nexus-mystery" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:12px 10px;background:linear-gradient(90deg,#111827,#241447,#111827);border-top:1px solid #7137c8;border-bottom:1px solid #7137c8;color:#e9ddff;text-decoration:none;text-align:center;font-size:13px;font-weight:700;">
+  🎲 NEW FEATURE UNLOCKED!
+  <span style="color:#a5b4fc;">Scratch & Reveal Your Daily Mystery Wallpaper</span>
+  <span style="color:#c084fc;">TRY NOW →</span>
+</a>
+<!-- 🚀 END ANNOUNCEMENT -->
 <main id="top">
 <!-- ============================== HERO ============================== -->
 <section aria-labelledby="page-title" class="hero">
@@ -1809,6 +2096,45 @@ END WALLPAPER CARD TEMPLATE
 </main>
 
 <!-- =================================================================== -->
+<!-- 🎲 NEXUS MYSTERY WALLPAPER — FIVE DAILY SCRATCH ATTEMPTS -->
+<!-- =================================================================== -->
+<section class="mystery-section" id="nexus-mystery" aria-labelledby="mystery-title">
+  <div class="mystery-header">
+    <div>
+      <p class="mystery-kicker">NEXUS SECRET DROP</p>
+      <h2 id="mystery-title">🎲 Mystery Wallpaper Card</h2>
+      <p>Scratch the cyberpunk coating to reveal a surprise from the wallpaper collection. You get up to five cards each day.</p>
+    </div>
+    <div class="mystery-tries" id="mystery-tries" aria-live="polite">Today: 1 / 5 tries</div>
+  </div>
+
+  <div class="mystery-layout">
+    <div class="mystery-card-shell">
+      <div class="mystery-stage" id="mystery-stage">
+        <img id="mystery-image" src="" alt="Mystery wallpaper hidden beneath the scratch coating" draggable="false" decoding="async">
+        <canvas id="mystery-scratch" aria-label="Scratch this card with your finger or mouse to reveal the wallpaper"></canvas>
+      </div>
+      <p class="mystery-status" id="mystery-status" aria-live="polite">Swipe across the card to reveal your mystery wallpaper.</p>
+    </div>
+
+    <div class="mystery-copy">
+      <span class="mystery-badge">✦ RANDOM COLLECTION DROP</span>
+      <h3 id="mystery-wallpaper-title">A surprise is waiting.</h3>
+      <p id="mystery-wallpaper-category">Your mystery wallpaper is selected from the current NEXUS collection. Scratch to reveal it.</p>
+      <div class="mystery-controls">
+        <button class="mystery-button" id="mystery-try-another" type="button">🎲 Try Another</button>
+        <button class="mystery-button mystery-button-secondary" id="mystery-preview" type="button" disabled>Preview Wallpaper ↗</button>
+      </div>
+      <div class="mystery-progress" id="mystery-progress" aria-label="Daily mystery attempts used">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <p class="mystery-footnote">Daily limit: 5 mystery cards per browser, saved on this device. Your tries reset on the next local calendar day.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- =================================================================== -->
 <!-- 📜 NEXUS LEGAL CENTER — TERMS / DMCA / COPYRIGHT / PRIVACY / ABOUT -->
 <!-- =================================================================== -->
 <section class="legal-center site-shell" id="nexus-legal-center" aria-labelledby="legal-center-title">
@@ -2054,6 +2380,16 @@ END WALLPAPER CARD TEMPLATE
 
 <!-- ============================== FOOTER ============================== -->
 <footer class="site-footer">
+<div class="feedback-cta" aria-label="NEXUS feedback and bug reports">
+    <div class="feedback-cta-copy">
+      <p class="feedback-cta-title">Help improve NEXUS Wallpapers</p>
+      <p class="feedback-cta-text">Found a broken preview, download issue, or have an idea? Send feedback directly to us.</p>
+    </div>
+    <a class="feedback-cta-link" href="https://tally.so/r/Eq5ex4" target="_blank" rel="noopener noreferrer">
+      <span aria-hidden="true">✉</span> Feedback / Bug Report <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+
   <div class="footer-brand-wrap">
     <span class="footer-brand">NEXUS WALLPAPERS</span>
     <span class="footer-tagline">Made for your screen. Built for your mood.</span>
@@ -3423,5 +3759,489 @@ END WALLPAPER CARD TEMPLATE
 })();
 </script>
 
+
+<script>
+(() => {
+  "use strict";
+
+  /* ---------------------------------------------------------------
+     NEXUS LOCAL REACTIONS
+     One reaction per wallpaper per browser/device. These are local
+     counts only; no server or cross-visitor aggregation is implied.
+     --------------------------------------------------------------- */
+  const reactionStorageKey = "nexus-wallpaper-reactions-v1";
+  const reactionTypes = [
+    { id: "love", emoji: "😍", label: "Love" },
+    { id: "fire", emoji: "🔥", label: "Fire" },
+    { id: "cool", emoji: "😎", label: "Cool" },
+    { id: "bug", emoji: "🐛", label: "Bug" }
+  ];
+
+  function readReactions() {
+    try {
+      const raw = localStorage.getItem(reactionStorageKey);
+      const parsed = raw ? JSON.parse(raw) : {};
+      return parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : {};
+    } catch (error) {
+      return {};
+    }
+  }
+
+  function writeReactions(data) {
+    try {
+      localStorage.setItem(reactionStorageKey, JSON.stringify(data));
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  const reactions = readReactions();
+  const wallpaperCards = Array.from(document.querySelectorAll("#wallpaper-grid .wallpaper-card"));
+
+  function reactionId(card) {
+    return card.dataset.wallpaperId || card.id || "";
+  }
+
+  function updateReactionBar(card, bar) {
+    const id = reactionId(card);
+    const selected = reactions[id] || "";
+    reactionTypes.forEach(type => {
+      const button = bar.querySelector('[data-reaction-choice="' + type.id + '"]');
+      if (!button) return;
+      const isSelected = selected === type.id;
+      const count = selected === type.id ? 1 : 0;
+      button.setAttribute("aria-pressed", String(isSelected));
+      button.disabled = Boolean(selected);
+      button.classList.toggle("is-selected", isSelected);
+      button.querySelector(".reaction-count").textContent = String(count);
+      button.setAttribute("aria-label",
+        type.label + " reaction, " + count + " local reaction" + (count === 1 ? "" : "s") +
+        (isSelected ? ", your reaction" : selected ? ", reaction already submitted" : ""));
+    });
+  }
+
+  function createReactionBar(card) {
+    if (card.querySelector(".reaction-bar")) return;
+    const id = reactionId(card);
+    if (!id) return;
+
+    const content = card.querySelector(".card-content");
+    if (!content) return;
+
+    const bar = document.createElement("div");
+    bar.className = "reaction-bar";
+    bar.dataset.wallpaperReactionBar = id;
+    bar.setAttribute("role", "group");
+    bar.setAttribute("aria-label", "Local reactions for " +
+      ((card.querySelector(".card-title") || {}).textContent || "this wallpaper").trim());
+
+    reactionTypes.forEach(type => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "reaction-button";
+      button.dataset.reactionChoice = type.id;
+      button.innerHTML =
+        '<span class="reaction-emoji" aria-hidden="true"></span>' +
+        '<span class="reaction-label"></span>' +
+        '<span class="reaction-count" aria-live="polite">0</span>';
+      button.querySelector(".reaction-emoji").textContent = type.emoji;
+      button.querySelector(".reaction-label").textContent = type.label;
+      button.title = type.label + " — one reaction per wallpaper on this device";
+      bar.appendChild(button);
+    });
+
+    const note = document.createElement("p");
+    note.className = "reaction-local-note";
+    note.textContent = "Local reaction · saved on this device";
+    const tools = content.querySelector(".card-tools");
+    if (tools) {
+      tools.insertAdjacentElement("afterend", bar);
+      bar.insertAdjacentElement("afterend", note);
+    } else {
+      content.append(bar, note);
+    }
+    updateReactionBar(card, bar);
+  }
+
+  wallpaperCards.forEach(createReactionBar);
+
+  const grid = document.getElementById("wallpaper-grid");
+  if (grid) {
+    grid.addEventListener("click", event => {
+      const button = event.target.closest("[data-reaction-choice]");
+      if (!button) return;
+      const card = button.closest(".wallpaper-card");
+      if (!card) return;
+
+      const id = reactionId(card);
+      if (!id) return;
+      if (reactions[id]) {
+        const status = document.getElementById("site-toast");
+        if (status) {
+          status.textContent = "You have already reacted to this wallpaper on this device.";
+          status.dataset.type = "info";
+          status.classList.add("is-visible");
+          window.setTimeout(() => status.classList.remove("is-visible"), 2400);
+        }
+        return;
+      }
+
+      const type = button.dataset.reactionChoice;
+      if (!reactionTypes.some(item => item.id === type)) return;
+      reactions[id] = type;
+      const saved = writeReactions(reactions);
+      const bar = button.closest(".reaction-bar");
+      if (bar) updateReactionBar(card, bar);
+
+      const status = document.getElementById("site-toast");
+      if (status) {
+        status.textContent = saved
+          ? "Reaction saved on this device. Thanks for sharing!"
+          : "Reaction selected for this visit, but browser storage is unavailable.";
+        status.dataset.type = saved ? "success" : "warn";
+        status.classList.add("is-visible");
+        window.setTimeout(() => status.classList.remove("is-visible"), 2600);
+      }
+    });
+  }
+
+  /* ---------------------------------------------------------------
+     TALLY FEEDBACK — opens the user's external form in a new tab.
+     --------------------------------------------------------------- */
+  document.querySelectorAll('a[href="https://tally.so/r/Eq5ex4"]').forEach(link => {
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
+  });
+
+  /* ---------------------------------------------------------------
+     MYSTERY SCRATCH CARD — five cards per local calendar day.
+     Loading the first card consumes one try. Refreshing the page
+     keeps the same card and does not consume another try.
+     --------------------------------------------------------------- */
+  const dailyKey = "nexus-mystery-daily-v1";
+  const dailyLimit = 5;
+  const stage = document.getElementById("mystery-stage");
+  const scratchCanvas = document.getElementById("mystery-scratch");
+  const mysteryImage = document.getElementById("mystery-image");
+  const titleEl = document.getElementById("mystery-wallpaper-title");
+  const categoryEl = document.getElementById("mystery-wallpaper-category");
+  const triesEl = document.getElementById("mystery-tries");
+  const statusEl = document.getElementById("mystery-status");
+  const anotherButton = document.getElementById("mystery-try-another");
+  const previewButton = document.getElementById("mystery-preview");
+  const progressEl = document.getElementById("mystery-progress");
+
+  if (!stage || !scratchCanvas || !mysteryImage || !anotherButton) return;
+
+  const mysteryCards = wallpaperCards.filter(card => {
+    const image = card.querySelector(".wallpaper-media img");
+    return image && image.getAttribute("src") && !image.closest(".image-placeholder");
+  });
+
+  let activeCard = null;
+  let dailyState = null;
+  let context = null;
+  let isScratching = false;
+  let lastPoint = null;
+  let scratchedDistance = 0;
+  let logicalWidth = 0;
+  let logicalHeight = 0;
+  let brushWidth = 42;
+  let currentRevealed = false;
+
+  function localDateKey() {
+    const now = new Date();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+    return now.getFullYear() + "-" + month + "-" + day;
+  }
+
+  function readDailyState() {
+    try {
+      const raw = localStorage.getItem(dailyKey);
+      const parsed = raw ? JSON.parse(raw) : null;
+      if (parsed && parsed.date === localDateKey() &&
+          Number.isInteger(parsed.used) && parsed.used >= 1 && parsed.used <= dailyLimit) {
+        return parsed;
+      }
+    } catch (error) {
+      // Continue with an in-memory daily limit if storage is unavailable.
+    }
+    return null;
+  }
+
+  function saveDailyState() {
+    try {
+      localStorage.setItem(dailyKey, JSON.stringify(dailyState));
+    } catch (error) {
+      // The feature remains usable in this tab; persistence requires browser storage.
+    }
+  }
+
+  function getCardId(card) {
+    return card ? (card.dataset.wallpaperId || card.id || "") : "";
+  }
+
+  function cardForId(id) {
+    return mysteryCards.find(card => getCardId(card) === id) || null;
+  }
+
+  function randomCard(excludeId = "") {
+    if (!mysteryCards.length) return null;
+    let pool = mysteryCards.filter(card => getCardId(card) !== excludeId);
+    if (!pool.length) pool = mysteryCards;
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+
+  function updateDailyUI() {
+    if (!dailyState) return;
+    if (triesEl) triesEl.textContent = "Today: " + dailyState.used + " / " + dailyLimit + " tries";
+    if (progressEl) {
+      Array.from(progressEl.children).forEach((segment, index) => {
+        segment.classList.toggle("is-used", index < dailyState.used);
+      });
+    }
+    const remaining = dailyLimit - dailyState.used;
+    anotherButton.disabled = remaining <= 0;
+    anotherButton.textContent = remaining > 0
+      ? "🎲 Try Another · " + remaining + " left"
+      : "Daily tries used · Reset tomorrow";
+  }
+
+  function drawCoating() {
+    if (!context || !logicalWidth || !logicalHeight) return;
+    context.save();
+    context.setTransform(1, 0, 0, 1, 0, 0);
+    context.globalCompositeOperation = "source-over";
+    context.clearRect(0, 0, scratchCanvas.width, scratchCanvas.height);
+    context.scale(scratchCanvas.width / logicalWidth, scratchCanvas.height / logicalHeight);
+
+    const gradient = context.createLinearGradient(0, 0, logicalWidth, logicalHeight);
+    gradient.addColorStop(0, "#111827");
+    gradient.addColorStop(.48, "#17132b");
+    gradient.addColorStop(1, "#071b27");
+    context.fillStyle = gradient;
+    context.fillRect(0, 0, logicalWidth, logicalHeight);
+
+    context.strokeStyle = "rgba(103,232,249,.13)";
+    context.lineWidth = 1;
+    for (let x = -logicalHeight; x < logicalWidth + logicalHeight; x += 24) {
+      context.beginPath();
+      context.moveTo(x, 0);
+      context.lineTo(x + logicalHeight * .7, logicalHeight);
+      context.stroke();
+    }
+
+    const glow = context.createRadialGradient(
+      logicalWidth / 2, logicalHeight / 2, 8,
+      logicalWidth / 2, logicalHeight / 2, Math.max(logicalWidth, logicalHeight) * .68
+    );
+    glow.addColorStop(0, "rgba(124,58,237,.25)");
+    glow.addColorStop(1, "rgba(2,6,23,0)");
+    context.fillStyle = glow;
+    context.fillRect(0, 0, logicalWidth, logicalHeight);
+
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    context.shadowColor = "rgba(103,232,249,.55)";
+    context.shadowBlur = 13;
+    context.fillStyle = "#d9faff";
+    context.font = "800 13px system-ui, sans-serif";
+    context.fillText("✦ NEXUS MYSTERY DROP ✦", logicalWidth / 2, logicalHeight / 2 - 22);
+    context.shadowBlur = 0;
+    context.fillStyle = "rgba(226,232,240,.9)";
+    context.font = "800 18px system-ui, sans-serif";
+    context.fillText("SCRATCH TO REVEAL", logicalWidth / 2, logicalHeight / 2 + 10);
+    context.fillStyle = "rgba(148,163,184,.95)";
+    context.font = "600 10px system-ui, sans-serif";
+    context.fillText("DRAG / SWIPE HERE", logicalWidth / 2, logicalHeight / 2 + 37);
+
+    context.restore();
+  }
+
+  function resizeScratchCanvas() {
+    if (!scratchCanvas || !stage) return;
+    const rect = stage.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    logicalWidth = rect.width;
+    logicalHeight = rect.height;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    scratchCanvas.width = Math.round(logicalWidth * dpr);
+    scratchCanvas.height = Math.round(logicalHeight * dpr);
+    context = scratchCanvas.getContext("2d", { willReadFrequently: false });
+    brushWidth = Math.max(34, Math.min(58, logicalWidth * .17));
+    scratchedDistance = 0;
+    if (!currentRevealed) drawCoating();
+  }
+
+  function pointFromEvent(event) {
+    const rect = scratchCanvas.getBoundingClientRect();
+    return { x: event.clientX - rect.left, y: event.clientY - rect.top };
+  }
+
+  function scratchAt(point) {
+    if (!context || currentRevealed) return;
+    context.save();
+    context.setTransform(scratchCanvas.width / logicalWidth, 0, 0,
+      scratchCanvas.height / logicalHeight, 0, 0);
+    context.globalCompositeOperation = "destination-out";
+    context.lineCap = "round";
+    context.lineJoin = "round";
+    context.lineWidth = brushWidth;
+    context.strokeStyle = "rgba(0,0,0,1)";
+    context.fillStyle = "rgba(0,0,0,1)";
+
+    if (lastPoint) {
+      const dx = point.x - lastPoint.x;
+      const dy = point.y - lastPoint.y;
+      scratchedDistance += Math.sqrt(dx * dx + dy * dy);
+      context.beginPath();
+      context.moveTo(lastPoint.x, lastPoint.y);
+      context.lineTo(point.x, point.y);
+      context.stroke();
+    } else {
+      context.beginPath();
+      context.arc(point.x, point.y, brushWidth / 2, 0, Math.PI * 2);
+      context.fill();
+      scratchedDistance += brushWidth * .7;
+    }
+    context.restore();
+    lastPoint = point;
+
+    const estimatedCoverage = (scratchedDistance * brushWidth * 1.35) /
+      Math.max(1, logicalWidth * logicalHeight);
+    if (estimatedCoverage >= .43) revealMystery();
+  }
+
+  function revealMystery() {
+    if (currentRevealed) return;
+    currentRevealed = true;
+    stage.classList.add("is-revealed");
+    if (statusEl) statusEl.textContent = "Revealed! Your mystery wallpaper is ready.";
+    if (previewButton) previewButton.disabled = !activeCard;
+    if (dailyState) {
+      dailyState.revealed = true;
+      saveDailyState();
+    }
+  }
+
+  function beginScratch(event) {
+    if (currentRevealed || !activeCard || event.button !== undefined && event.button !== 0) return;
+    event.preventDefault();
+    isScratching = true;
+    lastPoint = null;
+    try { scratchCanvas.setPointerCapture(event.pointerId); } catch (error) {}
+    scratchAt(pointFromEvent(event));
+  }
+
+  function moveScratch(event) {
+    if (!isScratching || currentRevealed) return;
+    event.preventDefault();
+    scratchAt(pointFromEvent(event));
+  }
+
+  function endScratch(event) {
+    if (!isScratching) return;
+    isScratching = false;
+    lastPoint = null;
+    try {
+      if (scratchCanvas.hasPointerCapture(event.pointerId)) scratchCanvas.releasePointerCapture(event.pointerId);
+    } catch (error) {}
+  }
+
+  function showCard(card, revealed) {
+    if (!card) return;
+    activeCard = card;
+    const img = card.querySelector(".wallpaper-media img");
+    const title = (card.querySelector(".card-title") || {}).textContent || "Mystery wallpaper";
+    const category = card.dataset.category || "Anime";
+    mysteryImage.src = img.getAttribute("src");
+    mysteryImage.alt = title + " wallpaper — mystery reveal";
+    if (titleEl) titleEl.textContent = revealed ? title : "A surprise is waiting.";
+    if (categoryEl) categoryEl.textContent = revealed
+      ? category + " · Mystery wallpaper revealed. Enjoy the surprise!"
+      : "A surprise from " + category + " is hidden underneath. Scratch to uncover the artwork.";
+    currentRevealed = Boolean(revealed);
+    stage.classList.toggle("is-revealed", currentRevealed);
+    if (statusEl) statusEl.textContent = currentRevealed
+      ? "Already revealed today. Come back tomorrow for a fresh scratch."
+      : "Swipe across the card to reveal your mystery wallpaper.";
+    if (previewButton) previewButton.disabled = !currentRevealed;
+    requestAnimationFrame(() => {
+      resizeScratchCanvas();
+      if (currentRevealed && context) {
+        context.clearRect(0, 0, scratchCanvas.width, scratchCanvas.height);
+      }
+    });
+  }
+
+  function consumeNextTry() {
+    if (!dailyState || dailyState.used >= dailyLimit) {
+      updateDailyUI();
+      return;
+    }
+    const next = randomCard(dailyState.currentId);
+    if (!next) return;
+    dailyState.used += 1;
+    dailyState.currentId = getCardId(next);
+    dailyState.revealed = false;
+    saveDailyState();
+    showCard(next, false);
+    updateDailyUI();
+  }
+
+  if (!mysteryCards.length) {
+    if (statusEl) statusEl.textContent = "No wallpaper cards are available for the mystery feature yet.";
+    anotherButton.disabled = true;
+  } else {
+    dailyState = readDailyState();
+    if (!dailyState || !cardForId(dailyState.currentId)) {
+      const firstCard = randomCard();
+      dailyState = {
+        date: localDateKey(),
+        used: firstCard ? 1 : 0,
+        currentId: getCardId(firstCard),
+        revealed: false
+      };
+      saveDailyState();
+    }
+    activeCard = cardForId(dailyState.currentId) || randomCard();
+    showCard(activeCard, Boolean(dailyState.revealed));
+    updateDailyUI();
+  }
+
+  scratchCanvas.addEventListener("pointerdown", beginScratch, { passive: false });
+  scratchCanvas.addEventListener("pointermove", moveScratch, { passive: false });
+  scratchCanvas.addEventListener("pointerup", endScratch);
+  scratchCanvas.addEventListener("pointercancel", endScratch);
+  scratchCanvas.addEventListener("lostpointercapture", () => {
+    isScratching = false;
+    lastPoint = null;
+  });
+  window.addEventListener("resize", () => {
+    if (!currentRevealed) resizeScratchCanvas();
+  }, { passive: true });
+
+  anotherButton.addEventListener("click", consumeNextTry);
+
+  if (previewButton) {
+    previewButton.addEventListener("click", () => {
+      if (!currentRevealed || !activeCard) return;
+      const media = activeCard.querySelector(".wallpaper-media");
+      if (media) media.click();
+      else {
+        const download = activeCard.querySelector("a.download-button");
+        if (download) window.open(download.href, "_blank", "noopener,noreferrer");
+      }
+    });
+  }
+
+  const mysteryImageError = () => {
+    if (statusEl) statusEl.textContent = "The mystery preview could not load. Please use the feedback form to report this.";
+  };
+  mysteryImage.addEventListener("error", mysteryImageError);
+})();
+</script>
 </body>
 </html>
