@@ -303,6 +303,66 @@
   .social-mark { width:21px; height:21px; }
 }
 
+
+
+/* =====================================================================
+   NEXUS LEGAL CENTER + FIRST-VISIT TERMS / PRIVACY NOTICE
+   Lightweight native HTML; no third-party UI dependencies.
+   ===================================================================== */
+.legal-center { margin: 42px auto 28px; padding: clamp(16px,3vw,28px); border: 1px solid rgba(167,139,250,.22); border-radius: 22px; background: linear-gradient(145deg,rgba(18,17,31,.78),rgba(6,9,16,.94)); }
+.legal-center.site-shell { width:100%; max-width:none; margin:42px 0 28px; }
+.legal-center-heading { display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin:0 0 18px; }
+.legal-center-kicker { margin:0 0 6px; color:#a99ad9; font-size:.64rem; font-weight:850; letter-spacing:.17em; }
+.legal-center-heading h2 { margin:0; color:#f1effb; font-size:clamp(1.2rem,3vw,1.55rem); }
+.legal-center-heading p { max-width:470px; margin:7px 0 0; color:var(--muted); font-size:.78rem; line-height:1.6; }
+.legal-accordion { margin:9px 0; overflow:hidden; border:1px solid rgba(148,163,184,.18); border-radius:14px; background:rgba(2,6,23,.48); }
+.legal-accordion[open] { border-color:rgba(167,139,250,.42); background:rgba(9,12,22,.78); }
+.legal-accordion summary { display:flex; min-height:58px; align-items:center; justify-content:space-between; gap:14px; padding:13px 16px; color:#e8e6f1; cursor:pointer; font-size:.86rem; font-weight:780; list-style:none; }
+.legal-accordion summary::-webkit-details-marker { display:none; }
+.legal-accordion summary::after { content:"+"; display:grid; width:27px; height:27px; flex:0 0 27px; place-items:center; border:1px solid var(--line-strong); border-radius:50%; color:#c4b5fd; font-size:1.1rem; line-height:1; }
+.legal-accordion[open] summary::after { content:"−"; }
+.legal-accordion summary:focus-visible { outline:2px solid var(--accent-2); outline-offset:-3px; }
+.legal-document { padding:0 17px 18px; color:#c4cad6; font-size:.79rem; line-height:1.75; }
+.legal-document h3 { margin:18px 0 7px; color:#f0edfa; font-size:.94rem; line-height:1.4; }
+.legal-document h3:first-child { margin-top:4px; }
+.legal-document p { margin:8px 0; }
+.legal-document ul,.legal-document ol { margin:8px 0 12px; padding-left:22px; }
+.legal-document li { margin:4px 0; padding-left:2px; }
+.legal-document a { color:#b9a7ff; text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }
+.legal-document strong { color:#e8e5f2; }
+.legal-document .legal-note { margin:13px 0; padding:11px 13px; border-left:3px solid rgba(167,139,250,.7); border-radius:0 9px 9px 0; background:rgba(124,58,237,.09); color:#d8d2ea; }
+.legal-document .legal-updated { color:#8f98a8; font-size:.69rem; }
+.legal-footer-links { display:flex; flex-wrap:wrap; gap:8px 15px; align-items:center; }
+.legal-footer-links a { color:#aeb5c5; text-decoration:underline; text-decoration-color:rgba(167,139,250,.38); text-underline-offset:3px; }
+.legal-footer-links a:hover { color:#e9ddff; }
+.consent-banner { position:fixed; z-index:950; right:14px; bottom:max(14px,env(safe-area-inset-bottom)); left:14px; width:min(760px,calc(100% - 28px)); margin:0 auto; padding:15px 16px; border:1px solid rgba(167,139,250,.4); border-radius:17px; background:rgba(7,9,16,.97); color:#e9e7f1; box-shadow:0 18px 60px rgba(0,0,0,.62); backdrop-filter:blur(12px); }
+.consent-banner[hidden] { display:none !important; }
+.consent-inner { display:flex; align-items:center; justify-content:space-between; gap:18px; }
+.consent-copy { min-width:0; }
+.consent-kicker { margin:0 0 5px; color:#b9a7ff; font-size:.62rem; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+.consent-copy h2 { margin:0 0 5px; color:#f4f1ff; font-size:.91rem; }
+.consent-copy p { margin:0; color:#aab2c2; font-size:.72rem; line-height:1.55; }
+.consent-copy a { color:#d0c4ff; text-decoration:underline; text-underline-offset:2px; }
+.consent-actions { display:flex; flex:0 0 auto; align-items:center; gap:8px; }
+.consent-button { min-height:40px; padding:0 15px; border:1px solid rgba(167,139,250,.48); border-radius:10px; background:rgba(124,58,237,.2); color:#f1edff; cursor:pointer; font-size:.73rem; font-weight:800; }
+.consent-button:hover { background:rgba(124,58,237,.34); border-color:rgba(196,181,253,.8); }
+.consent-button-secondary { border-color:var(--line-strong); background:rgba(148,163,184,.08); color:#c8ced9; }
+.consent-button-secondary:hover { background:rgba(148,163,184,.14); }
+@media (max-width:700px) {
+  .legal-center.site-shell { margin:30px 0 22px; }
+  .legal-center { margin:30px 0 22px; padding:13px; border-radius:17px; }
+  .legal-center-heading { align-items:flex-start; flex-direction:column; gap:4px; }
+  .legal-accordion summary { min-height:53px; padding:11px 12px; font-size:.8rem; }
+  .legal-document { padding:0 12px 15px; font-size:.75rem; }
+  .consent-banner { right:8px; bottom:max(8px,env(safe-area-inset-bottom)); left:8px; width:calc(100% - 16px); padding:13px; border-radius:14px; }
+  .consent-inner { align-items:stretch; flex-direction:column; gap:11px; }
+  .consent-actions { display:grid; grid-template-columns:1fr 1fr; }
+  .consent-button { min-height:43px; padding:0 9px; font-size:.7rem; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .consent-banner,.legal-accordion { scroll-behavior:auto !important; transition:none !important; }
+}
+
 </style>
 </head>
 <body>
@@ -1747,12 +1807,265 @@ END WALLPAPER CARD TEMPLATE
 </section>
 
 </main>
+
+<!-- =================================================================== -->
+<!-- 📜 NEXUS LEGAL CENTER — TERMS / DMCA / COPYRIGHT / PRIVACY / ABOUT -->
+<!-- =================================================================== -->
+<section class="legal-center site-shell" id="nexus-legal-center" aria-labelledby="legal-center-title">
+  <div class="legal-center-heading">
+    <div>
+      <p class="legal-center-kicker">NEXUS TRUST & TRANSPARENCY</p>
+      <h2 id="legal-center-title">Legal & Information Center</h2>
+      <p>Our policies, copyright information and story. Open any document below to read the complete page.</p>
+    </div>
+  </div>
+
+  <!-- TERMS & CONDITIONS -->
+  <details class="legal-accordion" id="terms-policy">
+    <summary>Terms &amp; Conditions</summary>
+    <article class="legal-document">
+      <p class="legal-updated"><strong>Last Updated:</strong> November 9, 2026</p>
+      <h3>1. Acceptance of Terms</h3>
+      <p>Welcome to NEXUS Wallpapers. By accessing, browsing, or downloading any content from this website, you acknowledge that you have read, understood, and agreed to these Terms &amp; Conditions.</p>
+      <p>If you do not agree with any part of these terms, please discontinue using the website. These terms apply to all visitors and users of NEXUS Wallpapers.</p>
+
+      <h3>2. Intellectual Property &amp; Copyright Disclaimer</h3>
+      <p>NEXUS Wallpapers is an independently managed website created for anime fans and wallpaper enthusiasts.</p>
+      <ul>
+        <li>All anime characters, names, logos, artwork, and related intellectual property belong to their respective copyright holders and original creators.</li>
+        <li>NEXUS Wallpapers does not claim ownership of any third-party anime characters or franchises featured on this website.</li>
+        <li>Wallpapers are provided strictly for free personal, non-commercial use, such as mobile and desktop backgrounds.</li>
+        <li>Downloading content from this website does not transfer copyright ownership or grant commercial usage rights.</li>
+        <li>Users are responsible for respecting the intellectual property rights of the original copyright owners.</li>
+      </ul>
+      <p>NEXUS Wallpapers is an unofficial fan-oriented platform and is not affiliated with, sponsored by, or officially endorsed by any anime studio, publisher, or franchise owner.</p>
+
+      <h3>3. Permitted &amp; Prohibited Use</h3>
+      <p><strong>You are welcome to:</strong></p>
+      <ul>
+        <li>Browse and download wallpapers for personal enjoyment.</li>
+        <li>Set downloaded wallpapers as backgrounds on your personal devices.</li>
+        <li>Share links to this website with friends and other anime enthusiasts.</li>
+      </ul>
+      <p><strong>You are not permitted to:</strong></p>
+      <ul>
+        <li>Sell downloaded wallpapers or use them for commercial purposes.</li>
+        <li>Redistribute wallpapers for profit or present them as your own original creations.</li>
+        <li>Remove copyright notices or misrepresent ownership of third-party artwork.</li>
+        <li>Use website content for unauthorized commercial projects.</li>
+        <li>Attempt to disrupt, damage, or misuse the website or its services.</li>
+      </ul>
+      <p>Any misuse of the website's content may result in restrictions on access where technically possible.</p>
+
+      <h3>4. Website Availability</h3>
+      <p>NEXUS Wallpapers is independently managed and provided free of charge. Although reasonable efforts are made to keep the website accessible, uninterrupted availability cannot be guaranteed.</p>
+      <p>The website may occasionally experience temporary downtime, maintenance, broken links, or technical issues caused by external providers. We reserve the right to modify, suspend, or discontinue any part of the website without prior notice.</p>
+
+      <h3>5. Limitation of Liability</h3>
+      <p>NEXUS Wallpapers is provided on an "AS IS" and "AS AVAILABLE" basis, without guarantees of uninterrupted operation or error-free content. To the extent permitted by applicable law, the website owner shall not be held responsible for:</p>
+      <ul>
+        <li>Any direct or indirect damage resulting from the use of this website.</li>
+        <li>Device or software issues associated with downloaded files.</li>
+        <li>Temporary website unavailability or failed downloads.</li>
+        <li>Loss of data or other problems arising from the use of third-party services.</li>
+      </ul>
+      <p>Users download and use files at their own discretion and are responsible for maintaining appropriate security on their devices. Nothing in these terms excludes liability that cannot legally be excluded under applicable law.</p>
+
+      <h3>6. Third-Party Services</h3>
+      <p>This website may contain links to external platforms or services, including Pinterest and third-party hosting providers. NEXUS Wallpapers does not control these external websites and is not responsible for their content, privacy practices, availability, or terms of use. Users should review the policies of external services before interacting with them.</p>
+
+      <h3>7. Changes to These Terms</h3>
+      <p>We reserve the right to update or modify these Terms &amp; Conditions whenever necessary. Any updated version will be published on this page with a revised effective date. Continued use of NEXUS Wallpapers after changes are published constitutes acceptance of the updated terms, to the extent permitted by applicable law.</p>
+
+      <h3>8. Contact &amp; Final Agreement</h3>
+      <p>For questions, copyright concerns, or requests regarding content published on NEXUS Wallpapers, please contact the website owner through <a href="mailto:nexuswallpapers.contact@gmail.com">nexuswallpapers.contact@gmail.com</a>.</p>
+      <p>By continuing to use NEXUS Wallpapers, you acknowledge that you understand and agree to these Terms &amp; Conditions.</p>
+      <p><strong>Made for anime fans. Free wallpapers. Personal enjoyment.</strong></p>
+    </article>
+  </details>
+
+  <!-- DMCA NOTICE & TAKEDOWN POLICY -->
+  <details class="legal-accordion" id="dmca-policy">
+    <summary>DMCA Notice &amp; Takedown Policy</summary>
+    <article class="legal-document">
+      <p class="legal-updated"><strong>Last Updated:</strong> November 9, 2026</p>
+      <p>At NEXUS Wallpapers (https://saiyan-vault.pages.dev), we respect intellectual property rights and take copyright concerns seriously. Our website is independently managed and provides free anime wallpapers, fan-inspired artwork, and digital wallpapers for personal, non-commercial enjoyment.</p>
+      <p>We understand that some content may involve characters, artwork, or intellectual property owned by third parties. If you are a copyright owner or an authorized representative and believe that material available on our website infringes your copyright, you may submit a removal request.</p>
+
+      <h3>1. Submitting a Copyright Complaint</h3>
+      <p>Please send a written copyright complaint to <a href="mailto:nexuswallpapers.contact@gmail.com">nexuswallpapers.contact@gmail.com</a>.</p>
+      <p><strong>Subject Line:</strong> Copyright Removal Request – NEXUS Wallpapers</p>
+      <p>To help us review your request, please include:</p>
+      <ol>
+        <li><strong>Your identification:</strong> Your full name and contact information.</li>
+        <li><strong>Copyrighted work:</strong> A description of the original copyrighted material you own or represent.</li>
+        <li><strong>Infringing material:</strong> The exact URL(s) of the content you believe infringes your copyright.</li>
+        <li><strong>Good-faith statement:</strong> A statement explaining why you believe the use of the material is unauthorized.</li>
+        <li><strong>Authority statement:</strong> Confirmation that you are the copyright owner or authorized to act on their behalf.</li>
+        <li><strong>Accuracy statement:</strong> Confirmation that the information provided is accurate to the best of your knowledge.</li>
+      </ol>
+      <p>Electronic or written signatures may be included as appropriate.</p>
+
+      <h3>2. Review &amp; Removal Process</h3>
+      <p>Once we receive a sufficiently detailed complaint, we will:</p>
+      <ul>
+        <li>Review the submitted information.</li>
+        <li>Verify the reported content and its location.</li>
+        <li>Remove or restrict access to material where appropriate.</li>
+        <li>Contact the reporting party if additional information is required.</li>
+      </ul>
+      <p>As a solo-managed website, requests are reviewed manually. We aim to handle legitimate copyright complaints as promptly as reasonably possible.</p>
+
+      <h3>3. Counter-Notification</h3>
+      <p>If you believe that content was removed or restricted by mistake, you may contact us using the same email address and explain your reasons. Please include the affected URL, an explanation of your claim, and any relevant supporting information.</p>
+      <p>Where applicable, formal counter-notification procedures may require additional information under the relevant copyright law.</p>
+
+      <h3>4. Repeat Copyright Issues &amp; Contact Information</h3>
+      <p>We reserve the right to remove repeatedly reported infringing material and take reasonable steps to prevent recurring copyright issues.</p>
+      <p><strong>Website:</strong> <a href="https://saiyan-vault.pages.dev" target="_blank" rel="noopener noreferrer">https://saiyan-vault.pages.dev</a><br>
+      <strong>Platform Name:</strong> NEXUS Wallpapers<br>
+      <strong>Copyright Contact:</strong> <a href="mailto:nexuswallpapers.contact@gmail.com">nexuswallpapers.contact@gmail.com</a></p>
+      <p>Thank you for helping us maintain a respectful environment for artists, creators, and anime fans. <strong>Respect creators. Respect creativity.</strong></p>
+    </article>
+  </details>
+
+  <!-- COPYRIGHT & FAN ART POLICY -->
+  <details class="legal-accordion" id="copyright-policy">
+    <summary>Copyright &amp; Fan Art Policy</summary>
+    <article class="legal-document">
+      <p class="legal-updated"><strong>Last Updated:</strong> November 9, 2026</p>
+      <p>At NEXUS Wallpapers, we appreciate anime, digital art, creativity, and the communities built around them. Our goal is to provide anime enthusiasts and wallpaper lovers with a collection of free digital wallpapers for personal enjoyment.</p>
+
+      <h3>1. Ownership of Anime Characters &amp; Franchises</h3>
+      <p>All anime characters, franchise names, logos, trademarks, and officially associated intellectual property belong to their respective copyright and trademark owners. This includes, but is not limited to, properties associated with:</p>
+      <ul>
+        <li>Toei Animation</li>
+        <li>Shueisha</li>
+        <li>Studio Ghibli</li>
+        <li>Pierrot</li>
+        <li>MAPPA</li>
+        <li>Other anime studios, publishers, and original creators.</li>
+      </ul>
+      <p>NEXUS Wallpapers does not claim ownership of these characters, franchises, or third-party intellectual property.</p>
+
+      <h3>2. Fan Art &amp; Wallpaper Usage</h3>
+      <p>Some wallpapers available on this website may be fan-inspired, digitally edited, or created using digital design tools. These wallpapers are provided for free personal, non-commercial enjoyment.</p>
+      <p><strong>Visitors may:</strong> Download wallpapers for personal use, set them as backgrounds, and enjoy the collection individually.</p>
+      <p><strong>Visitors may not:</strong> Sell wallpapers, redistribute them for commercial profit, claim third-party art as their own, or use content in commercial products without authorization. Downloading does not transfer ownership.</p>
+
+      <h3>3. Respect for Original Creators &amp; Content Removal</h3>
+      <p>We recognize the time, creativity, and effort invested by anime studios and creators. NEXUS Wallpapers aims to respect their intellectual property and is not affiliated with or endorsed by any official anime studio.</p>
+      <p>If you are an artist or copyright owner and believe material on NEXUS Wallpapers infringes your rights, please contact us at <a href="mailto:nexuswallpapers.contact@gmail.com">nexuswallpapers.contact@gmail.com</a>.</p>
+
+      <h3>4. Original Digital Content &amp; Final Statement</h3>
+      <p>Any original website layouts, branding elements, descriptions, and independently created designs associated with NEXUS Wallpapers remain subject to their respective intellectual property rights. Third-party intellectual property remains the property of its respective owners.</p>
+      <p>NEXUS Wallpapers exists to celebrate creativity and provide anime fans with a place to discover wallpapers they enjoy. We believe in respecting original creators while making digital wallpaper collections accessible for personal enjoyment.</p>
+      <p><strong>NEXUS Wallpapers — Created for fans. Shared with respect.</strong></p>
+    </article>
+  </details>
+
+  <!-- PRIVACY POLICY — ADDED BECAUSE THE PROVIDED PDF DOES NOT CONTAIN ONE -->
+  <details class="legal-accordion" id="privacy-policy">
+    <summary>Privacy Policy</summary>
+    <article class="legal-document">
+      <p class="legal-updated"><strong>Last Updated:</strong> November 9, 2026</p>
+      <p>This Privacy Policy explains how NEXUS Wallpapers (https://saiyan-vault.pages.dev), an independently managed website, handles information when you browse the website, save wallpapers, use its optional account feature, or contact the site owner.</p>
+
+      <h3>1. Information Stored on Your Device</h3>
+      <p>The website uses your browser's local storage to provide basic features. In the current website code, this includes:</p>
+      <ul>
+        <li><strong>Saved favourites:</strong> wallpaper IDs saved on your current browser/device.</li>
+        <li><strong>Recently viewed wallpapers:</strong> wallpaper IDs used to display your recent items on that browser/device.</li>
+        <li><strong>Policy notice preference:</strong> a small preference record so the first-visit Terms &amp; Privacy notice does not keep appearing after you accept it.</li>
+      </ul>
+      <p>This browser storage is used to remember site preferences. It is not, by itself, a website account and does not automatically sync between devices. You can remove these records by clearing this website's browser storage, although doing so will also remove locally saved favourites and recent items.</p>
+      <p class="legal-note"><strong>Cookies:</strong> The current website code does not intentionally set advertising or analytics cookies. It uses browser local storage for the features described above. If optional account synchronization is configured and enabled in a future deployment, the relevant third-party authentication/storage technology may also be used as described below.</p>
+
+      <h3>2. Optional Account &amp; Favourites Synchronization</h3>
+      <p>The website code includes an optional Firebase-based account feature intended to let users synchronize wallpaper favourites across devices. In the HTML version supplied for this update, the Firebase configuration values are blank, so account creation and cloud synchronization are not active until the site owner configures the service.</p>
+      <p>If this feature is enabled in a future deployment and you choose to use it, Firebase Authentication may process your email address and authentication information, and Cloud Firestore may store your account identifier, saved wallpaper IDs, and an update timestamp. Password authentication is handled by Firebase; the website owner does not receive or store your account password. Do not reuse a password from another service.</p>
+      <p>Firebase is a third-party service operated by Google. Its processing is subject to Google's/Firebase's applicable terms and privacy information. The website loads Firebase modules only when the account feature is opened and a valid configuration is present.</p>
+
+      <h3>3. Information You Send to Us</h3>
+      <p>If you contact the website owner by email, the owner will receive the information you choose to include, such as your email address, name, message, and any files or URLs you provide. This information is used to respond to your enquiry, handle copyright reports, or address website-related requests. Please do not send passwords or unnecessary sensitive personal information.</p>
+
+      <h3>4. Hosting, Technical Data &amp; External Links</h3>
+      <p>The website is delivered through a third-party hosting platform. The hosting, network, and security providers may process technical request information such as IP address, browser/device details, requested pages, and request timestamps to deliver, secure, and troubleshoot the website. NEXUS Wallpapers does not operate those infrastructure systems directly.</p>
+      <p>The website may link to third-party services such as Pinterest, Google/Firebase, or other external providers. When you follow an external link or use a third-party service, that provider's own privacy policy and terms apply. NEXUS Wallpapers does not control their independent data practices.</p>
+      <p>The supplied HTML currently contains no Google Analytics or advertising tag/script. If analytics, advertising, or other non-essential tracking tools are added later, this policy and any required consent controls should be updated before those tools are activated.</p>
+
+      <h3>5. How We Use Information</h3>
+      <p>Information handled by the website is used only for purposes connected with operating its features, such as remembering favourites and recent items, providing optional account synchronization if enabled, responding to emails, reviewing copyright notices, and maintaining website security and functionality.</p>
+      <p>NEXUS Wallpapers does not sell personal information. The site is independently managed and does not maintain a customer advertising database.</p>
+
+      <h3>6. Data Retention &amp; Your Choices</h3>
+      <ul>
+        <li>Local favourites and recently viewed items remain in your browser until you remove them or clear the website's browser storage.</li>
+        <li>Emails remain in the website owner's email account for as long as reasonably needed to respond, keep relevant records, or handle a legal request.</li>
+        <li>If Firebase synchronization is enabled, account data is retained by the configured Firebase project until it is deleted through the account/service controls or by the project owner, subject to applicable provider retention practices.</li>
+      </ul>
+      <p>You can stop using the site, clear its local storage, avoid opening third-party links, or contact us with a privacy request. Clearing browser storage does not delete any data already stored by a third-party service.</p>
+
+      <h3>7. Children's Privacy</h3>
+      <p>NEXUS Wallpapers is a general-audience wallpaper website and is not designed to collect personal information from children. Visitors should not submit unnecessary personal information. Parents or guardians who believe a child has sent personal information to the site may contact us so we can review the request.</p>
+
+      <h3>8. Security &amp; Changes</h3>
+      <p>Reasonable care is taken when managing the website, but no website or internet transmission can be guaranteed completely secure. We may update this Privacy Policy when the website's features or practices change. The latest version and effective date will be displayed here.</p>
+
+      <h3>9. Contact</h3>
+      <p>For privacy questions or requests, contact <a href="mailto:nexuswallpapers.contact@gmail.com">nexuswallpapers.contact@gmail.com</a> with the subject line <strong>Privacy Request – NEXUS Wallpapers</strong>.</p>
+      <p class="legal-note">This policy describes the website code supplied for this update. If you activate Firebase, add analytics/advertising, or introduce additional data collection, review and update this notice to match the live configuration and applicable law.</p>
+    </article>
+  </details>
+
+  <!-- ABOUT US -->
+  <details class="legal-accordion" id="about-nexus">
+    <summary>About NEXUS Wallpapers</summary>
+    <article class="legal-document">
+      <p><strong>A Place for Anime Fans, Wallpaper Enthusiasts &amp; Digital Creativity.</strong></p>
+      <p>Welcome to NEXUS Wallpapers — a personal project built around a simple passion: anime, beautiful wallpapers, and digital creativity. Website: <a href="https://saiyan-vault.pages.dev" target="_blank" rel="noopener noreferrer">https://saiyan-vault.pages.dev</a>.</p>
+
+      <h3>Our Story</h3>
+      <p>NEXUS Wallpapers started as an independent project created by an anime enthusiast who wanted to build something useful for the anime community. As someone who appreciates anime art, iconic characters, cinematic scenes, and aesthetic backgrounds, I wanted to create a dedicated place where people could discover and enjoy wallpapers without unnecessary complications.</p>
+      <p>What began as a personal creative idea gradually developed into a growing wallpaper collection. I independently manage and maintain this website, from organizing wallpaper collections to improving its design and user experience.</p>
+
+      <h3>What You'll Find Here</h3>
+      <p>NEXUS Wallpapers brings together different styles of digital wallpapers. Our collection focuses on:</p>
+      <ul>
+        <li><strong>Anime Wallpapers:</strong> Popular characters, iconic moments, and anime-inspired visuals.</li>
+        <li><strong>Dark &amp; Minimalist:</strong> Clean, sophisticated wallpapers with darker aesthetics.</li>
+        <li><strong>Aesthetic Wallpapers:</strong> Beautiful compositions and visually appealing designs.</li>
+        <li><strong>Mobile Wallpapers:</strong> Vertical wallpapers designed for phone screens.</li>
+        <li><strong>Desktop Wallpapers:</strong> Digital backgrounds for larger displays.</li>
+        <li><strong>Digital Resources:</strong> Selected productivity guides, PDFs, and creative resources.</li>
+      </ul>
+
+      <h3>Our Mission &amp; Solo Management</h3>
+      <p>Our mission is simple: make discovering and enjoying beautiful wallpapers easy, accessible, and free. We aim to provide a clean browsing experience, free personal downloads, diverse visual styles, and mobile optimization.</p>
+      <p>NEXUS Wallpapers is a solo-managed independent project. There is no large team behind the website. The design, organization, updates, and improvements are managed independently. Every improvement is part of an ongoing effort to make the website better for its visitors.</p>
+
+      <h3>Commitment to Creators &amp; Stay Connected</h3>
+      <p>We appreciate the anime studios, artists, illustrators, and creators whose work inspires communities around the world. NEXUS Wallpapers is an unofficial, independent fan-oriented platform. Third-party intellectual property remains the property of its respective owners.</p>
+      <p>Discover more through <a href="https://pin.it/1bXoRQY5S" target="_blank" rel="noopener noreferrer">NEXUS Wallpapers on Pinterest</a> or contact us at <a href="mailto:nexuswallpapers.contact@gmail.com">nexuswallpapers.contact@gmail.com</a>.</p>
+      <p><strong>NEXUS Wallpapers — Explore. Discover. Personalize.</strong><br>Made for anime fans, one wallpaper at a time.</p>
+    </article>
+  </details>
+</section>
+
 <!-- ============================== FOOTER ============================== -->
 <footer class="site-footer">
   <div class="footer-brand-wrap">
     <span class="footer-brand">NEXUS WALLPAPERS</span>
     <span class="footer-tagline">Made for your screen. Built for your mood.</span>
+    <a class="footer-tagline" href="mailto:nexuswallpapers.contact@gmail.com">nexuswallpapers.contact@gmail.com</a>
   </div>
+  <nav class="legal-footer-links" aria-label="Legal and information pages">
+    <a href="#terms-policy" data-policy-link="terms-policy">Terms &amp; Conditions</a>
+    <a href="#dmca-policy" data-policy-link="dmca-policy">DMCA Policy</a>
+    <a href="#copyright-policy" data-policy-link="copyright-policy">Copyright</a>
+    <a href="#privacy-policy" data-policy-link="privacy-policy">Privacy Policy</a>
+    <a href="#about-nexus" data-policy-link="about-nexus">About Us</a>
+  </nav>
   <span class="footer-copy">&copy; <span id="year"></span> NEXUS Wallpapers</span>
   <a class="social-link footer-social" href="https://pin.it/1bXoRQY5S"
      target="_blank" rel="noopener noreferrer" aria-label="Visit NEXUS on Pinterest">
@@ -3029,5 +3342,86 @@ END WALLPAPER CARD TEMPLATE
   updateWallpapers();
 })();
 </script>
+
+<!-- =================================================================== -->
+<!-- 🔒 FIRST-VISIT TERMS & PRIVACY NOTICE -->
+<!-- =================================================================== -->
+<aside class="consent-banner" id="nexus-consent-banner" role="region" aria-labelledby="nexus-consent-title" hidden>
+  <div class="consent-inner">
+    <div class="consent-copy">
+      <p class="consent-kicker">NEXUS · PRIVACY &amp; TERMS</p>
+      <h2 id="nexus-consent-title">A quick note about your privacy</h2>
+      <p>We use essential browser storage to remember favourites, recently viewed wallpapers and this notice preference. By selecting Accept &amp; Continue, you acknowledge our <a href="#terms-policy" data-policy-link="terms-policy">Terms &amp; Conditions</a> and <a href="#privacy-policy" data-policy-link="privacy-policy">Privacy Policy</a>.</p>
+    </div>
+    <div class="consent-actions">
+      <button class="consent-button consent-button-secondary" id="nexus-view-policies" type="button">View policies</button>
+      <button class="consent-button" id="nexus-accept-policies" type="button">Accept &amp; Continue</button>
+    </div>
+  </div>
+</aside>
+
+
+<!-- ===================== LEGAL LINKS + CONSENT LOGIC ===================== -->
+<script>
+(() => {
+  "use strict";
+  const consentBanner = document.getElementById("nexus-consent-banner");
+  const acceptButton = document.getElementById("nexus-accept-policies");
+  const viewPoliciesButton = document.getElementById("nexus-view-policies");
+  const consentKey = "nexus-policy-consent-v1";
+  const consentVersion = "2026-11-09";
+
+  function safeReadConsent() {
+    try { return window.localStorage.getItem(consentKey); }
+    catch (error) { return null; }
+  }
+
+  function safeSaveConsent() {
+    try {
+      window.localStorage.setItem(consentKey, consentVersion);
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function openPolicy(policyId) {
+    const target = document.getElementById(policyId);
+    if (!target || !target.classList.contains("legal-accordion")) return;
+    document.querySelectorAll(".legal-accordion").forEach(item => {
+      item.open = item === target;
+    });
+    target.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+    const summary = target.querySelector("summary");
+    if (summary) summary.focus({ preventScroll: true });
+  }
+
+  document.querySelectorAll("[data-policy-link]").forEach(link => {
+    link.addEventListener("click", event => {
+      const policyId = link.getAttribute("data-policy-link");
+      if (!policyId) return;
+      event.preventDefault();
+      openPolicy(policyId);
+      if (history && history.replaceState) history.replaceState(null, "", "#" + policyId);
+    });
+  });
+
+  if (viewPoliciesButton) {
+    viewPoliciesButton.addEventListener("click", () => openPolicy("terms-policy"));
+  }
+
+  if (acceptButton) {
+    acceptButton.addEventListener("click", () => {
+      safeSaveConsent();
+      if (consentBanner) consentBanner.hidden = true;
+    });
+  }
+
+  if (consentBanner && safeReadConsent() !== consentVersion) {
+    consentBanner.hidden = false;
+  }
+})();
+</script>
+
 </body>
 </html>
