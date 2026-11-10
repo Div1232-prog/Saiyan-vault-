@@ -8,7 +8,7 @@
   // Apply the saved accent theme before the page styles render to avoid a theme flash.
   try {
     const savedNexusTheme = localStorage.getItem("nexus-theme-preference-v1");
-    document.documentElement.dataset.theme = ["cyberpunk", "crimson", "matrix"].includes(savedNexusTheme)
+    document.documentElement.dataset.theme = ["cyberpunk", "chrome", "titanium", "gold"].includes(savedNexusTheme)
       ? savedNexusTheme : "cyberpunk";
   } catch (_) {
     document.documentElement.dataset.theme = "cyberpunk";
@@ -379,7 +379,7 @@
    ===================================================================== */
 .reaction-bar {
   display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-template-columns:repeat(5,minmax(0,1fr));
   gap:6px;
   margin-top:10px;
   padding-top:10px;
@@ -658,45 +658,38 @@
 
 /* ===== NEXUS ORIGINALS + FOUR FEATURE ENHANCEMENTS ===== */
 :root[data-theme="cyberpunk"] {
-  --bg:#000000; --surface:rgba(15,23,42,.65); --accent:#a78bfa; --accent-2:#67e8f9;
-  --theme-soft:rgba(124,58,237,.18); --theme-border:rgba(167,139,250,.58); --theme-text:#eee9ff;
-  --theme-glow:rgba(103,232,249,.25); --theme-gradient:linear-gradient(105deg,#a78bfa,#67e8f9);
+  --bg:#02040a; --surface:rgba(12,20,35,.78); --text:#e8edf8; --muted:#929fb4; --line:rgba(96,165,250,.19); --line-strong:rgba(103,232,249,.4);
+  --accent:#60a5fa; --accent-2:#67e8f9; --theme-soft:rgba(37,99,235,.2); --theme-border:rgba(103,232,249,.58); --theme-text:#e0faff;
+  --theme-glow:rgba(34,211,238,.19); --theme-gradient:linear-gradient(105deg,#60a5fa,#67e8f9,#c4b5fd);
 }
-:root[data-theme="crimson"] {
-  --bg:#050204; --surface:rgba(31,8,16,.72); --accent:#fb7185; --accent-2:#ef4444;
-  --theme-soft:rgba(190,24,93,.18); --theme-border:rgba(251,113,133,.58); --theme-text:#ffe4e9;
-  --theme-glow:rgba(239,68,68,.24); --theme-gradient:linear-gradient(105deg,#fb7185,#b91c1c);
+:root[data-theme="chrome"] {
+  --bg:#07090d; --surface:rgba(24,29,37,.82); --text:#eef1f5; --muted:#a0aab8; --line:rgba(203,213,225,.18); --line-strong:rgba(226,232,240,.42);
+  --accent:#cbd5e1; --accent-2:#93c5fd; --theme-soft:rgba(148,163,184,.16); --theme-border:rgba(203,213,225,.62); --theme-text:#f1f5f9;
+  --theme-glow:rgba(203,213,225,.16); --theme-gradient:linear-gradient(105deg,#f8fafc,#94a3b8,#e2e8f0);
 }
-:root[data-theme="matrix"] {
-  --bg:#020603; --surface:rgba(5,22,10,.75); --accent:#a3e635; --accent-2:#22c55e;
-  --theme-soft:rgba(34,197,94,.16); --theme-border:rgba(163,230,53,.58); --theme-text:#ecfccb;
-  --theme-glow:rgba(34,197,94,.23); --theme-gradient:linear-gradient(105deg,#a3e635,#22c55e);
+:root[data-theme="titanium"] {
+  --bg:#050610; --surface:rgba(21,23,42,.82); --text:#eef0ff; --muted:#a1a1bd; --line:rgba(167,139,250,.2); --line-strong:rgba(129,140,248,.48);
+  --accent:#a78bfa; --accent-2:#38bdf8; --theme-soft:rgba(99,102,241,.18); --theme-border:rgba(167,139,250,.62); --theme-text:#f0eaff;
+  --theme-glow:rgba(129,140,248,.2); --theme-gradient:linear-gradient(105deg,#c4b5fd,#60a5fa,#f0abfc);
+}
+:root[data-theme="gold"] {
+  --bg:#090704; --surface:rgba(32,25,13,.82); --text:#fff7e6; --muted:#c3b69d; --line:rgba(217,169,73,.2); --line-strong:rgba(234,179,8,.45);
+  --accent:#eab308; --accent-2:#fbbf24; --theme-soft:rgba(180,120,20,.18); --theme-border:rgba(234,179,8,.62); --theme-text:#fff2c2;
+  --theme-glow:rgba(245,158,11,.18); --theme-gradient:linear-gradient(105deg,#fff0b3,#d6a63c,#fef3c7);
 }
 .theme-control { display:inline-flex; align-items:center; }
-.theme-select {
-  width:118px; min-height:38px; padding:0 27px 0 10px; border:1px solid var(--theme-border);
-  border-radius:11px; background:rgba(8,10,17,.88); color:var(--theme-text); cursor:pointer;
-  font-size:.68rem; font-weight:750; appearance:auto;
-}
+.theme-select { width:150px; min-height:40px; padding:0 28px 0 11px; border:1px solid var(--theme-border); border-radius:11px; background:rgba(8,10,17,.9); color:var(--theme-text); cursor:pointer; font-size:.7rem; font-weight:800; }
 .theme-select:focus-visible { outline:2px solid var(--accent-2); outline-offset:3px; }
 .theme-select option { background:#080b12; color:#f1f5f9; }
 :root[data-theme] .brand-mark { border-color:var(--theme-border); background:var(--theme-soft); color:var(--theme-text); }
 :root[data-theme] .category-pill[aria-pressed="true"] { border-color:var(--theme-border); background:var(--theme-soft); color:var(--theme-text); }
-:root[data-theme] .download-button,
-:root[data-theme] .featured-view,
-:root[data-theme] .load-more-button,
-:root[data-theme] .mystery-button { border-color:var(--theme-border); background:var(--theme-soft); color:var(--theme-text); }
-:root[data-theme] .card-action:hover,
-:root[data-theme] .carousel-control:hover,
-:root[data-theme] .back-to-top:hover { border-color:var(--theme-border); }
-:root[data-theme] .eyebrow,
-:root[data-theme] .card-category,
-:root[data-theme] .lightbox-eyebrow,
-:root[data-theme] .legal-document a { color:var(--accent); }
-:root[data-theme] .eyebrow::before,
-:root[data-theme] .eyebrow::after { background:var(--accent); }
+:root[data-theme] .download-button,:root[data-theme] .featured-view,:root[data-theme] .load-more-button,:root[data-theme] .mystery-button { border-color:var(--theme-border); background:var(--theme-soft); color:var(--theme-text); }
+:root[data-theme] .card-action:hover,:root[data-theme] .carousel-control:hover,:root[data-theme] .back-to-top:hover { border-color:var(--theme-border); }
+:root[data-theme] .eyebrow,:root[data-theme] .card-category,:root[data-theme] .lightbox-eyebrow,:root[data-theme] .legal-document a { color:var(--accent); }
+:root[data-theme] .eyebrow::before,:root[data-theme] .eyebrow::after { background:var(--accent); }
 :root[data-theme] .gradient-text { background-image:var(--theme-gradient); }
 :root[data-theme] .category-pill[data-filter="NEXUS Originals"] { border-color:var(--theme-border); box-shadow:0 0 16px var(--theme-glow); }
+
 .exclusive-badge {
   display:inline-flex; align-items:center; margin-left:7px; padding:4px 7px; border:1px solid var(--theme-border);
   border-radius:999px; background:var(--theme-soft); color:var(--theme-text); font-size:.52rem;
@@ -778,6 +771,99 @@ body.nexus-glitch::after {
   .nexus-doubletap-heart { opacity:0; }
 }
 
+
+/* ===== NEXUS ULTIMATE LAYER — NAVIGATION / THEMES / SUPPORT ===== */
+.nexus-menu-toggle { display:grid; flex:0 0 42px; width:42px; height:42px; place-content:center; gap:5px; border:1px solid var(--theme-border); border-radius:12px; background:var(--theme-soft); cursor:pointer; }
+.nexus-menu-toggle span { display:block; width:18px; height:2px; border-radius:3px; background:var(--theme-text); transition:transform 180ms ease,opacity 180ms ease; }
+.nexus-menu-toggle[aria-expanded="true"] span:first-child { transform:translateY(7px) rotate(45deg); }
+.nexus-menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity:0; }
+.nexus-menu-toggle[aria-expanded="true"] span:last-child { transform:translateY(-7px) rotate(-45deg); }
+.nexus-menu-scrim { position:fixed; z-index:1200; inset:0; background:rgba(0,0,0,.68); backdrop-filter:blur(5px); }
+.nexus-site-menu { position:fixed; z-index:1201; top:0; right:0; bottom:0; width:min(420px,88vw); padding:clamp(20px,4vw,32px); overflow:auto; border-left:1px solid var(--theme-border); background:linear-gradient(155deg,rgba(18,24,38,.99),rgba(4,6,12,.99)); color:var(--text); box-shadow:-22px 0 70px rgba(0,0,0,.55); transform:translateX(103%); transition:transform 240ms cubic-bezier(.2,.75,.25,1); }
+.nexus-site-menu.is-open { transform:translateX(0); }
+.nexus-menu-head { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; padding-bottom:20px; border-bottom:1px solid var(--line); }
+.nexus-menu-kicker,.nexus-section-eyebrow { margin:0 0 7px; color:var(--accent); font-size:.62rem; font-weight:900; letter-spacing:.18em; }
+.nexus-menu-head h2 { margin:0; font-size:1.45rem; letter-spacing:-.04em; }
+.nexus-menu-close { display:grid; width:40px; height:40px; place-items:center; border:1px solid var(--line-strong); border-radius:50%; background:var(--theme-soft); color:var(--theme-text); cursor:pointer; font-size:1.5rem; }
+.nexus-menu-links { display:grid; gap:7px; padding:20px 0; }
+.nexus-menu-links a,.nexus-menu-links button { display:flex; align-items:center; gap:13px; min-height:47px; padding:0 13px; border:1px solid transparent; border-radius:11px; background:rgba(148,163,184,.055); color:#dce5f4; cursor:pointer; text-align:left; font-size:.82rem; font-weight:700; }
+.nexus-menu-links a:hover,.nexus-menu-links button:hover { border-color:var(--theme-border); background:var(--theme-soft); color:var(--theme-text); }
+.nexus-menu-links a:first-child { border-color:var(--theme-border); background:var(--theme-soft); }
+.nexus-menu-links a span,.nexus-menu-links button span { flex:1; }
+.nexus-menu-foot { margin:8px 0 0; color:var(--muted); font-size:.58rem; font-weight:850; letter-spacing:.17em; text-align:center; }
+body.nexus-menu-open { overflow:hidden; touch-action:none; }
+.nexus-feature-banner { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:7px 12px; min-height:38px; margin:7px auto; padding:7px 12px; border:1px solid var(--theme-border); border-radius:12px; background:linear-gradient(90deg,rgba(9,16,28,.96),var(--theme-soft),rgba(9,16,28,.96)); color:var(--theme-text); font-size:.72rem; text-align:center; }
+.nexus-feature-banner strong { font-size:.61rem; letter-spacing:.12em; }
+.nexus-feature-banner span:not(.banner-pulse) { color:var(--muted); }
+.nexus-feature-banner b { color:var(--accent); font-size:.63rem; letter-spacing:.08em; }
+.banner-pulse { width:7px; height:7px; border-radius:50%; background:var(--accent-2); box-shadow:0 0 10px var(--accent-2); }
+.nexus-guide-section,.nexus-help-section,.nexus-contact-section { margin:36px 0 30px; padding:clamp(17px,3vw,28px); border:1px solid var(--line); border-radius:22px; background:linear-gradient(145deg,var(--surface),rgba(5,8,14,.86)); }
+.nexus-guide-heading { display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-bottom:18px; }
+.nexus-guide-heading h2,.nexus-help-section h2,.nexus-contact-copy h2 { margin:0; font-size:clamp(1.25rem,3vw,1.7rem); letter-spacing:-.04em; }
+.nexus-guide-heading p,.nexus-help-intro,.nexus-contact-copy p { margin:7px 0 0; color:var(--muted); font-size:.78rem; line-height:1.6; }
+.nexus-guide-chip { padding:6px 9px; border:1px solid var(--theme-border); border-radius:999px; background:var(--theme-soft); color:var(--theme-text); font-size:.56rem; font-weight:900; letter-spacing:.1em; white-space:nowrap; }
+.nexus-guide-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:11px; }
+.nexus-guide-card { min-width:0; padding:15px; border:1px solid var(--line); border-radius:15px; background:rgba(2,6,23,.43); }
+.nexus-guide-card>span { color:var(--accent); font-size:.58rem; font-weight:900; letter-spacing:.13em; }
+.nexus-guide-card h3 { margin:9px 0 6px; color:var(--text); font-size:.92rem; }
+.nexus-guide-card p { margin:0; color:var(--muted); font-size:.72rem; line-height:1.65; }
+.nexus-secrets-note { display:flex; flex-wrap:wrap; gap:8px 14px; margin-top:14px; padding:13px 15px; border:1px dashed var(--theme-border); border-radius:13px; background:var(--theme-soft); color:var(--muted); font-size:.72rem; line-height:1.55; }
+.nexus-secrets-note strong { color:var(--theme-text); }
+.nexus-faq-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; margin-top:18px; }
+.nexus-faq-grid details { padding:13px 14px; border:1px solid var(--line); border-radius:12px; background:rgba(2,6,23,.4); }
+.nexus-faq-grid summary { color:var(--text); cursor:pointer; font-size:.78rem; font-weight:800; }
+.nexus-faq-grid details p { margin:10px 0 0; color:var(--muted); font-size:.72rem; line-height:1.65; }
+.nexus-contact-section { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1fr); gap:clamp(20px,5vw,52px); align-items:start; }
+.nexus-contact-email { display:inline-flex; margin-top:16px; color:var(--accent); font-size:.83rem; font-weight:800; overflow-wrap:anywhere; }
+.nexus-contact-form { display:grid; gap:8px; }
+.nexus-contact-form label { margin-top:3px; color:var(--text); font-size:.72rem; font-weight:800; }
+.nexus-contact-form input,.nexus-contact-form textarea { width:100%; min-width:0; padding:12px 13px; border:1px solid var(--line-strong); border-radius:10px; background:rgba(0,0,0,.3); color:var(--text); font:inherit; font-size:.78rem; }
+.nexus-contact-form textarea { resize:vertical; }
+.nexus-contact-submit { min-height:43px; margin-top:4px; border:1px solid var(--theme-border); border-radius:10px; background:var(--theme-soft); color:var(--theme-text); cursor:pointer; font-size:.76rem; font-weight:850; }
+.nexus-contact-note { margin:2px 0 0; color:var(--muted); font-size:.64rem; line-height:1.55; }
+.card-category::after { }
+.wallpaper-card[data-category="NEXUS Originals"] .card-category::after { content:" · ORIGINAL ART"; color:var(--accent-2); font-size:.57rem; letter-spacing:.04em; }
+.reaction-button.reaction-pop { animation:nexus-reaction-pop 280ms ease-out; }
+@keyframes nexus-reaction-pop { 50% { transform:scale(1.08); box-shadow:0 0 18px var(--theme-glow); } }
+.reaction-local-note[data-state="error"] { color:#fca5a5; }
+.reaction-local-note[data-state="ready"] { color:var(--muted); }
+.account-google { width:100%; margin-top:9px; border-color:var(--theme-border); background:var(--theme-soft); color:var(--theme-text); }
+.account-google[hidden] { display:none !important; }
+:root[data-theme="chrome"] .featured-carousel,:root[data-theme="chrome"] .mind-hub,:root[data-theme="chrome"] .mystery-section,:root[data-theme="chrome"] .legal-center { background:linear-gradient(145deg,rgba(36,43,53,.92),rgba(7,9,13,.96)); }
+:root[data-theme="titanium"] .featured-carousel,:root[data-theme="titanium"] .mind-hub,:root[data-theme="titanium"] .mystery-section,:root[data-theme="titanium"] .legal-center { background:linear-gradient(145deg,rgba(31,30,58,.9),rgba(5,6,16,.97)); }
+:root[data-theme="gold"] .featured-carousel,:root[data-theme="gold"] .mind-hub,:root[data-theme="gold"] .mystery-section,:root[data-theme="gold"] .legal-center { background:linear-gradient(145deg,rgba(47,34,13,.88),rgba(9,7,4,.97)); }
+:root[data-theme] .wallpaper-card,:root[data-theme] .nexus-guide-card,:root[data-theme] .nexus-faq-grid details { border-color:var(--line); }
+@media(max-width:900px) { .nexus-guide-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:700px) {
+  .nexus-menu-toggle { width:38px; height:38px; flex-basis:38px; }
+  .site-header { align-items:center; }
+  .site-header>.brand { margin-right:auto; }
+  .nexus-feature-banner { justify-content:flex-start; border-radius:10px; font-size:.65rem; }
+  .nexus-feature-banner span:not(.banner-pulse) { flex:1 1 100%; }
+  .nexus-guide-section,.nexus-help-section,.nexus-contact-section { margin:26px 0 22px; padding:14px; border-radius:17px; }
+  .nexus-guide-heading { align-items:flex-start; flex-direction:column; }
+  .nexus-guide-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+  .nexus-guide-card { padding:11px; border-radius:12px; }
+  .nexus-guide-card h3 { font-size:.82rem; }
+  .nexus-guide-card p,.nexus-faq-grid details p { font-size:.68rem; }
+  .nexus-faq-grid { grid-template-columns:1fr; gap:7px; }
+  .nexus-contact-section { grid-template-columns:1fr; gap:17px; }
+  .reaction-bar { grid-template-columns:repeat(5,minmax(0,1fr)); }
+  .reaction-button { min-height:44px; padding:4px 1px; }
+  .reaction-label { font-size:.48rem; }
+}
+@media(max-width:380px) {
+  .site-header>.brand { font-size:.68rem; }
+  .theme-select { width:122px; font-size:.57rem; }
+  .header-actions { gap:5px; }
+  .nexus-guide-grid { grid-template-columns:1fr; }
+  .reaction-label { font-size:.44rem; }
+  .reaction-emoji { font-size:.9rem; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .nexus-site-menu,.nexus-menu-toggle span,.reaction-button.reaction-pop { transition:none !important; animation:none !important; }
+}
+
 </style>
 </head>
 <body>
@@ -835,17 +921,19 @@ END WALLPAPER CARD TEMPLATE
 <div class="site-shell">
 <!-- ============================ HEADER ============================= -->
 <header class="site-header">
+<button class="nexus-menu-toggle" id="nexus-menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="nexus-site-menu" aria-expanded="false"><span></span><span></span><span></span></button>
 <a aria-label="NEXUS Wallpapers home" class="brand" href="#top"><span aria-hidden="true" class="brand-mark">N</span><span>NEXUS WALLPAPERS</span></a>
 <div class="header-actions">
-  <div class="theme-control">
+  <div class="theme-control" id="themes-control">
     <label class="visually-hidden" for="nexus-theme-select">Accent colour theme</label>
     <select class="theme-select" id="nexus-theme-select" aria-label="Choose accent colour theme">
-      <option value="cyberpunk">Cyberpunk</option>
-      <option value="crimson">Crimson Gothic</option>
-      <option value="matrix">Matrix</option>
+      <option value="cyberpunk">01 · Original Cyberpunk</option>
+      <option value="chrome">02 · Liquid Chrome</option>
+      <option value="titanium">03 · Midnight Titanium</option>
+      <option value="gold">04 · Liquid Gold</option>
     </select>
   </div>
-  <div class="header-note"><span aria-hidden="true" class="status-dot"></span>The 4K wallpaper archive</div>
+  <div class="header-note"><span aria-hidden="true" class="status-dot"></span>The NEXUS wallpaper archive</div>
   <a class="social-link header-social" href="https://pin.it/1bXoRQY5S"
      target="_blank" rel="noopener noreferrer" aria-label="Visit NEXUS on Pinterest">
     <span class="social-mark" aria-hidden="true">P</span><span class="social-label">Pinterest</span>
@@ -857,12 +945,28 @@ END WALLPAPER CARD TEMPLATE
   </button>
 </div>
 </header>
-<!-- 🚀 NEW FEATURE ANNOUNCEMENT --><a href="#nexus-mystery" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:12px 10px;background:linear-gradient(90deg,#111827,#241447,#111827);border-top:1px solid #7137c8;border-bottom:1px solid #7137c8;color:#e9ddff;text-decoration:none;text-align:center;font-size:13px;font-weight:700;">
-  🎲 NEW FEATURE UNLOCKED!
-  <span style="color:#a5b4fc;">Scratch & Reveal Your Daily Mystery Wallpaper</span>
-  <span style="color:#c084fc;">TRY NOW →</span>
-</a>
-<!-- 🚀 END ANNOUNCEMENT -->
+
+<div class="nexus-menu-scrim" id="nexus-menu-scrim" hidden></div>
+<nav class="nexus-site-menu" id="nexus-site-menu" aria-label="Main navigation" aria-hidden="true" inert>
+  <div class="nexus-menu-head"><div><p class="nexus-menu-kicker">NEXUS / NAVIGATION</p><h2>Explore the Vault</h2></div><button type="button" class="nexus-menu-close" id="nexus-menu-close" aria-label="Close navigation">×</button></div>
+  <div class="nexus-menu-links">
+    <a href="#top" data-menu-close>⌂ <span>Home</span></a>
+    <a href="#wallpaper-grid" data-menu-filter="All">▦ <span>All Wallpapers</span></a>
+    <button type="button" data-menu-filter="NEXUS Originals">✦ <span>NEXUS Originals</span></button>
+    <a href="#featured-section" data-menu-close>◇ <span>Featured Wallpapers</span></a>
+    <a href="#wallpaper-grid" data-menu-sort="latest">◷ <span>Latest Wallpapers</span></a>
+    <a href="#wallpaper-grid" data-menu-sort="popular">↗ <span>Popular Wallpapers</span></a>
+    <a href="#themes-control" data-menu-close>◈ <span>Themes & Appearance</span></a>
+    <a href="#nexus-features-guide" data-menu-close>⌘ <span>Features & Secrets</span></a>
+    <a href="#nexus-help-center" data-menu-close>？ <span>Help Center</span></a>
+    <a href="#terms-policy" data-policy-link="terms-policy" data-menu-close>▤ <span>Terms & Conditions</span></a>
+    <a href="#privacy-policy" data-policy-link="privacy-policy" data-menu-close>◉ <span>Privacy Policy</span></a>
+    <a href="#nexus-contact" data-menu-close>✉ <span>Contact Us</span></a>
+  </div>
+  <p class="nexus-menu-foot">EXPLORE · DISCOVER · PERSONALIZE</p>
+</nav>
+
+<a class="nexus-feature-banner" href="#nexus-mystery" aria-label="Try the daily Mystery Wallpaper Scratch and Reveal feature"><span class="banner-pulse" aria-hidden="true"></span><strong>FEATURE UNLOCKED</strong><span>Scratch &amp; Reveal your daily Mystery Wallpaper</span><b>TRY NOW ↗</b></a>
 <main id="top">
 <!-- ============================== HERO ============================== -->
 <section aria-labelledby="page-title" class="hero">
@@ -875,7 +979,7 @@ END WALLPAPER CARD TEMPLATE
 </section>
 
 <!-- ======================== FEATURED WALLPAPERS ====================== -->
-<section aria-labelledby="featured-title" class="featured-section">
+<section aria-labelledby="featured-title" class="featured-section" id="featured-section">
 <div class="section-heading featured-heading">
 <div><h2 id="featured-title">Featured wallpapers</h2><p>A rotating selection from the existing NEXUS collection.</p></div>
 <span class="featured-kicker">EDITOR'S PICKS</span>
@@ -904,6 +1008,7 @@ END WALLPAPER CARD TEMPLATE
 <option value="latest">Latest</option>
 <option value="az">Title A → Z</option>
 <option value="za">Title Z → A</option>
+<option value="popular">Most Reacted</option>
 </select>
 </div>
 <p aria-live="polite" class="result-count" id="result-count">Showing 50 wallpapers</p>
@@ -2361,6 +2466,21 @@ END WALLPAPER CARD TEMPLATE
 
 <!-- =================================================================== -->
 <!-- 🚀 PDF & MIND HUB — Upload these exact files into the repository's PDF/ folder. -->
+
+<section class="nexus-guide-section" id="nexus-features-guide" aria-labelledby="nexus-guide-title">
+  <div class="nexus-section-eyebrow">NEXUS / FIELD GUIDE</div>
+  <div class="nexus-guide-heading"><div><h2 id="nexus-guide-title">Features &amp; Secrets</h2><p>A quick guide to getting the most from the wallpaper vault.</p></div><span class="nexus-guide-chip">BUILT FOR MOBILE</span></div>
+  <div class="nexus-guide-grid">
+    <article class="nexus-guide-card"><span>01 / DISCOVER</span><h3>Browse &amp; Search</h3><p>Use the category chips to filter anime, moods, and NEXUS Originals. Search by character, series, title, or aesthetic, then sort the results.</p></article>
+    <article class="nexus-guide-card"><span>02 / DOWNLOAD</span><h3>Save the Original</h3><p>Tap Download 4K on a card or open its preview for a larger view. The download link points to the existing original asset path.</p></article>
+    <article class="nexus-guide-card"><span>03 / REACT</span><h3>Global Reactions</h3><p>Choose one reaction per wallpaper. Counts are shared through Firestore and update live for visitors. Anonymous sign-in creates a guest identity; no email is needed to react.</p></article>
+    <article class="nexus-guide-card"><span>04 / PERSONALIZE</span><h3>Four Premium Themes</h3><p>Switch between Original Cyberpunk, Liquid Chrome, Midnight Titanium, and Liquid Gold. Your selected theme is remembered on this device.</p></article>
+    <article class="nexus-guide-card"><span>05 / YOUR VAULT</span><h3>Favorites &amp; Recent</h3><p>Save favourites, revisit recently opened wallpapers, preview in the lightbox, and use the account panel to sync favourites across devices.</p></article>
+    <article class="nexus-guide-card"><span>06 / PLAY</span><h3>Mystery &amp; Mind Hub</h3><p>Scratch the daily Mystery Wallpaper, explore the Mind Hub downloads, and use the featured carousel to discover editor-selected art.</p></article>
+  </div>
+  <div class="nexus-secrets-note"><strong>◈ A secret is hidden in plain sight.</strong><span>Tap the NEXUS WALLPAPERS footer mark five times in quick succession to reveal the VIP Easter Egg. Desktop users can also press Ctrl + Shift + N.</span></div>
+</section>
+
 <section aria-labelledby="mind-hub-title" class="mind-hub" id="mind-hub">
   <div class="section-heading mind-hub-heading">
     <div>
@@ -2652,15 +2772,15 @@ END WALLPAPER CARD TEMPLATE
         <li><strong>Recently viewed wallpapers:</strong> wallpaper IDs used to display your recent items on that browser/device.</li>
         <li><strong>Policy notice preference:</strong> a small preference record so the first-visit Terms &amp; Privacy notice does not keep appearing after you accept it.</li>
         <li><strong>Accent theme preference:</strong> the selected Cyberpunk, Crimson Gothic, or Matrix colour theme.</li>
-        <li><strong>Local reactions:</strong> the reaction you select for a wallpaper on this browser/device.</li>
+        <li><strong>Global reactions:</strong> a Firebase anonymous user ID, wallpaper ID, selected reaction type, and aggregate reaction counters are processed/stored by Cloud Firestore to enforce one vote per authenticated UID per wallpaper and show shared counts.</li>
         <li><strong>Mystery Wallpaper attempts:</strong> the current local-calendar-day attempt count and selected card needed to provide the daily scratch-card feature.</li>
       </ul>
       <p>This browser storage is used to remember site preferences. It is not, by itself, a website account and does not automatically sync between devices. You can remove these records by clearing this website's browser storage, although doing so will also remove locally saved favourites and recent items.</p>
       <p class="legal-note"><strong>Cookies:</strong> The current website code does not intentionally set advertising or analytics cookies. It uses browser local storage for the features described above. If optional account synchronization is configured and enabled in a future deployment, the relevant third-party authentication/storage technology may also be used as described below.</p>
 
       <h3>2. Optional Account &amp; Favourites Synchronization</h3>
-      <p>The website code includes an optional Firebase-based account feature intended to let users synchronize wallpaper favourites across devices. In the HTML version supplied for this update, the Firebase configuration values are blank, so account creation and cloud synchronization are not active until the site owner configures the service.</p>
-      <p>If this feature is enabled in a future deployment and you choose to use it, Firebase Authentication may process your email address and authentication information, and Cloud Firestore may store your account identifier, saved wallpaper IDs, and an update timestamp. Password authentication is handled by Firebase; the website owner does not receive or store your account password. Do not reuse a password from another service.</p>
+      <p>NEXUS uses Firebase Authentication and Cloud Firestore for global wallpaper reactions and optional account-based favourites sync. Visitors may receive an anonymous Firebase user ID so the site can enforce one reaction per authenticated UID per wallpaper without asking for an account. If you choose email/password or Google sign-in, Firebase may also process your email address and authentication information.</p>
+      <p>Cloud Firestore stores reaction documents (wallpaper identifiers, reaction counts, and one vote record per Firebase UID) and, when you use account sync, your account's saved wallpaper IDs and an update timestamp. Password authentication is handled by Firebase; the website owner does not receive or store your account password. Do not reuse a password from another service.</p>
       <p>Firebase is a third-party service operated by Google. Its processing is subject to Google's/Firebase's applicable terms and privacy information. The website loads Firebase modules only when the account feature is opened and a valid configuration is present.</p>
 
       <h3>3. Information You Send to Us</h3>
@@ -2668,7 +2788,7 @@ END WALLPAPER CARD TEMPLATE
 
       <h3>4. Hosting, Technical Data &amp; External Links</h3>
       <p>The website is delivered through a third-party hosting platform. The hosting, network, and security providers may process technical request information such as IP address, browser/device details, requested pages, and request timestamps to deliver, secure, and troubleshoot the website. NEXUS Wallpapers does not operate those infrastructure systems directly.</p>
-      <p>The website may link to third-party services such as Pinterest, Google/Firebase, or other external providers. When you follow an external link or use a third-party service, that provider's own privacy policy and terms apply. NEXUS Wallpapers does not control their independent data practices.</p>
+      <p>The website uses Google Firebase Authentication and Cloud Firestore for guest identity, global reactions, and optional account favourites sync. The Google sign-in provider is available when enabled in Firebase. The site does not initialize Google Analytics in this build. External services such as Pinterest are subject to their own terms and privacy notices.</p>
       <p>The supplied HTML currently contains no Google Analytics or advertising tag/script. If analytics, advertising, or other non-essential tracking tools are added later, this policy and any required consent controls should be updated before those tools are activated.</p>
 
       <h3>5. How We Use Information</h3>
@@ -2691,7 +2811,7 @@ END WALLPAPER CARD TEMPLATE
 
       <h3>9. Contact</h3>
       <p>For privacy questions or requests, contact <a href="mailto:nexuswallpapers.contact@gmail.com">nexuswallpapers.contact@gmail.com</a> with the subject line <strong>Privacy Request – NEXUS Wallpapers</strong>.</p>
-      <p class="legal-note">This policy describes the website code supplied for this update. If you activate Firebase, add analytics/advertising, or introduce additional data collection, review and update this notice to match the live configuration and applicable law.</p>
+      <p class="legal-note">This notice describes the Firebase-backed features included in this build. If you later enable Google Analytics, advertising, new providers, or additional data collection, review and update this notice to match the live configuration and applicable law.</p>
     </article>
   </details>
 
@@ -2730,6 +2850,33 @@ END WALLPAPER CARD TEMPLATE
       <p><strong>NEXUS Wallpapers — Explore. Discover. Personalize.</strong><br>Made for anime fans, one wallpaper at a time.</p>
     </article>
   </details>
+</section>
+
+
+<section class="nexus-help-section" id="nexus-help-center" aria-labelledby="nexus-help-title">
+  <div class="nexus-section-eyebrow">NEXUS / SUPPORT</div>
+  <h2 id="nexus-help-title">Help Center</h2>
+  <p class="nexus-help-intro">Quick answers for common browsing and account questions.</p>
+  <div class="nexus-faq-grid">
+    <details><summary>How do I download a wallpaper?</summary><p>Tap the Download 4K control on a wallpaper card, or open its preview and use the download control there.</p></details>
+    <details><summary>Are wallpapers free?</summary><p>The collection is offered for personal, non-commercial wallpaper use. Downloading does not transfer copyright or commercial rights.</p></details>
+    <details><summary>How do I change themes?</summary><p>Use the theme selector in the header and choose one of the four visual themes. Your choice is saved in this browser.</p></details>
+    <details><summary>How do global reactions work?</summary><p>Firebase Anonymous Authentication gives your browser a guest UID. Firestore accepts one reaction for each UID and wallpaper; shared counts update automatically.</p></details>
+    <details><summary>What is NEXUS Originals?</summary><p>It is the collection label for original character artwork created for the NEXUS collection. Third-party fan art and copyrighted characters are not represented as NEXUS-owned original IP.</p></details>
+    <details><summary>What if an image does not load?</summary><p>Check your connection and retry. If it remains broken, use the existing Feedback / Bug Report link in the footer and include the wallpaper title.</p></details>
+    <details><summary>Why are reactions not updating?</summary><p>Check your connection, Firebase Anonymous Authentication, Firestore deployment, and the published Security Rules. If Firebase is unavailable, reaction controls show an error state instead of claiming a vote succeeded.</p></details>
+    <details><summary>Can I sync favourites?</summary><p>Open Account Sync and sign in with email/password or Google. Local favourites remain available on this device.</p></details>
+  </div>
+</section>
+<section class="nexus-contact-section" id="nexus-contact" aria-labelledby="nexus-contact-title">
+  <div class="nexus-contact-copy"><div class="nexus-section-eyebrow">NEXUS / CONTACT</div><h2 id="nexus-contact-title">Contact Us</h2><p>Questions, broken images, or improvement ideas? Reach the NEXUS contact inbox.</p><a class="nexus-contact-email" href="mailto:nexuswallpapers.contact@gmail.com">nexuswallpapers.contact@gmail.com ↗</a></div>
+  <form class="nexus-contact-form" id="nexus-contact-form">
+    <label for="nexus-contact-name">Name</label><input id="nexus-contact-name" name="name" autocomplete="name" maxlength="80" required placeholder="Your name">
+    <label for="nexus-contact-email">Email</label><input id="nexus-contact-email" name="email" type="email" autocomplete="email" maxlength="160" required placeholder="you@example.com">
+    <label for="nexus-contact-message">Message</label><textarea id="nexus-contact-message" name="message" rows="4" maxlength="2000" required placeholder="How can we help?"></textarea>
+    <button type="submit" class="nexus-contact-submit">Open email app ↗</button>
+    <p class="nexus-contact-note">This form validates your message and opens your email app with a prepared draft. It does not send or store messages on the website.</p>
+  </form>
 </section>
 
 <!-- ============================== FOOTER ============================== -->
@@ -2834,7 +2981,8 @@ END WALLPAPER CARD TEMPLATE
         <button class="account-submit account-create" type="submit" value="create" name="auth-mode" id="account-create">Create account</button>
       </div>
     </form>
-    <p class="account-footnote">Your password is handled by Firebase Authentication. NEXUS stores only wallpaper IDs in your private account favourites document.</p>
+    <button class="account-submit account-google" id="account-google" type="button">Continue with Google</button>
+    <p class="account-footnote">Your password is handled by Firebase Authentication. NEXUS stores only wallpaper IDs in your private account favourites document. Guest reactions use Anonymous Authentication; linking an email or Google account preserves the same guest UID.</p>
   </div>
 </dialog>
 
@@ -2890,10 +3038,13 @@ END WALLPAPER CARD TEMPLATE
    * Without config, local favourites continue working on this device.
    */
   const FIREBASE_CONFIG = {
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    appId: ""
+    apiKey: "AIzaSyBAq8c6EVUBDTpptaxExPak1mEj52gWk_Q",
+    authDomain: "nexus-090.firebaseapp.com",
+    projectId: "nexus-090",
+    storageBucket: "nexus-090.firebasestorage.app",
+    messagingSenderId: "184604786048",
+    appId: "1:184604786048:web:1f114875cea50fe4ae1565",
+    measurementId: "G-ESBW1GJJ3B"
   };
   const FIREBASE_SDK_VERSION = "13.2.0";
 
@@ -3231,22 +3382,27 @@ END WALLPAPER CARD TEMPLATE
   function updateAccountUI() {
     const configured = firebaseConfigReady();
     if (accountLabel) accountLabel.textContent = cloudUser ? "Synced account" : "Account sync";
+    const permanentUser = Boolean(cloudUser && !cloudUser.isAnonymous);
     if (accountStatus) {
-      if (cloudUser) {
+      if (permanentUser) {
         accountStatus.textContent = "Signed in. Your favourites are synced to your NEXUS account.";
+      } else if (cloudUser && cloudUser.isAnonymous) {
+        accountStatus.textContent = "Guest session active. Your reactions are protected by an anonymous Firebase identity. Add email/password or Google sign-in to sync favourites across devices.";
       } else if (!configured) {
-        accountStatus.textContent = "Local favourites are active on this device. To sync across phones and computers, complete the Firebase setup in the code comments, then add your Firebase Web App config.";
+        accountStatus.textContent = "Local favourites are active on this device. Firebase cloud sync is not configured.";
       } else {
         accountStatus.textContent = "Sign in or create an account to sync your favourites across devices.";
       }
     }
-    if (accountSignedIn) accountSignedIn.hidden = !cloudUser;
-    if (accountForm) accountForm.hidden = Boolean(cloudUser);
-    if (accountEmail) accountEmail.textContent = cloudUser ? (cloudUser.email || "Signed-in NEXUS member") : "";
+    if (accountSignedIn) accountSignedIn.hidden = !permanentUser;
+    if (accountForm) accountForm.hidden = permanentUser;
+    if (accountEmail) accountEmail.textContent = permanentUser ? (cloudUser.email || "Signed-in NEXUS member") : "";
     if (accountSignIn) accountSignIn.disabled = !configured;
     if (accountCreate) accountCreate.disabled = !configured;
     if (accountPasswordInput) accountPasswordInput.disabled = !configured;
     if (accountEmailInput) accountEmailInput.disabled = !configured;
+    const googleButton = document.getElementById("account-google");
+    if (googleButton) { googleButton.disabled = !configured; googleButton.hidden = permanentUser; }
   }
 
   async function ensureFirebase() {
@@ -3417,12 +3573,42 @@ END WALLPAPER CARD TEMPLATE
       try {
         const { auth, authApi } = await ensureFirebase();
         if (mode === "create") {
-          await authApi.createUserWithEmailAndPassword(auth, email, password);
+          if (auth.currentUser && auth.currentUser.isAnonymous) {
+            const credential = authApi.EmailAuthProvider.credential(email, password);
+            await authApi.linkWithCredential(auth.currentUser, credential);
+          } else {
+            await authApi.createUserWithEmailAndPassword(auth, email, password);
+          }
         } else {
           await authApi.signInWithEmailAndPassword(auth, email, password);
         }
         if (accountPasswordInput) accountPasswordInput.value = "";
         if (accountDialog && typeof accountDialog.close === "function") accountDialog.close();
+      } catch (error) {
+        if (accountStatus) accountStatus.textContent = friendlyAuthError(error);
+        showToast(friendlyAuthError(error), "error", 4200);
+      } finally {
+        updateAccountUI();
+      }
+    });
+  }
+
+
+  const accountGoogle = document.getElementById("account-google");
+  if (accountGoogle) {
+    accountGoogle.addEventListener("click", async () => {
+      accountGoogle.disabled = true;
+      if (accountStatus) accountStatus.textContent = "Connecting to Google…";
+      try {
+        const { auth, authApi } = await ensureFirebase();
+        const provider = new authApi.GoogleAuthProvider();
+        if (auth.currentUser && auth.currentUser.isAnonymous) {
+          await authApi.linkWithPopup(auth.currentUser, provider);
+        } else {
+          await authApi.signInWithPopup(auth, provider);
+        }
+        if (accountDialog && typeof accountDialog.close === "function") accountDialog.close();
+        showToast("Google account connected to NEXUS.", "success");
       } catch (error) {
         if (accountStatus) accountStatus.textContent = friendlyAuthError(error);
         showToast(friendlyAuthError(error), "error", 4200);
@@ -3522,6 +3708,12 @@ END WALLPAPER CARD TEMPLATE
       matched.sort((a, b) => meta(a).title.localeCompare(meta(b).title, undefined, { sensitivity: "base" }));
     } else if (state.sort === "za") {
       matched.sort((a, b) => meta(b).title.localeCompare(meta(a).title, undefined, { sensitivity: "base" }));
+    } else if (state.sort === "popular") {
+      const totals = window.NEXUS_REACTION_TOTALS || {};
+      matched.sort((a, b) => {
+        const total = card => Object.values(totals[card.dataset.wallpaperId] || {}).reduce((sum, value) => sum + (Number(value) || 0), 0);
+        return total(b) - total(a) || originalOrder.indexOf(a) - originalOrder.indexOf(b);
+      });
     }
 
     return matched;
@@ -4026,6 +4218,9 @@ END WALLPAPER CARD TEMPLATE
       updateWallpapers();
     });
   }
+  window.addEventListener("nexus:reaction-totals-updated", () => {
+    if (state.sort === "popular") { state.limit = BATCH; updateWallpapers(); }
+  });
 
   // Load more
   if (loadMoreBtn) {
@@ -4135,7 +4330,7 @@ END WALLPAPER CARD TEMPLATE
     <div class="consent-copy">
       <p class="consent-kicker">NEXUS · PRIVACY &amp; TERMS</p>
       <h2 id="nexus-consent-title">A quick note about your privacy</h2>
-      <p>We use essential browser storage to remember favourites, recently viewed wallpapers, your selected accent theme, local reactions, Mystery Wallpaper progress and this notice preference. By selecting Accept &amp; Continue, you acknowledge our <a href="#terms-policy" data-policy-link="terms-policy">Terms &amp; Conditions</a> and <a href="#privacy-policy" data-policy-link="privacy-policy">Privacy Policy</a>.</p>
+      <p>We use essential browser storage to remember favourites, recently viewed wallpapers, your selected theme, Firebase reaction status, Mystery Wallpaper progress and this notice preference. By selecting Accept &amp; Continue, you acknowledge our <a href="#terms-policy" data-policy-link="terms-policy">Terms &amp; Conditions</a> and <a href="#privacy-policy" data-policy-link="privacy-policy">Privacy Policy</a>.</p>
     </div>
     <div class="consent-actions">
       <button class="consent-button consent-button-secondary" id="nexus-view-policies" type="button">View policies</button>
@@ -4213,146 +4408,231 @@ END WALLPAPER CARD TEMPLATE
   "use strict";
 
   /* ---------------------------------------------------------------
-     NEXUS LOCAL REACTIONS
-     One reaction per wallpaper per browser/device. These are local
-     counts only; no server or cross-visitor aggregation is implied.
+     NEXUS GLOBAL FIRESTORE REACTIONS
+     One immutable vote per Firebase UID + wallpaper ID.
+     Counts are public-read / securely-transactional-write in Firestore.
      --------------------------------------------------------------- */
-  const reactionStorageKey = "nexus-wallpaper-reactions-v1";
   const reactionTypes = [
-    { id: "love", emoji: "😍", label: "Love" },
+    { id: "love", emoji: "❤️", label: "Love" },
     { id: "fire", emoji: "🔥", label: "Fire" },
     { id: "cool", emoji: "😎", label: "Cool" },
-    { id: "bug", emoji: "🐛", label: "Bug" }
+    { id: "awesome", emoji: "⚡", label: "Awesome" },
+    { id: "legendary", emoji: "💎", label: "Legendary" }
   ];
-
-  function readReactions() {
-    try {
-      const raw = localStorage.getItem(reactionStorageKey);
-      const parsed = raw ? JSON.parse(raw) : {};
-      return parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : {};
-    } catch (error) {
-      return {};
-    }
-  }
-
-  function writeReactions(data) {
-    try {
-      localStorage.setItem(reactionStorageKey, JSON.stringify(data));
-      return true;
-    } catch (error) {
-      return false;
-    }
-  }
-
-  const reactions = readReactions();
+  const reactionStorageKey = "nexus-firestore-reactions-v2";
+  const firebaseConfig = {
+    apiKey: "AIzaSyBAq8c6EVUBDTpptaxExPak1mEj52gWk_Q",
+    authDomain: "nexus-090.firebaseapp.com",
+    projectId: "nexus-090",
+    storageBucket: "nexus-090.firebasestorage.app",
+    messagingSenderId: "184604786048",
+    appId: "1:184604786048:web:1f114875cea50fe4ae1565",
+    measurementId: "G-ESBW1GJJ3B"
+  };
   const wallpaperCards = Array.from(document.querySelectorAll("#wallpaper-grid .wallpaper-card"));
+  const reactionCounts = Object.create(null);
+  let reactionSelections = {};
+  let reactionUser = null;
+  let reactionDb = null;
+  let reactionFirestore = null;
+  let reactionReady = false;
+  let reactionError = "";
+  let reactionInitPromise = null;
 
-  function reactionId(card) {
-    return card.dataset.wallpaperId || card.id || "";
+  try {
+    const parsed = JSON.parse(localStorage.getItem(reactionStorageKey) || "{}");
+    if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) reactionSelections = parsed;
+  } catch (_) { reactionSelections = {}; }
+
+  function reactionId(card) { return card.dataset.wallpaperId || card.id || ""; }
+  function emptyCounts() { return { love: 0, fire: 0, cool: 0, awesome: 0, legendary: 0 }; }
+  function selectedReaction(id) {
+    return reactionUser && reactionSelections[reactionUser.uid] && reactionSelections[reactionUser.uid][id] || "";
   }
-
+  function saveReactionSelection(id, type) {
+    if (!reactionUser) return;
+    if (!reactionSelections[reactionUser.uid]) reactionSelections[reactionUser.uid] = {};
+    reactionSelections[reactionUser.uid][id] = type;
+    try { localStorage.setItem(reactionStorageKey, JSON.stringify(reactionSelections)); } catch (_) { /* Firestore remains authoritative. */ }
+  }
+  function showReactionStatus(message, type) {
+    const status = document.getElementById("site-toast");
+    if (!status) return;
+    status.textContent = message;
+    status.dataset.type = type || "info";
+    status.classList.add("is-visible");
+    window.clearTimeout(status._nexusTimer);
+    status._nexusTimer = window.setTimeout(() => status.classList.remove("is-visible"), 3200);
+  }
   function updateReactionBar(card, bar) {
     const id = reactionId(card);
-    const selected = reactions[id] || "";
+    const selected = selectedReaction(id);
+    const counts = reactionCounts[id] || emptyCounts();
     reactionTypes.forEach(type => {
       const button = bar.querySelector('[data-reaction-choice="' + type.id + '"]');
       if (!button) return;
       const isSelected = selected === type.id;
-      const count = selected === type.id ? 1 : 0;
       button.setAttribute("aria-pressed", String(isSelected));
-      button.disabled = Boolean(selected);
+      button.disabled = !reactionReady || Boolean(selected) || button.dataset.pending === "true";
       button.classList.toggle("is-selected", isSelected);
-      button.querySelector(".reaction-count").textContent = String(count);
-      button.setAttribute("aria-label",
-        type.label + " reaction, " + count + " local reaction" + (count === 1 ? "" : "s") +
-        (isSelected ? ", your reaction" : selected ? ", reaction already submitted" : ""));
+      button.querySelector(".reaction-count").textContent = String(Number(counts[type.id]) || 0);
+      button.querySelector(".reaction-label").textContent = type.label;
+      button.setAttribute("aria-label", type.label + " reaction, " + (Number(counts[type.id]) || 0) + " global reactions" + (isSelected ? ", your reaction" : selected ? ", you have already reacted" : ""));
+      button.title = type.label + " — one reaction per wallpaper per Firebase account";
+    });
+    const note = bar.nextElementSibling;
+    if (note && note.classList.contains("reaction-local-note")) {
+      note.textContent = reactionReady
+        ? (selected ? "Your vote is saved · global live count" : "Global live reactions · one vote per wallpaper")
+        : (reactionError || "Connecting to global reactions…");
+      note.dataset.state = reactionReady ? "ready" : "error";
+    }
+  }
+  function updateAllReactionBars() {
+    wallpaperCards.forEach(card => {
+      const bar = card.querySelector(".reaction-bar");
+      if (bar) updateReactionBar(card, bar);
     });
   }
-
   function createReactionBar(card) {
     if (card.querySelector(".reaction-bar")) return;
     const id = reactionId(card);
-    if (!id) return;
-
     const content = card.querySelector(".card-content");
-    if (!content) return;
-
+    if (!id || !content) return;
     const bar = document.createElement("div");
     bar.className = "reaction-bar";
     bar.dataset.wallpaperReactionBar = id;
     bar.setAttribute("role", "group");
-    bar.setAttribute("aria-label", "Local reactions for " +
-      ((card.querySelector(".card-title") || {}).textContent || "this wallpaper").trim());
-
+    bar.setAttribute("aria-label", "Global reactions for " + ((card.querySelector(".card-title") || {}).textContent || "this wallpaper").trim());
     reactionTypes.forEach(type => {
       const button = document.createElement("button");
       button.type = "button";
       button.className = "reaction-button";
       button.dataset.reactionChoice = type.id;
-      button.innerHTML =
-        '<span class="reaction-emoji" aria-hidden="true"></span>' +
-        '<span class="reaction-label"></span>' +
-        '<span class="reaction-count" aria-live="polite">0</span>';
+      button.disabled = true;
+      button.innerHTML = '<span class="reaction-emoji" aria-hidden="true"></span><span class="reaction-label"></span><span class="reaction-count" aria-live="polite">0</span>';
       button.querySelector(".reaction-emoji").textContent = type.emoji;
       button.querySelector(".reaction-label").textContent = type.label;
-      button.title = type.label + " — one reaction per wallpaper on this device";
       bar.appendChild(button);
     });
-
     const note = document.createElement("p");
     note.className = "reaction-local-note";
-    note.textContent = "Local reaction · saved on this device";
+    note.textContent = "Connecting to global reactions…";
     const tools = content.querySelector(".card-tools");
-    if (tools) {
-      tools.insertAdjacentElement("afterend", bar);
-      bar.insertAdjacentElement("afterend", note);
-    } else {
-      content.append(bar, note);
-    }
+    if (tools) tools.insertAdjacentElement("afterend", bar);
+    else content.appendChild(bar);
+    bar.insertAdjacentElement("afterend", note);
     updateReactionBar(card, bar);
   }
-
   wallpaperCards.forEach(createReactionBar);
+
+  async function initGlobalReactions() {
+    if (reactionInitPromise) return reactionInitPromise;
+    reactionInitPromise = (async () => {
+      const base = "https://www.gstatic.com/firebasejs/13.2.0/";
+      const [appApi, authApi, firestoreApi] = await Promise.all([
+        import(base + "firebase-app.js"),
+        import(base + "firebase-auth.js"),
+        import(base + "firebase-firestore.js")
+      ]);
+      const app = appApi.getApps().length ? appApi.getApp() : appApi.initializeApp(firebaseConfig);
+      const auth = authApi.getAuth(app);
+      reactionDb = firestoreApi.getFirestore(app);
+      reactionFirestore = firestoreApi;
+      authApi.onAuthStateChanged(auth, user => {
+        reactionUser = user || null;
+        updateAllReactionBars();
+      });
+      if (!auth.currentUser) await authApi.signInAnonymously(auth);
+      reactionUser = auth.currentUser || reactionUser;
+      const countsQuery = firestoreApi.collection(reactionDb, "wallpaperReactions");
+      firestoreApi.onSnapshot(countsQuery, snapshot => {
+        snapshot.docChanges().forEach(change => {
+          const data = change.doc.data() || {};
+          reactionCounts[change.doc.id] = Object.assign(emptyCounts(), data.counts || {});
+        });
+        window.NEXUS_REACTION_TOTALS = reactionCounts;
+        updateAllReactionBars();
+        window.dispatchEvent(new CustomEvent("nexus:reaction-totals-updated"));
+      }, error => {
+        console.warn("NEXUS global reactions listener error:", error);
+        reactionReady = false;
+        reactionError = "Global reactions unavailable · check Firebase connection and rules";
+        updateAllReactionBars();
+      });
+      reactionReady = true;
+      reactionError = "";
+      updateAllReactionBars();
+      return true;
+    })().catch(error => {
+      console.warn("NEXUS global reactions could not initialize:", error);
+      reactionReady = false;
+      reactionError = "Global reactions unavailable · please try again later";
+      updateAllReactionBars();
+      reactionInitPromise = null;
+      return false;
+    });
+    return reactionInitPromise;
+  }
 
   const grid = document.getElementById("wallpaper-grid");
   if (grid) {
-    grid.addEventListener("click", event => {
+    grid.addEventListener("click", async event => {
       const button = event.target.closest("[data-reaction-choice]");
       if (!button) return;
       const card = button.closest(".wallpaper-card");
-      if (!card) return;
-
-      const id = reactionId(card);
-      if (!id) return;
-      if (reactions[id]) {
-        const status = document.getElementById("site-toast");
-        if (status) {
-          status.textContent = "You have already reacted to this wallpaper on this device.";
-          status.dataset.type = "info";
-          status.classList.add("is-visible");
-          window.setTimeout(() => status.classList.remove("is-visible"), 2400);
-        }
+      const id = card && reactionId(card);
+      const type = button.dataset.reactionChoice;
+      if (!id || !reactionTypes.some(item => item.id === type)) return;
+      if (selectedReaction(id)) {
+        showReactionStatus("You have already reacted to this wallpaper.", "info");
         return;
       }
-
-      const type = button.dataset.reactionChoice;
-      if (!reactionTypes.some(item => item.id === type)) return;
-      reactions[id] = type;
-      const saved = writeReactions(reactions);
-      const bar = button.closest(".reaction-bar");
-      if (bar) updateReactionBar(card, bar);
-
-      const status = document.getElementById("site-toast");
-      if (status) {
-        status.textContent = saved
-          ? "Reaction saved on this device. Thanks for sharing!"
-          : "Reaction selected for this visit, but browser storage is unavailable.";
-        status.dataset.type = saved ? "success" : "warn";
-        status.classList.add("is-visible");
-        window.setTimeout(() => status.classList.remove("is-visible"), 2600);
+      if (!reactionReady || !reactionUser || !reactionDb || !reactionFirestore) {
+        showReactionStatus(reactionError || "Global reactions are not connected. Your vote was not submitted.", "warn");
+        return;
+      }
+      button.dataset.pending = "true";
+      button.disabled = true;
+      button.querySelector(".reaction-label").textContent = "Saving…";
+      try {
+        const voteRef = reactionFirestore.doc(reactionDb, "wallpaperReactions", id, "votes", reactionUser.uid);
+        const counterRef = reactionFirestore.doc(reactionDb, "wallpaperReactions", id);
+        await reactionFirestore.runTransaction(reactionDb, async transaction => {
+          const voteSnap = await transaction.get(voteRef);
+          const counterSnap = await transaction.get(counterRef);
+          if (voteSnap.exists()) {
+            const prior = (voteSnap.data() || {}).reaction || "";
+            throw new Error("ALREADY_VOTED:" + prior);
+          }
+          const oldCounts = Object.assign(emptyCounts(), counterSnap.exists() ? ((counterSnap.data() || {}).counts || {}) : {});
+          const nextCounts = Object.assign({}, oldCounts);
+          nextCounts[type] = (Number(nextCounts[type]) || 0) + 1;
+          transaction.set(voteRef, { reaction: type, createdAt: reactionFirestore.serverTimestamp() });
+          transaction.set(counterRef, { counts: nextCounts, updatedAt: reactionFirestore.serverTimestamp() });
+        });
+        saveReactionSelection(id, type);
+        button.classList.add("reaction-pop");
+        updateReactionBar(card, button.closest(".reaction-bar"));
+        showReactionStatus("Your reaction is live. Thanks for helping the NEXUS community!", "success");
+      } catch (error) {
+        const message = String(error && error.message || "");
+        if (message.startsWith("ALREADY_VOTED:")) {
+          const prior = message.split(":")[1];
+          if (reactionTypes.some(item => item.id === prior)) saveReactionSelection(id, prior);
+          updateReactionBar(card, button.closest(".reaction-bar"));
+          showReactionStatus("A reaction for this wallpaper is already recorded for your account.", "info");
+        } else {
+          console.warn("NEXUS reaction write failed:", error);
+          showReactionStatus("Reaction was not saved. Check connection and Firestore Rules, then try again.", "error");
+        }
+      } finally {
+        delete button.dataset.pending;
+        updateReactionBar(card, button.closest(".reaction-bar"));
       }
     });
   }
+  initGlobalReactions();
 
   /* ---------------------------------------------------------------
      TALLY FEEDBACK — opens the user's external form in a new tab.
@@ -4699,7 +4979,7 @@ END WALLPAPER CARD TEMPLATE
   /* MULTI-THEME ACCENT SWITCHER */
   const themeKey = "nexus-theme-preference-v1";
   const themeSelect = document.getElementById("nexus-theme-select");
-  const validThemes = new Set(["cyberpunk", "crimson", "matrix"]);
+  const validThemes = new Set(["cyberpunk", "chrome", "titanium", "gold"]);
   let activeTheme = document.documentElement.dataset.theme || "cyberpunk";
   try {
     const stored = localStorage.getItem(themeKey);
@@ -4823,6 +5103,89 @@ END WALLPAPER CARD TEMPLATE
   }, { passive: true });
 
   document.addEventListener("touchcancel", resetPull, { passive: true });
+})();
+</script>
+
+
+<script>
+(() => {
+  "use strict";
+  const toggle = document.getElementById("nexus-menu-toggle");
+  const menu = document.getElementById("nexus-site-menu");
+  const scrim = document.getElementById("nexus-menu-scrim");
+  const close = document.getElementById("nexus-menu-close");
+  let lastFocus = null;
+  function setMenu(open) {
+    if (!toggle || !menu || !scrim) return;
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+    menu.setAttribute("aria-hidden", String(!open));
+    if (open) {
+      lastFocus = document.activeElement;
+      menu.inert = false;
+      menu.hidden = false;
+      scrim.hidden = false;
+      document.body.classList.add("nexus-menu-open");
+      requestAnimationFrame(() => menu.classList.add("is-open"));
+      const first = menu.querySelector("a,button");
+      if (first) first.focus();
+    } else {
+      menu.classList.remove("is-open");
+      document.body.classList.remove("nexus-menu-open");
+      window.setTimeout(() => { menu.hidden = true; menu.inert = true; scrim.hidden = true; }, 250);
+      if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+    }
+  }
+  if (toggle) toggle.addEventListener("click", () => setMenu(toggle.getAttribute("aria-expanded") !== "true"));
+  if (close) close.addEventListener("click", () => setMenu(false));
+  if (scrim) scrim.addEventListener("click", () => setMenu(false));
+  document.addEventListener("keydown", event => { if (event.key === "Escape" && toggle && toggle.getAttribute("aria-expanded") === "true") setMenu(false); });
+  if (menu) menu.addEventListener("keydown", event => {
+    if (event.key !== "Tab") return;
+    const focusable = Array.from(menu.querySelectorAll('a[href],button:not([disabled])')).filter(el => !el.hidden);
+    if (!focusable.length) return;
+    const first = focusable[0], last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  });
+  if (menu) menu.addEventListener("click", event => {
+    const filter = event.target.closest("[data-menu-filter]");
+    const sort = event.target.closest("[data-menu-sort]");
+    if (filter) {
+      const pill = document.querySelector('.category-pill[data-filter="' + CSS.escape(filter.dataset.menuFilter) + '"]');
+      if (pill) pill.click();
+      setMenu(false);
+      document.getElementById("wallpaper-grid")?.scrollIntoView({behavior:"smooth",block:"start"});
+      return;
+    }
+    if (sort) {
+      const allPill = document.querySelector('.category-pill[data-filter="All"]');
+      if (allPill) allPill.click();
+      const select = document.getElementById("sort-select");
+      if (select) { select.value = sort.dataset.menuSort; select.dispatchEvent(new Event("change", {bubbles:true})); }
+    }
+    if (event.target.closest("[data-menu-close]") || event.target.closest("a")) setMenu(false);
+  });
+
+  // Optional keyboard Easter Egg for desktop; footer five-tap remains available everywhere.
+  document.addEventListener("keydown", event => {
+    if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === "n") {
+      const trigger = document.getElementById("nexus-easter-trigger");
+      if (trigger) { event.preventDefault(); [1,2,3,4,5].forEach((_, i) => window.setTimeout(() => trigger.click(), i * 90)); }
+    }
+  });
+
+  // This form opens a pre-addressed email draft; it does not submit data to a website backend.
+  const contactForm = document.getElementById("nexus-contact-form");
+  if (contactForm) contactForm.addEventListener("submit", event => {
+    event.preventDefault();
+    if (!contactForm.reportValidity()) return;
+    const data = new FormData(contactForm);
+    const subject = "NEXUS Wallpapers — Website enquiry";
+    const body = "Name: " + data.get("name") + "\nReply email: " + data.get("email") + "\n\nMessage:\n" + data.get("message");
+    const mailto = "mailto:nexuswallpapers.contact@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    window.location.href = mailto;
+  });
 })();
 </script>
 
