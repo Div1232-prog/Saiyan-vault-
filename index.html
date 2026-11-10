@@ -1,26 +1,36 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="cyberpunk">
 <head>
     <meta name="google-site-verification" content="UsZdPG1wEf3OlgjmP2neOXyIj_fwjWCoZ4wW-9zkTb8" />
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
+<script>
+  // Apply the saved accent theme before the page styles render to avoid a theme flash.
+  try {
+    const savedNexusTheme = localStorage.getItem("nexus-theme-preference-v1");
+    document.documentElement.dataset.theme = ["cyberpunk", "crimson", "matrix"].includes(savedNexusTheme)
+      ? savedNexusTheme : "cyberpunk";
+  } catch (_) {
+    document.documentElement.dataset.theme = "cyberpunk";
+  }
+</script>
 <meta content="#000000" name="theme-color"/>
-<meta content="Explore free 4K anime wallpapers, vertical 9:16 mobile backgrounds, curated aesthetic collections and practical psychology PDFs from NEXUS Wallpapers." name="description"/>
-<meta content="free 4K anime wallpapers, mobile backgrounds, dark Saiyan aesthetic, Goku, Gojo, Sukuna, 9:16 vertical wallpapers, Rengoku, Tanjiro, Asta, Killua, Denji, L Lawliet, Sung Jin-Woo, Ichigo" name="keywords"/>
+<meta content="Explore cinematic 4K anime wallpapers, exclusive NEXUS Originals character art, vertical mobile backgrounds and practical psychology guides from NEXUS Wallpapers." name="description"/>
+<meta content="free 4K anime wallpapers, NEXUS Originals, original character art, mobile backgrounds, dark Saiyan aesthetic, Goku, Gojo, Sukuna, 9:16 vertical wallpapers, Rengoku, Tanjiro, Asta, Killua, Denji, L Lawliet, Sung Jin-Woo, Ichigo" name="keywords"/>
 <meta content="index, follow" name="robots"/>
 <meta content="NEXUS Wallpapers" name="author"/>
 <link href="https://div1232-prog.github.io/Saiyan-vault-/NEXUS-Anime-Wallpapers.html" rel="canonical"/>
 <meta content="website" property="og:type"/>
 <meta content="NEXUS Wallpapers" property="og:site_name"/>
-<meta content="NEXUS Anime Wallpapers | Free 4K 9:16 Mobile Lockscreen Backgrounds" property="og:title"/>
-<meta content="Explore free 4K anime wallpapers and vertical 9:16 mobile backgrounds. Preview your favourite characters and download the original high-resolution files." property="og:description"/>
+<meta content="NEXUS Wallpapers | Anime Wallpapers &amp; NEXUS Originals" property="og:title"/>
+<meta content="Explore cinematic 4K anime wallpapers, original NEXUS character art and practical psychology guides." property="og:description"/>
 <meta content="https://div1232-prog.github.io/Saiyan-vault-/NEXUS-Anime-Wallpapers.html" property="og:url"/>
 <meta content="https://div1232-prog.github.io/Saiyan-vault-/wallpapers/satoru-gojo-infinity-4k-wallpaper.webp" property="og:image"/>
 <meta content="Satoru Gojo Infinity anime wallpaper preview from NEXUS Wallpapers" property="og:image:alt"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="NEXUS Anime Wallpapers | Free 4K Mobile Lockscreen Backgrounds" name="twitter:title"/>
-<meta content="Explore vertical 9:16 anime wallpapers and download original high-resolution files." name="twitter:description"/>
-<title>NEXUS Anime Wallpapers | Free 4K 9:16 Mobile Lockscreen Backgrounds</title>
+<meta content="NEXUS Wallpapers | NEXUS Originals" name="twitter:title"/>
+<meta content="Discover cinematic anime wallpapers, exclusive original character art and more from NEXUS Wallpapers." name="twitter:description"/>
+<title>NEXUS Wallpapers | Anime Wallpapers &amp; NEXUS Originals</title>
 <style>
     :root { color-scheme: dark; --bg: #000; --surface: rgba(15,23,42,.65); --text: #e1e1e6; --muted: #9299a8; --line: rgba(148,163,184,.18); --line-strong: rgba(148,163,184,.32); --accent: #a78bfa; --accent-2: #67e8f9; --radius: 20px; --content-width: 1440px; }
     *,*::before,*::after { box-sizing: border-box; }
@@ -644,13 +654,137 @@
   .reaction-button,.feedback-cta-link,.mystery-button,.mystery-stage.is-revealed canvas { transition:none !important; }
 }
 
+
+
+/* ===== NEXUS ORIGINALS + FOUR FEATURE ENHANCEMENTS ===== */
+:root[data-theme="cyberpunk"] {
+  --bg:#000000; --surface:rgba(15,23,42,.65); --accent:#a78bfa; --accent-2:#67e8f9;
+  --theme-soft:rgba(124,58,237,.18); --theme-border:rgba(167,139,250,.58); --theme-text:#eee9ff;
+  --theme-glow:rgba(103,232,249,.25); --theme-gradient:linear-gradient(105deg,#a78bfa,#67e8f9);
+}
+:root[data-theme="crimson"] {
+  --bg:#050204; --surface:rgba(31,8,16,.72); --accent:#fb7185; --accent-2:#ef4444;
+  --theme-soft:rgba(190,24,93,.18); --theme-border:rgba(251,113,133,.58); --theme-text:#ffe4e9;
+  --theme-glow:rgba(239,68,68,.24); --theme-gradient:linear-gradient(105deg,#fb7185,#b91c1c);
+}
+:root[data-theme="matrix"] {
+  --bg:#020603; --surface:rgba(5,22,10,.75); --accent:#a3e635; --accent-2:#22c55e;
+  --theme-soft:rgba(34,197,94,.16); --theme-border:rgba(163,230,53,.58); --theme-text:#ecfccb;
+  --theme-glow:rgba(34,197,94,.23); --theme-gradient:linear-gradient(105deg,#a3e635,#22c55e);
+}
+.theme-control { display:inline-flex; align-items:center; }
+.theme-select {
+  width:118px; min-height:38px; padding:0 27px 0 10px; border:1px solid var(--theme-border);
+  border-radius:11px; background:rgba(8,10,17,.88); color:var(--theme-text); cursor:pointer;
+  font-size:.68rem; font-weight:750; appearance:auto;
+}
+.theme-select:focus-visible { outline:2px solid var(--accent-2); outline-offset:3px; }
+.theme-select option { background:#080b12; color:#f1f5f9; }
+:root[data-theme] .brand-mark { border-color:var(--theme-border); background:var(--theme-soft); color:var(--theme-text); }
+:root[data-theme] .category-pill[aria-pressed="true"] { border-color:var(--theme-border); background:var(--theme-soft); color:var(--theme-text); }
+:root[data-theme] .download-button,
+:root[data-theme] .featured-view,
+:root[data-theme] .load-more-button,
+:root[data-theme] .mystery-button { border-color:var(--theme-border); background:var(--theme-soft); color:var(--theme-text); }
+:root[data-theme] .card-action:hover,
+:root[data-theme] .carousel-control:hover,
+:root[data-theme] .back-to-top:hover { border-color:var(--theme-border); }
+:root[data-theme] .eyebrow,
+:root[data-theme] .card-category,
+:root[data-theme] .lightbox-eyebrow,
+:root[data-theme] .legal-document a { color:var(--accent); }
+:root[data-theme] .eyebrow::before,
+:root[data-theme] .eyebrow::after { background:var(--accent); }
+:root[data-theme] .gradient-text { background-image:var(--theme-gradient); }
+:root[data-theme] .category-pill[data-filter="NEXUS Originals"] { border-color:var(--theme-border); box-shadow:0 0 16px var(--theme-glow); }
+.exclusive-badge {
+  display:inline-flex; align-items:center; margin-left:7px; padding:4px 7px; border:1px solid var(--theme-border);
+  border-radius:999px; background:var(--theme-soft); color:var(--theme-text); font-size:.52rem;
+  font-weight:900; letter-spacing:.09em; box-shadow:0 0 12px var(--theme-glow);
+}
+.theme-select, .exclusive-badge { transition:border-color 160ms ease,background 160ms ease,color 160ms ease; }
+
+/* Double-tap favourite heart */
+.wallpaper-media { position:relative; touch-action:pan-y; }
+.nexus-doubletap-heart {
+  position:absolute; z-index:4; top:50%; left:50%; color:#fff; font-size:clamp(3.5rem,12vw,5.5rem);
+  line-height:1; text-shadow:0 0 12px var(--accent-2),0 0 28px var(--accent); pointer-events:none;
+  transform:translate(-50%,-50%) scale(.35); animation:nexus-heart-pop 680ms cubic-bezier(.18,.78,.25,1) forwards;
+}
+@keyframes nexus-heart-pop {
+  0% { opacity:0; transform:translate(-50%,-50%) scale(.35); }
+  22% { opacity:1; transform:translate(-50%,-50%) scale(1.14); }
+  55% { opacity:1; transform:translate(-50%,-50%) scale(.96); }
+  100% { opacity:0; transform:translate(-50%,-50%) scale(1.24); }
+}
+
+/* Five-tap Easter egg and VIP card */
+.easter-trigger { cursor:pointer; }
+.easter-trigger:focus-visible { outline:2px solid var(--accent-2); outline-offset:4px; border-radius:4px; }
+body.nexus-glitch::after {
+  position:fixed; z-index:2000; inset:0; content:""; pointer-events:none;
+  background:repeating-linear-gradient(0deg,rgba(34,211,238,.10) 0 1px,transparent 1px 4px),
+    linear-gradient(90deg,transparent 0 44%,rgba(167,139,250,.18) 49%,transparent 54%);
+  mix-blend-mode:screen; animation:nexus-matrix-glitch 2s steps(2,end) both;
+}
+@keyframes nexus-matrix-glitch {
+  0% { opacity:0; transform:translateX(0); clip-path:inset(0 0 100% 0); }
+  12% { opacity:1; clip-path:inset(10% 0 70% 0); transform:translateX(-4px); }
+  27% { clip-path:inset(42% 0 35% 0); transform:translateX(5px); }
+  43% { clip-path:inset(70% 0 12% 0); transform:translateX(-3px); }
+  62% { clip-path:inset(18% 0 58% 0); transform:translateX(4px); }
+  82% { clip-path:inset(0 0 0 0); opacity:.65; transform:translateX(-1px); }
+  100% { opacity:0; transform:translateX(0); }
+}
+.nexus-vip-card {
+  margin:28px 0 34px; padding:clamp(18px,3vw,28px); border:1px solid var(--theme-border);
+  border-radius:20px; background:radial-gradient(ellipse at 15% 0%,var(--theme-soft),transparent 55%),rgba(7,9,16,.96);
+  box-shadow:0 0 28px var(--theme-glow); text-align:center;
+}
+.nexus-vip-card h2 { margin:0 0 8px; color:var(--theme-text); font-size:clamp(1.15rem,3vw,1.55rem); }
+.nexus-vip-card p { margin:0; color:var(--muted); font-size:.82rem; line-height:1.65; }
+.nexus-vip-art-slot {
+  display:grid; min-height:110px; place-items:center; margin:16px auto 0; padding:18px; max-width:560px;
+  border:1px dashed var(--theme-border); border-radius:14px; background:rgba(2,6,23,.42); color:var(--muted);
+  font-size:.75rem; line-height:1.6;
+}
+
+/* Pull-to-refresh indicator */
+.nexus-pull-indicator {
+  position:fixed; z-index:1500; top:calc(9px + env(safe-area-inset-top)); left:50%; display:flex; align-items:center; gap:9px;
+  min-height:42px; padding:8px 14px; border:1px solid var(--theme-border); border-radius:999px;
+  background:rgba(5,8,15,.96); color:var(--theme-text); font-size:.69rem; font-weight:800;
+  box-shadow:0 8px 28px rgba(0,0,0,.45),0 0 18px var(--theme-glow); opacity:0; pointer-events:none;
+  transform:translate(-50%,-150%); transition:transform 160ms ease,opacity 160ms ease;
+}
+.nexus-pull-indicator.is-visible { opacity:1; transform:translate(-50%,0); }
+.nexus-rain-spinner { display:flex; height:23px; align-items:center; gap:2px; overflow:hidden; color:var(--accent-2); font:900 .78rem/1 ui-monospace,monospace; text-shadow:0 0 8px var(--accent-2); }
+.nexus-rain-spinner i { display:inline-block; font-style:normal; opacity:.35; transform:translateY(-7px); }
+.nexus-pull-indicator.is-loading .nexus-rain-spinner i { animation:nexus-rain-fall 520ms linear infinite; }
+.nexus-pull-indicator.is-loading .nexus-rain-spinner i:nth-child(2) { animation-delay:90ms; }
+.nexus-pull-indicator.is-loading .nexus-rain-spinner i:nth-child(3) { animation-delay:180ms; }
+.nexus-pull-indicator.is-loading .nexus-rain-spinner i:nth-child(4) { animation-delay:270ms; }
+@keyframes nexus-rain-fall { 0% { opacity:.2; transform:translateY(-10px); } 55% { opacity:1; } 100% { opacity:.45; transform:translateY(10px); } }
+:root[data-theme] body { background:radial-gradient(ellipse at 50% -18%,var(--theme-glow),transparent 48%),var(--bg); }
+@media (max-width:700px) {
+  .site-header { flex-wrap:wrap; gap:8px; padding:10px 0; }
+  .header-actions { width:100%; justify-content:flex-end; gap:7px; }
+  .theme-select { width:128px; min-height:36px; padding-left:8px; font-size:.63rem; }
+  .nexus-vip-card { padding:16px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .nexus-doubletap-heart,.nexus-pull-indicator.is-loading .nexus-rain-spinner i { animation:none !important; }
+  body.nexus-glitch::after { display:none !important; }
+  .nexus-doubletap-heart { opacity:0; }
+}
+
 </style>
 </head>
 <body>
 <!--
 ===================================================================
 🧩 NEW WALLPAPER CARD TEMPLATE — COPY, PASTE, THEN EDIT THE VALUES
-Keep data-category exactly equal to an existing anime filter pill.
+Keep data-category exactly equal to an existing category filter, including NEXUS Originals.
 Use data-tags for optional mood filters, separated with | characters.
 Do not remove this comment wrapper; it keeps the sample out of the live grid.
 
@@ -703,6 +837,14 @@ END WALLPAPER CARD TEMPLATE
 <header class="site-header">
 <a aria-label="NEXUS Wallpapers home" class="brand" href="#top"><span aria-hidden="true" class="brand-mark">N</span><span>NEXUS WALLPAPERS</span></a>
 <div class="header-actions">
+  <div class="theme-control">
+    <label class="visually-hidden" for="nexus-theme-select">Accent colour theme</label>
+    <select class="theme-select" id="nexus-theme-select" aria-label="Choose accent colour theme">
+      <option value="cyberpunk">Cyberpunk</option>
+      <option value="crimson">Crimson Gothic</option>
+      <option value="matrix">Matrix</option>
+    </select>
+  </div>
   <div class="header-note"><span aria-hidden="true" class="status-dot"></span>The 4K wallpaper archive</div>
   <a class="social-link header-social" href="https://pin.it/1bXoRQY5S"
      target="_blank" rel="noopener noreferrer" aria-label="Visit NEXUS on Pinterest">
@@ -725,8 +867,8 @@ END WALLPAPER CARD TEMPLATE
 <!-- ============================== HERO ============================== -->
 <section aria-labelledby="page-title" class="hero">
 <p class="eyebrow">Curated for your screen</p>
-<h1 id="page-title">Anime in <span class="gradient-text">Every Pixel.</span></h1>
-<p class="hero-description">Explore cinematic 4K anime wallpapers, aesthetic collections and practical psychology guides. Preview each design and download original wallpaper and PDF files in one tap.</p>
+<h1 id="page-title">Anime in Every Pixel. <span class="gradient-text">Now Featuring NEXUS Originals.</span></h1>
+<p class="hero-description">Explore cinematic 4K wallpapers, exclusive original character art, and practical psychology guides. Download original files in one tap.</p>
 <div aria-label="Collection features" class="collection-meta">
 <span class="meta-chip">4K original downloads</span><span class="meta-chip">Vertical 9:16 format</span><span class="meta-chip">Instant downloads</span>
 </div>
@@ -767,7 +909,8 @@ END WALLPAPER CARD TEMPLATE
 <p aria-live="polite" class="result-count" id="result-count">Showing 50 wallpapers</p>
 </div>
 </div>
-<nav aria-label="Filter wallpapers by anime series and aesthetic" class="category-nav">
+<nav aria-label="Filter wallpapers by NEXUS Originals, anime series and aesthetic" class="category-nav">
+<button aria-pressed="false" class="category-pill" data-filter="NEXUS Originals" type="button"><span>NEXUS Originals</span><span class="exclusive-badge">EXCLUSIVE</span></button>
 <button aria-pressed="true" class="category-pill" data-filter="All" type="button">All</button>
 <button aria-pressed="false" class="category-pill" data-filter="Jujutsu Kaisen" type="button">Jujutsu Kaisen</button>
 <button aria-pressed="false" class="category-pill" data-filter="Naruto" type="button">Naruto</button>
@@ -2013,7 +2156,199 @@ END WALLPAPER CARD TEMPLATE
     </a>
 <div aria-label="Actions for Wanderer Mountain Valley Sunset" class="card-tools"><button aria-label="Save Wanderer Mountain Valley Sunset to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Wanderer Mountain Valley Sunset wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Wanderer Mountain Valley Sunset on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Wanderer Mountain Valley Sunset on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Wanderer Mountain Valley Sunset" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 </article>
-    
+   
+ <article class="wallpaper-card" data-category="NEXUS Originals" data-search="aetherion celestial guardian original character fantasy art angelic knight 4k 9:16 mobile vertical wallpaper NEXUS Originals" data-wallpaper-id="wp-aetherion-celestial-guardian" id="wp-aetherion-celestial-guardian" data-tags="Fantasy">
+<div aria-label="Preview Aetherion &mdash; The Celestial Guardian wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
+<img alt="Aetherion, a celestial guardian original character in a fantasy aesthetic &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/aetherion-the-celestial-guardian-aesthetic-art.webp" width="900"/>
+<div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>aetherion-the-celestial-guardian-aesthetic-art.webp</span></div>
+<span class="quality-tag">4K ORIGINAL</span>
+</div>
+<div class="card-content">
+<div class="card-topline"><span class="card-category">NEXUS Originals</span><span class="file-type">PNG</span></div>
+<h3 class="card-title">Aetherion &mdash; The Celestial Guardian</h3>
+<a aria-label="Download Aetherion The Celestial Guardian 4K wallpaper" class="download-button" data-download="true" download="aetherion-the-celestial-guardian-aesthetic-art.png" href="wallpapers/aetherion-the-celestial-guardian-aesthetic-art.png">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
+      Download 4K
+    </a>
+<div aria-label="Actions for Aetherion &mdash; The Celestial Guardian" class="card-tools"><button aria-label="Save Aetherion &mdash; The Celestial Guardian to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Aetherion &mdash; The Celestial Guardian wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Aetherion &mdash; The Celestial Guardian on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Aetherion &mdash; The Celestial Guardian on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Aetherion &mdash; The Celestial Guardian" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
+</article>
+
+<article class="wallpaper-card" data-category="NEXUS Originals" data-search="draeven void monarch original character dark fantasy king purple aura 4k 9:16 mobile vertical wallpaper NEXUS Originals" data-wallpaper-id="wp-draeven-void-monarch" id="wp-draeven-void-monarch" data-tags="Dark Minimalist">
+<div aria-label="Preview Draeven &mdash; The Void Monarch wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
+<img alt="Draeven, the Void Monarch original character with a dark purple aura &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/draeven-the-void-monarch-4k-wallpaper.webp" width="900"/>
+<div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>draeven-the-void-monarch-4k-wallpaper.webp</span></div>
+<span class="quality-tag">4K ORIGINAL</span>
+</div>
+<div class="card-content">
+<div class="card-topline"><span class="card-category">NEXUS Originals</span><span class="file-type">PNG</span></div>
+<h3 class="card-title">Draeven &mdash; The Void Monarch</h3>
+<a aria-label="Download Draeven The Void Monarch 4K wallpaper" class="download-button" data-download="true" download="draeven-the-void-monarch-4k-wallpaper.png" href="wallpapers/draeven-the-void-monarch-4k-wallpaper.png">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
+      Download 4K
+    </a>
+<div aria-label="Actions for Draeven &mdash; The Void Monarch" class="card-tools"><button aria-label="Save Draeven &mdash; The Void Monarch to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Draeven &mdash; The Void Monarch wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Draeven &mdash; The Void Monarch on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Draeven &mdash; The Void Monarch on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Draeven &mdash; The Void Monarch" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
+</article>
+
+<article class="wallpaper-card" data-category="NEXUS Originals" data-search="elyra emerald empress original character fantasy nature queen green 4k 9:16 mobile vertical wallpaper NEXUS Originals" data-wallpaper-id="wp-elyra-emerald-empress" id="wp-elyra-emerald-empress" data-tags="Nature &amp; Architecture">
+<div aria-label="Preview Elyra &mdash; The Emerald Empress wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
+<img alt="Elyra, the Emerald Empress original fantasy character art &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/elyra-the-emerald-empress-fantasy-art.webp" width="900"/>
+<div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>elyra-the-emerald-empress-fantasy-art.webp</span></div>
+<span class="quality-tag">4K ORIGINAL</span>
+</div>
+<div class="card-content">
+<div class="card-topline"><span class="card-category">NEXUS Originals</span><span class="file-type">PNG</span></div>
+<h3 class="card-title">Elyra &mdash; The Emerald Empress</h3>
+<a aria-label="Download Elyra The Emerald Empress 4K wallpaper" class="download-button" data-download="true" download="elyra-the-emerald-empress-fantasy-art.png" href="wallpapers/elyra-the-emerald-empress-fantasy-art.png">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
+      Download 4K
+    </a>
+<div aria-label="Actions for Elyra &mdash; The Emerald Empress" class="card-tools"><button aria-label="Save Elyra &mdash; The Emerald Empress to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Elyra &mdash; The Emerald Empress wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Elyra &mdash; The Emerald Empress on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Elyra &mdash; The Emerald Empress on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Elyra &mdash; The Emerald Empress" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
+</article>
+
+<article class="wallpaper-card" data-category="NEXUS Originals" data-search="elysia emerald queen original character close up portrait green fantasy 4k 9:16 mobile vertical wallpaper NEXUS Originals" data-wallpaper-id="wp-elysia-emerald-queen" id="wp-elysia-emerald-queen" data-tags="Nature &amp; Architecture">
+<div aria-label="Preview Elysia &mdash; Emerald Queen wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
+<img alt="Elysia, the Emerald Queen original character close-up portrait &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/elysia-emerald-queen-close-up-art.webp" width="900"/>
+<div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>elysia-emerald-queen-close-up-art.webp</span></div>
+<span class="quality-tag">4K ORIGINAL</span>
+</div>
+<div class="card-content">
+<div class="card-topline"><span class="card-category">NEXUS Originals</span><span class="file-type">PNG</span></div>
+<h3 class="card-title">Elysia &mdash; Emerald Queen</h3>
+<a aria-label="Download Elysia Emerald Queen 4K wallpaper" class="download-button" data-download="true" download="elysia-emerald-queen-close-up-art.png" href="wallpapers/elysia-emerald-queen-close-up-art.png">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
+      Download 4K
+    </a>
+<div aria-label="Actions for Elysia &mdash; Emerald Queen" class="card-tools"><button aria-label="Save Elysia &mdash; Emerald Queen to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Elysia &mdash; Emerald Queen wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Elysia &mdash; Emerald Queen on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Elysia &mdash; Emerald Queen on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Elysia &mdash; Emerald Queen" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
+</article>
+
+<article class="wallpaper-card" data-category="NEXUS Originals" data-search="kael void hunter original character cyberpunk sci-fi portrait blue neon 4k 9:16 mobile vertical wallpaper NEXUS Originals" data-wallpaper-id="wp-kael-void-hunter" id="wp-kael-void-hunter" data-tags="Dark Minimalist">
+<div aria-label="Preview Kael &mdash; Void Hunter wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
+<img alt="Kael, a cyberpunk Void Hunter original character portrait &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/kael-void-hunter-cyberpunk-portrait.webp" width="900"/>
+<div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>kael-void-hunter-cyberpunk-portrait.webp</span></div>
+<span class="quality-tag">4K ORIGINAL</span>
+</div>
+<div class="card-content">
+<div class="card-topline"><span class="card-category">NEXUS Originals</span><span class="file-type">PNG</span></div>
+<h3 class="card-title">Kael &mdash; Void Hunter</h3>
+<a aria-label="Download Kael Void Hunter 4K wallpaper" class="download-button" data-download="true" download="kael-void-hunter-cyberpunk-portrait.png" href="wallpapers/kael-void-hunter-cyberpunk-portrait.png">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
+      Download 4K
+    </a>
+<div aria-label="Actions for Kael &mdash; Void Hunter" class="card-tools"><button aria-label="Save Kael &mdash; Void Hunter to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Kael &mdash; Void Hunter wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Kael &mdash; Void Hunter on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Kael &mdash; Void Hunter on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Kael &mdash; Void Hunter" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
+</article>
+
+<article class="wallpaper-card" data-category="NEXUS Originals" data-search="kaizen crimson ronin original character samurai red armor dark fantasy 4k 9:16 mobile vertical wallpaper NEXUS Originals" data-wallpaper-id="wp-kaizen-crimson-ronin" id="wp-kaizen-crimson-ronin" data-tags="Dark Minimalist">
+<div aria-label="Preview Kaizen &mdash; The Crimson Ronin wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
+<img alt="Kaizen, the Crimson Ronin original character in red samurai armor &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/kaizen-the-crimson-ronin-4k-wallpaper.webp" width="900"/>
+<div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>kaizen-the-crimson-ronin-4k-wallpaper.webp</span></div>
+<span class="quality-tag">4K ORIGINAL</span>
+</div>
+<div class="card-content">
+<div class="card-topline"><span class="card-category">NEXUS Originals</span><span class="file-type">PNG</span></div>
+<h3 class="card-title">Kaizen &mdash; The Crimson Ronin</h3>
+<a aria-label="Download Kaizen The Crimson Ronin 4K wallpaper" class="download-button" data-download="true" download="kaizen-the-crimson-ronin-4k-wallpaper.png" href="wallpapers/kaizen-the-crimson-ronin-4k-wallpaper.png">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
+      Download 4K
+    </a>
+<div aria-label="Actions for Kaizen &mdash; The Crimson Ronin" class="card-tools"><button aria-label="Save Kaizen &mdash; The Crimson Ronin to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Kaizen &mdash; The Crimson Ronin wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Kaizen &mdash; The Crimson Ronin on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Kaizen &mdash; The Crimson Ronin on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Kaizen &mdash; The Crimson Ronin" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
+</article>
+
+<article class="wallpaper-card" data-category="NEXUS Originals" data-search="lunara moonlit sorceress original character magic purple fantasy witch 4k 9:16 mobile vertical wallpaper NEXUS Originals" data-wallpaper-id="wp-lunara-moonlit-sorceress" id="wp-lunara-moonlit-sorceress" data-tags="Fantasy">
+<div aria-label="Preview Lunara &mdash; The Moonlit Sorceress wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
+<img alt="Lunara, the Moonlit Sorceress original character casting magic &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/lunara-the-moonlit-sorceress-wallpaper.webp" width="900"/>
+<div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>lunara-the-moonlit-sorceress-wallpaper.webp</span></div>
+<span class="quality-tag">4K ORIGINAL</span>
+</div>
+<div class="card-content">
+<div class="card-topline"><span class="card-category">NEXUS Originals</span><span class="file-type">PNG</span></div>
+<h3 class="card-title">Lunara &mdash; The Moonlit Sorceress</h3>
+<a aria-label="Download Lunara The Moonlit Sorceress 4K wallpaper" class="download-button" data-download="true" download="lunara-the-moonlit-sorceress-wallpaper.png" href="wallpapers/lunara-the-moonlit-sorceress-wallpaper.png">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
+      Download 4K
+    </a>
+<div aria-label="Actions for Lunara &mdash; The Moonlit Sorceress" class="card-tools"><button aria-label="Save Lunara &mdash; The Moonlit Sorceress to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Lunara &mdash; The Moonlit Sorceress wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Lunara &mdash; The Moonlit Sorceress on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Lunara &mdash; The Moonlit Sorceress on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Lunara &mdash; The Moonlit Sorceress" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
+</article>
+
+<article class="wallpaper-card" data-category="NEXUS Originals" data-search="ryuka azure storm original character anime warrior blue lightning katana 4k 9:16 mobile vertical wallpaper NEXUS Originals" data-wallpaper-id="wp-ryuka-azure-storm" id="wp-ryuka-azure-storm" data-tags="Anime Mix">
+<div aria-label="Preview Ryuka &mdash; The Azure Storm wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
+<img alt="Ryuka, the Azure Storm original anime character wielding a katana &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/ryuka-the-azure-storm-anime-wallpaper.webp" width="900"/>
+<div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>ryuka-the-azure-storm-anime-wallpaper.webp</span></div>
+<span class="quality-tag">4K ORIGINAL</span>
+</div>
+<div class="card-content">
+<div class="card-topline"><span class="card-category">NEXUS Originals</span><span class="file-type">PNG</span></div>
+<h3 class="card-title">Ryuka &mdash; The Azure Storm</h3>
+<a aria-label="Download Ryuka The Azure Storm 4K wallpaper" class="download-button" data-download="true" download="ryuka-the-azure-storm-anime-wallpaper.png" href="wallpapers/ryuka-the-azure-storm-anime-wallpaper.png">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
+      Download 4K
+    </a>
+<div aria-label="Actions for Ryuka &mdash; The Azure Storm" class="card-tools"><button aria-label="Save Ryuka &mdash; The Azure Storm to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Ryuka &mdash; The Azure Storm wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Ryuka &mdash; The Azure Storm on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Ryuka &mdash; The Azure Storm on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Ryuka &mdash; The Azure Storm" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
+</article>
+
+<article class="wallpaper-card" data-category="NEXUS Originals" data-search="seraphina moonlight beauty original character portrait silver hair night aesthetic 4k 9:16 mobile vertical wallpaper NEXUS Originals" data-wallpaper-id="wp-seraphina-moonlight-beauty" id="wp-seraphina-moonlight-beauty" data-tags="Dark Minimalist">
+<div aria-label="Preview Seraphina &mdash; Moonlight Beauty wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
+<img alt="Seraphina, a Moonlight Beauty original character portrait &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/seraphina-moonlight-beauty-aesthetic-wallpaper.webp" width="900"/>
+<div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>seraphina-moonlight-beauty-aesthetic-wallpaper.webp</span></div>
+<span class="quality-tag">4K ORIGINAL</span>
+</div>
+<div class="card-content">
+<div class="card-topline"><span class="card-category">NEXUS Originals</span><span class="file-type">PNG</span></div>
+<h3 class="card-title">Seraphina &mdash; Moonlight Beauty</h3>
+<a aria-label="Download Seraphina Moonlight Beauty 4K wallpaper" class="download-button" data-download="true" download="seraphina-moonlight-beauty-aesthetic-wallpaper.png" href="wallpapers/seraphina-moonlight-beauty-aesthetic-wallpaper.png">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
+      Download 4K
+    </a>
+<div aria-label="Actions for Seraphina &mdash; Moonlight Beauty" class="card-tools"><button aria-label="Save Seraphina &mdash; Moonlight Beauty to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Seraphina &mdash; Moonlight Beauty wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Seraphina &mdash; Moonlight Beauty on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Seraphina &mdash; Moonlight Beauty on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Seraphina &mdash; Moonlight Beauty" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
+</article>
+
+<article class="wallpaper-card" data-category="NEXUS Originals" data-search="solen last flame original character fire warrior golden armor 4k 9:16 mobile vertical wallpaper NEXUS Originals" data-wallpaper-id="wp-solen-last-flame" id="wp-solen-last-flame" data-tags="Fantasy">
+<div aria-label="Preview Solen &mdash; The Last Flame wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
+<img alt="Solen, The Last Flame original warrior character in golden armor &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/solen-the-last-flame-aesthetic-wallpaper.webp" width="900"/>
+<div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>solen-the-last-flame-aesthetic-wallpaper.webp</span></div>
+<span class="quality-tag">4K ORIGINAL</span>
+</div>
+<div class="card-content">
+<div class="card-topline"><span class="card-category">NEXUS Originals</span><span class="file-type">PNG</span></div>
+<h3 class="card-title">Solen &mdash; The Last Flame</h3>
+<a aria-label="Download Solen The Last Flame 4K wallpaper" class="download-button" data-download="true" download="solen-the-last-flame-aesthetic-wallpaper.png" href="wallpapers/solen-the-last-flame-aesthetic-wallpaper.png">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
+      Download 4K
+    </a>
+<div aria-label="Actions for Solen &mdash; The Last Flame" class="card-tools"><button aria-label="Save Solen &mdash; The Last Flame to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Solen &mdash; The Last Flame wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Solen &mdash; The Last Flame on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Solen &mdash; The Last Flame on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Solen &mdash; The Last Flame" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
+</article>
+
+<article class="wallpaper-card" data-category="NEXUS Originals" data-search="vex shadow reaper original character cyberpunk dark fantasy grim reaper 4k 9:16 mobile vertical wallpaper NEXUS Originals" data-wallpaper-id="wp-vex-shadow-reaper" id="wp-vex-shadow-reaper" data-tags="Dark Minimalist">
+<div aria-label="Preview Vex &mdash; The Shadow Reaper wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
+<img alt="Vex, the Shadow Reaper original character in a cyberpunk style &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/vex-the-shadow-reaper-cyberpunk-wallpaper.webp" width="900"/>
+<div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>vex-the-shadow-reaper-cyberpunk-wallpaper.webp</span></div>
+<span class="quality-tag">4K ORIGINAL</span>
+</div>
+<div class="card-content">
+<div class="card-topline"><span class="card-category">NEXUS Originals</span><span class="file-type">PNG</span></div>
+<h3 class="card-title">Vex &mdash; The Shadow Reaper</h3>
+<a aria-label="Download Vex The Shadow Reaper 4K wallpaper" class="download-button" data-download="true" download="vex-the-shadow-reaper-cyberpunk-wallpaper.png" href="wallpapers/vex-the-shadow-reaper-cyberpunk-wallpaper.png">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
+      Download 4K
+    </a>
+<div aria-label="Actions for Vex &mdash; The Shadow Reaper" class="card-tools"><button aria-label="Save Vex &mdash; The Shadow Reaper to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Vex &mdash; The Shadow Reaper wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Vex &mdash; The Shadow Reaper on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Vex &mdash; The Shadow Reaper on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Vex &mdash; The Shadow Reaper" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
+</article>
+
+<article class="wallpaper-card" data-category="NEXUS Originals" data-search="zerath inferno queen original character fire fantasy demonic red orange 4k 9:16 mobile vertical wallpaper NEXUS Originals" data-wallpaper-id="wp-zerath-inferno-queen" id="wp-zerath-inferno-queen" data-tags="Fantasy">
+<div aria-label="Preview Zerath &mdash; The Inferno Queen wallpaper" class="wallpaper-media" data-action="preview" role="button" tabindex="0">
+<img alt="Zerath, the Inferno Queen original character with fire magic &mdash; 4K 9:16 vertical mobile wallpaper" decoding="async" height="1600" loading="lazy" src="wallpapers/zerath-the-inferno-queen-4k-aesthetic.webp" width="900"/>
+<div class="image-placeholder" hidden=""><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect height="18" rx="3" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg><span>Add your 9:16 wallpaper<br/>zerath-the-inferno-queen-4k-aesthetic.webp</span></div>
+<span class="quality-tag">4K ORIGINAL</span>
+</div>
+<div class="card-content">
+<div class="card-topline"><span class="card-category">NEXUS Originals</span><span class="file-type">PNG</span></div>
+<h3 class="card-title">Zerath &mdash; The Inferno Queen</h3>
+<a aria-label="Download Zerath The Inferno Queen 4K wallpaper" class="download-button" data-download="true" download="zerath-the-inferno-queen-4k-aesthetic.png" href="wallpapers/zerath-the-inferno-queen-4k-aesthetic.png">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>
+      Download 4K
+    </a>
+<div aria-label="Actions for Zerath &mdash; The Inferno Queen" class="card-tools"><button aria-label="Save Zerath &mdash; The Inferno Queen to favourites" aria-pressed="false" class="card-action favorite-action" data-action="favorite" type="button"><span aria-hidden="true" class="action-glyph">♡</span><span class="action-label">Save</span></button><button aria-label="Share Zerath &mdash; The Inferno Queen wallpaper" class="card-action share-action" data-action="share" type="button"><span aria-hidden="true" class="action-glyph">&nearrow;</span><span class="action-label">Share</span></button><button aria-label="Share Zerath &mdash; The Inferno Queen on WhatsApp" class="card-action whatsapp-share-action" data-action="whatsapp-share" type="button"><span aria-hidden="true" class="action-glyph">WA</span></button><button aria-label="Share Zerath &mdash; The Inferno Queen on Pinterest" class="card-action pinterest-share-action" data-action="pinterest-share" type="button"><span aria-hidden="true" class="action-glyph">P</span></button><button aria-label="Copy Pinterest tags for Zerath &mdash; The Inferno Queen" class="card-action copy-tags-action" data-action="copy-tags" type="button"><span aria-hidden="true" class="action-glyph">#</span><span class="action-label">Tags</span></button></div></div>
+</article>
+  
 </div>
 
 <div class="load-more-wrap" id="load-more-wrap" hidden>
@@ -2150,7 +2485,7 @@ END WALLPAPER CARD TEMPLATE
   <details class="legal-accordion" id="terms-policy">
     <summary>Terms &amp; Conditions</summary>
     <article class="legal-document">
-      <p class="legal-updated"><strong>Last Updated:</strong> November 9, 2026</p>
+      <p class="legal-updated"><strong>Last Updated:</strong> November 10, 2026</p>
       <h3>1. Acceptance of Terms</h3>
       <p>Welcome to NEXUS Wallpapers. By accessing, browsing, or downloading any content from this website, you acknowledge that you have read, understood, and agreed to these Terms &amp; Conditions.</p>
       <p>If you do not agree with any part of these terms, please discontinue using the website. These terms apply to all visitors and users of NEXUS Wallpapers.</p>
@@ -2165,6 +2500,16 @@ END WALLPAPER CARD TEMPLATE
         <li>Users are responsible for respecting the intellectual property rights of the original copyright owners.</li>
       </ul>
       <p>NEXUS Wallpapers is an unofficial fan-oriented platform and is not affiliated with, sponsored by, or officially endorsed by any anime studio, publisher, or franchise owner.</p>
+
+      <h3>NEXUS Originals — Intellectual Property &amp; Personal Use</h3>
+      <p>NEXUS Originals is a dedicated collection of original characters and wallpaper artwork developed specifically for the NEXUS Wallpapers project and its community. NEXUS Wallpapers claims rights only in material for which it genuinely owns or controls the relevant intellectual property rights; third-party tools, contributors, or other rights holders may retain rights where applicable.</p>
+      <ul>
+        <li>Where NEXUS Wallpapers holds the relevant rights, NEXUS Originals artwork and character designs are protected intellectual property.</li>
+        <li>Visitors may download those wallpapers for personal, non-commercial device personalization, including use as mobile or desktop backgrounds.</li>
+        <li>Downloading a file does not transfer copyright, ownership, or any commercial license.</li>
+        <li>Commercial resale, sublicensing, unauthorized redistribution, or presenting the artwork as your own creation is not permitted.</li>
+        <li>Any use beyond personal device wallpaper requires prior written permission from the relevant rights holder.</li>
+      </ul>
 
       <h3>3. Permitted &amp; Prohibited Use</h3>
       <p><strong>You are welcome to:</strong></p>
@@ -2214,14 +2559,14 @@ END WALLPAPER CARD TEMPLATE
   <details class="legal-accordion" id="dmca-policy">
     <summary>DMCA Notice &amp; Takedown Policy</summary>
     <article class="legal-document">
-      <p class="legal-updated"><strong>Last Updated:</strong> November 9, 2026</p>
-      <p>At NEXUS Wallpapers (https://saiyan-vault.pages.dev), we respect intellectual property rights and take copyright concerns seriously. Our website is independently managed and provides free anime wallpapers, fan-inspired artwork, and digital wallpapers for personal, non-commercial enjoyment.</p>
+      <p class="legal-updated"><strong>Last Updated:</strong> November 10, 2026</p>
+      <p>At NEXUS Wallpapers (https://saiyan-vault.pages.dev), we respect intellectual property rights and take copyright concerns seriously. The website features curated anime-related wallpapers and fan-oriented aesthetics alongside NEXUS Originals, our collection of original characters and wallpaper artwork. Rights in NEXUS Originals are claimed only where NEXUS Wallpapers genuinely owns or controls the relevant rights; third-party anime characters, artwork, and franchises remain with their respective rights holders.</p>
       <p>We understand that some content may involve characters, artwork, or intellectual property owned by third parties. If you are a copyright owner or an authorized representative and believe that material available on our website infringes your copyright, you may submit a removal request.</p>
 
       <h3>1. Submitting a Copyright Complaint</h3>
       <p>Please send a written copyright complaint to <a href="mailto:nexuswallpapers.contact@gmail.com">nexuswallpapers.contact@gmail.com</a>.</p>
       <p><strong>Subject Line:</strong> Copyright Removal Request – NEXUS Wallpapers</p>
-      <p>To help us review your request, please include:</p>
+      <p>To help us review your request, please include the exact page or image URL on NEXUS Wallpapers where the disputed material appears, together with the following information:</p>
       <ol>
         <li><strong>Your identification:</strong> Your full name and contact information.</li>
         <li><strong>Copyrighted work:</strong> A description of the original copyrighted material you own or represent.</li>
@@ -2259,8 +2604,11 @@ END WALLPAPER CARD TEMPLATE
   <details class="legal-accordion" id="copyright-policy">
     <summary>Copyright &amp; Fan Art Policy</summary>
     <article class="legal-document">
-      <p class="legal-updated"><strong>Last Updated:</strong> November 9, 2026</p>
+      <p class="legal-updated"><strong>Last Updated:</strong> November 10, 2026</p>
       <p>At NEXUS Wallpapers, we appreciate anime, digital art, creativity, and the communities built around them. Our goal is to provide anime enthusiasts and wallpaper lovers with a collection of free digital wallpapers for personal enjoyment.</p>
+
+      <h3>NEXUS Originals — Original Character &amp; Wallpaper Art</h3>
+      <p>NEXUS Originals is our dedicated collection of original characters and wallpaper artwork created or developed specifically for the NEXUS Wallpapers community. These designs form part of the site's own creative direction. NEXUS Wallpapers claims ownership or control only where the relevant creation, assignment, license, and other rights support that claim. Do not copy, commercially resell, redistribute, sublicense, or present protected NEXUS Originals material as your own without written permission from the rights holder.</p>
 
       <h3>1. Ownership of Anime Characters &amp; Franchises</h3>
       <p>All anime characters, franchise names, logos, trademarks, and officially associated intellectual property belong to their respective copyright and trademark owners. This includes, but is not limited to, properties associated with:</p>
@@ -2275,16 +2623,16 @@ END WALLPAPER CARD TEMPLATE
       <p>NEXUS Wallpapers does not claim ownership of these characters, franchises, or third-party intellectual property.</p>
 
       <h3>2. Fan Art &amp; Wallpaper Usage</h3>
-      <p>Some wallpapers available on this website may be fan-inspired, digitally edited, or created using digital design tools. These wallpapers are provided for free personal, non-commercial enjoyment.</p>
+      <p>Some third-party anime wallpapers available on this website may be fan-inspired, digitally edited, or created using digital design tools. These are distinct from NEXUS Originals. Anime characters, franchise elements, and third-party source artwork remain the property of their respective rights holders. Such wallpapers are provided for free personal, non-commercial enjoyment only to the extent permitted by applicable rights and law.</p>
       <p><strong>Visitors may:</strong> Download wallpapers for personal use, set them as backgrounds, and enjoy the collection individually.</p>
       <p><strong>Visitors may not:</strong> Sell wallpapers, redistribute them for commercial profit, claim third-party art as their own, or use content in commercial products without authorization. Downloading does not transfer ownership.</p>
 
       <h3>3. Respect for Original Creators &amp; Content Removal</h3>
       <p>We recognize the time, creativity, and effort invested by anime studios and creators. NEXUS Wallpapers aims to respect their intellectual property and is not affiliated with or endorsed by any official anime studio.</p>
-      <p>If you are an artist or copyright owner and believe material on NEXUS Wallpapers infringes your rights, please contact us at <a href="mailto:nexuswallpapers.contact@gmail.com">nexuswallpapers.contact@gmail.com</a>.</p>
+      <p>If you are an artist or copyright owner and believe either a NEXUS Originals item or third-party material on NEXUS Wallpapers infringes your rights, please contact us at <a href="mailto:nexuswallpapers.contact@gmail.com">nexuswallpapers.contact@gmail.com</a> with the relevant page or image URL and a description of the rights involved. Please see our <a href="#dmca-policy" data-policy-link="dmca-policy">DMCA Notice &amp; Takedown Policy</a> for reporting details.</p>
 
       <h3>4. Original Digital Content &amp; Final Statement</h3>
-      <p>Any original website layouts, branding elements, descriptions, and independently created designs associated with NEXUS Wallpapers remain subject to their respective intellectual property rights. Third-party intellectual property remains the property of its respective owners.</p>
+      <p>Any original website layouts, branding elements, descriptions, NEXUS Originals characters, and independently created wallpaper designs associated with NEXUS Wallpapers remain subject to the intellectual property rights actually held in those works. Third-party intellectual property remains the property of its respective owners.</p>
       <p>NEXUS Wallpapers exists to celebrate creativity and provide anime fans with a place to discover wallpapers they enjoy. We believe in respecting original creators while making digital wallpaper collections accessible for personal enjoyment.</p>
       <p><strong>NEXUS Wallpapers — Created for fans. Shared with respect.</strong></p>
     </article>
@@ -2294,7 +2642,7 @@ END WALLPAPER CARD TEMPLATE
   <details class="legal-accordion" id="privacy-policy">
     <summary>Privacy Policy</summary>
     <article class="legal-document">
-      <p class="legal-updated"><strong>Last Updated:</strong> November 9, 2026</p>
+      <p class="legal-updated"><strong>Last Updated:</strong> November 10, 2026</p>
       <p>This Privacy Policy explains how NEXUS Wallpapers (https://saiyan-vault.pages.dev), an independently managed website, handles information when you browse the website, save wallpapers, use its optional account feature, or contact the site owner.</p>
 
       <h3>1. Information Stored on Your Device</h3>
@@ -2303,6 +2651,9 @@ END WALLPAPER CARD TEMPLATE
         <li><strong>Saved favourites:</strong> wallpaper IDs saved on your current browser/device.</li>
         <li><strong>Recently viewed wallpapers:</strong> wallpaper IDs used to display your recent items on that browser/device.</li>
         <li><strong>Policy notice preference:</strong> a small preference record so the first-visit Terms &amp; Privacy notice does not keep appearing after you accept it.</li>
+        <li><strong>Accent theme preference:</strong> the selected Cyberpunk, Crimson Gothic, or Matrix colour theme.</li>
+        <li><strong>Local reactions:</strong> the reaction you select for a wallpaper on this browser/device.</li>
+        <li><strong>Mystery Wallpaper attempts:</strong> the current local-calendar-day attempt count and selected card needed to provide the daily scratch-card feature.</li>
       </ul>
       <p>This browser storage is used to remember site preferences. It is not, by itself, a website account and does not automatically sync between devices. You can remove these records by clearing this website's browser storage, although doing so will also remove locally saved favourites and recent items.</p>
       <p class="legal-note"><strong>Cookies:</strong> The current website code does not intentionally set advertising or analytics cookies. It uses browser local storage for the features described above. If optional account synchronization is configured and enabled in a future deployment, the relevant third-party authentication/storage technology may also be used as described below.</p>
@@ -2366,6 +2717,9 @@ END WALLPAPER CARD TEMPLATE
         <li><strong>Digital Resources:</strong> Selected productivity guides, PDFs, and creative resources.</li>
       </ul>
 
+      <h3>NEXUS Originals — Our Own Creative Universe</h3>
+      <p>NEXUS Originals is the next chapter of the project: a dedicated universe of original characters and custom wallpaper artwork developed for the NEXUS Wallpapers community. With its own cyberpunk-inspired atmosphere, character concepts, and visual identity, this collection gives the brand a creative space beyond curated anime aesthetics. Rights in each original work are represented according to the rights actually held by NEXUS Wallpapers and any contributing creators.</p>
+
       <h3>Our Mission &amp; Solo Management</h3>
       <p>Our mission is simple: make discovering and enjoying beautiful wallpapers easy, accessible, and free. We aim to provide a clean browsing experience, free personal downloads, diverse visual styles, and mobile optimization.</p>
       <p>NEXUS Wallpapers is a solo-managed independent project. There is no large team behind the website. The design, organization, updates, and improvements are managed independently. Every improvement is part of an ongoing effort to make the website better for its visitors.</p>
@@ -2391,7 +2745,7 @@ END WALLPAPER CARD TEMPLATE
   </div>
 
   <div class="footer-brand-wrap">
-    <span class="footer-brand">NEXUS WALLPAPERS</span>
+    <span class="footer-brand easter-trigger" id="nexus-easter-trigger" role="button" tabindex="0" aria-label="NEXUS Wallpapers secret trigger. Activate five times to reveal a hidden feature." title="A little secret is hidden here.">NEXUS WALLPAPERS</span>
     <span class="footer-tagline">Made for your screen. Built for your mood.</span>
     <a class="footer-tagline" href="mailto:nexuswallpapers.contact@gmail.com">nexuswallpapers.contact@gmail.com</a>
   </div>
@@ -2408,8 +2762,18 @@ END WALLPAPER CARD TEMPLATE
     <span class="social-mark" aria-hidden="true">P</span><span class="social-label">Pinterest</span>
   </a>
 </footer>
+
+<section class="nexus-vip-card" id="nexus-vip-card" aria-labelledby="nexus-vip-title" aria-live="polite" hidden>
+  <h2 id="nexus-vip-title">✦ VIP Secret Wallpaper</h2>
+  <p>You found the hidden NEXUS drop. This is the reserved artwork slot for a future NEXUS Originals release.</p>
+  <!-- Add a real NEXUS Originals image and its real download URL here when one is published. -->
+  <div class="nexus-vip-art-slot" data-vip-wallpaper-image-slot>
+    <span>ORIGINAL ART SLOT · A NEXUS Originals wallpaper will appear here when its actual image asset is added.</span>
+  </div>
+</section>
 </div>
 
+<div class="nexus-pull-indicator" id="nexus-pull-indicator" role="status" aria-live="polite"><span class="nexus-rain-spinner" aria-hidden="true"><i>1</i><i>0</i><i>1</i><i>0</i></span><span id="nexus-pull-label">Pull to refresh</span></div>
 <button aria-label="Back to top" class="back-to-top" id="back-to-top" type="button">&uarr;</button>
 
 <dialog aria-labelledby="lightbox-title" class="lightbox" id="wallpaper-lightbox">
@@ -3500,6 +3864,90 @@ END WALLPAPER CARD TEMPLATE
 
   /* ---------------- EVENT WIRING ---------------- */
 
+  // Double-tap to favourite: reuse the existing toggleFavorite() and FAV_KEY.
+  // A single tap is delayed briefly so a second tap can be recognized without opening the preview.
+  const tapStates = new WeakMap();
+  const pointerStarts = new Map();
+  function showDoubleTapHeart(media) {
+    const previous = media.querySelector(".nexus-doubletap-heart");
+    if (previous) previous.remove();
+    const heart = document.createElement("span");
+    heart.className = "nexus-doubletap-heart";
+    heart.setAttribute("aria-hidden", "true");
+    heart.textContent = "♥";
+    media.appendChild(heart);
+    window.setTimeout(() => heart.remove(), 720);
+  }
+
+  grid.addEventListener("pointerdown", event => {
+    if (!event.isPrimary || event.button !== 0) return;
+    const media = event.target.closest(".wallpaper-media");
+    if (!media) return;
+    pointerStarts.set(event.pointerId, { media, x: event.clientX, y: event.clientY });
+  }, { passive: true });
+
+  grid.addEventListener("pointercancel", event => pointerStarts.delete(event.pointerId), { passive: true });
+
+  grid.addEventListener("pointerup", event => {
+    const start = pointerStarts.get(event.pointerId);
+    pointerStarts.delete(event.pointerId);
+    if (!start || !event.isPrimary || event.button !== 0) return;
+    if (Math.hypot(event.clientX - start.x, event.clientY - start.y) > 12) return;
+    const media = start.media;
+    const card = media.closest(".wallpaper-card");
+    if (!card) return;
+
+    let tap = tapStates.get(media);
+    if (!tap) {
+      tap = { lastAt: 0, timer: 0, ignoredClicks: 0, allowSynthetic: false };
+      tapStates.set(media, tap);
+    }
+    // The browser emits a click after pointerup; suppress it and replay only a confirmed single tap.
+    tap.ignoredClicks += 1;
+    const now = Date.now();
+    if (tap.lastAt && now - tap.lastAt <= 330) {
+      window.clearTimeout(tap.timer);
+      tap.timer = 0;
+      tap.lastAt = 0;
+      toggleFavorite(card);
+      showDoubleTapHeart(media);
+      return;
+    }
+
+    tap.lastAt = now;
+    tap.timer = window.setTimeout(() => {
+      tap.lastAt = 0;
+      tap.timer = 0;
+      tap.allowSynthetic = true;
+      media.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, view: window }));
+      // Clear the bypass if a browser drops the synthetic event.
+      window.setTimeout(() => { tap.allowSynthetic = false; }, 0);
+    }, 330);
+  }, { passive: true });
+
+  grid.addEventListener("click", event => {
+    const media = event.target.closest(".wallpaper-media");
+    if (!media) return;
+    const tap = tapStates.get(media);
+    if (!tap) return;
+    if (tap.allowSynthetic) {
+      tap.allowSynthetic = false;
+      return;
+    }
+    if (tap.ignoredClicks > 0) {
+      tap.ignoredClicks -= 1;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }
+  }, true);
+
+  // Pull-to-refresh dispatches a local re-render; static data is not misrepresented as a server fetch.
+  window.addEventListener("nexus:pull-refresh", () => {
+    updateWallpapers();
+    refreshFavoriteUI();
+    refreshCategoryCounts();
+  });
+
   // Grid: preview / favourite / share / download are delegated here.
   grid.addEventListener("click", event => {
     const card = event.target.closest(".wallpaper-card");
@@ -3687,7 +4135,7 @@ END WALLPAPER CARD TEMPLATE
     <div class="consent-copy">
       <p class="consent-kicker">NEXUS · PRIVACY &amp; TERMS</p>
       <h2 id="nexus-consent-title">A quick note about your privacy</h2>
-      <p>We use essential browser storage to remember favourites, recently viewed wallpapers and this notice preference. By selecting Accept &amp; Continue, you acknowledge our <a href="#terms-policy" data-policy-link="terms-policy">Terms &amp; Conditions</a> and <a href="#privacy-policy" data-policy-link="privacy-policy">Privacy Policy</a>.</p>
+      <p>We use essential browser storage to remember favourites, recently viewed wallpapers, your selected accent theme, local reactions, Mystery Wallpaper progress and this notice preference. By selecting Accept &amp; Continue, you acknowledge our <a href="#terms-policy" data-policy-link="terms-policy">Terms &amp; Conditions</a> and <a href="#privacy-policy" data-policy-link="privacy-policy">Privacy Policy</a>.</p>
     </div>
     <div class="consent-actions">
       <button class="consent-button consent-button-secondary" id="nexus-view-policies" type="button">View policies</button>
@@ -3705,7 +4153,7 @@ END WALLPAPER CARD TEMPLATE
   const acceptButton = document.getElementById("nexus-accept-policies");
   const viewPoliciesButton = document.getElementById("nexus-view-policies");
   const consentKey = "nexus-policy-consent-v1";
-  const consentVersion = "2026-11-09";
+  const consentVersion = "2026-11-10";
 
   function safeReadConsent() {
     try { return window.localStorage.getItem(consentKey); }
@@ -4243,5 +4691,140 @@ END WALLPAPER CARD TEMPLATE
   mysteryImage.addEventListener("error", mysteryImageError);
 })();
 </script>
+
+<script>
+(() => {
+  "use strict";
+
+  /* MULTI-THEME ACCENT SWITCHER */
+  const themeKey = "nexus-theme-preference-v1";
+  const themeSelect = document.getElementById("nexus-theme-select");
+  const validThemes = new Set(["cyberpunk", "crimson", "matrix"]);
+  let activeTheme = document.documentElement.dataset.theme || "cyberpunk";
+  try {
+    const stored = localStorage.getItem(themeKey);
+    if (validThemes.has(stored)) activeTheme = stored;
+  } catch (_) { /* Theme still works for the current page session. */ }
+  if (!validThemes.has(activeTheme)) activeTheme = "cyberpunk";
+  document.documentElement.dataset.theme = activeTheme;
+  if (themeSelect) {
+    themeSelect.value = activeTheme;
+    themeSelect.addEventListener("change", () => {
+      const nextTheme = themeSelect.value;
+      if (!validThemes.has(nextTheme)) return;
+      document.documentElement.dataset.theme = nextTheme;
+      try { localStorage.setItem(themeKey, nextTheme); }
+      catch (_) { /* Keep the selected theme for this session if storage is unavailable. */ }
+    });
+  }
+
+  /* FIVE-TAP EASTER EGG */
+  const trigger = document.getElementById("nexus-easter-trigger");
+  const vipCard = document.getElementById("nexus-vip-card");
+  let tapCount = 0;
+  let lastTapAt = 0;
+  let glitchTimer = 0;
+  if (trigger && vipCard) {
+    const activateTap = () => {
+      const now = Date.now();
+      if (now - lastTapAt > 1100) tapCount = 0;
+      lastTapAt = now;
+      tapCount += 1;
+      if (tapCount < 5 || !vipCard.hidden) return;
+      tapCount = 0;
+      document.body.classList.add("nexus-glitch");
+      window.clearTimeout(glitchTimer);
+      glitchTimer = window.setTimeout(() => {
+        document.body.classList.remove("nexus-glitch");
+        vipCard.hidden = false;
+        vipCard.scrollIntoView({
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+          block: "center"
+        });
+      }, 2000);
+    };
+    trigger.addEventListener("click", activateTap);
+    trigger.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        activateTap();
+      }
+    });
+  }
+
+  /* MOBILE PULL-TO-REFRESH */
+  const indicator = document.getElementById("nexus-pull-indicator");
+  const label = document.getElementById("nexus-pull-label");
+  const grid = document.getElementById("wallpaper-grid");
+  if (!indicator || !grid) return;
+
+  const threshold = 86;
+  let startY = 0;
+  let pullDistance = 0;
+  let tracking = false;
+  let refreshing = false;
+  let startTarget = null;
+
+  function isExcludedTarget(target) {
+    return Boolean(target && target.closest(
+      "input,textarea,select,button,a,[role='button'],dialog,.mystery-stage,.nexus-pull-indicator"
+    ));
+  }
+  function resetPull() {
+    tracking = false;
+    pullDistance = 0;
+    startTarget = null;
+    indicator.classList.remove("is-visible", "is-loading");
+    indicator.style.removeProperty("--pull-progress");
+  }
+
+  document.addEventListener("touchstart", event => {
+    if (refreshing || window.scrollY > 1 || !event.touches || event.touches.length !== 1) return;
+    const target = event.target;
+    if (isExcludedTarget(target)) return;
+    tracking = true;
+    startTarget = target;
+    startY = event.touches[0].clientY;
+    pullDistance = 0;
+  }, { passive: true });
+
+  document.addEventListener("touchmove", event => {
+    if (!tracking || refreshing || !event.touches || event.touches.length !== 1) return;
+    const currentY = event.touches[0].clientY;
+    const delta = currentY - startY;
+    if (delta <= 0 || window.scrollY > 1) { resetPull(); return; }
+    pullDistance = Math.min(delta, 125);
+    if (pullDistance > 14) {
+      indicator.classList.add("is-visible");
+      indicator.style.setProperty("--pull-progress", String(Math.min(1, pullDistance / threshold)));
+      if (label) label.textContent = pullDistance >= threshold ? "Release to refresh" : "Pull to refresh";
+    }
+    if (pullDistance > 42) event.preventDefault();
+  }, { passive: false });
+
+  document.addEventListener("touchend", () => {
+    if (!tracking || refreshing) { resetPull(); return; }
+    if (pullDistance >= threshold && window.scrollY <= 1) {
+      refreshing = true;
+      indicator.classList.add("is-visible", "is-loading");
+      if (label) label.textContent = "Refreshing collection…";
+      window.dispatchEvent(new CustomEvent("nexus:pull-refresh"));
+      window.setTimeout(() => {
+        if (label) label.textContent = "Collection refreshed";
+        window.setTimeout(() => {
+          refreshing = false;
+          if (label) label.textContent = "Pull to refresh";
+          resetPull();
+        }, 450);
+      }, 520);
+    } else {
+      resetPull();
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchcancel", resetPull, { passive: true });
+})();
+</script>
+
 </body>
 </html>
