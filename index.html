@@ -379,7 +379,7 @@
    ===================================================================== */
 .reaction-bar {
   display:grid;
-  grid-template-columns:repeat(5,minmax(0,1fr));
+  grid-template-columns:repeat(4,minmax(0,1fr));
   gap:6px;
   margin-top:10px;
   padding-top:10px;
@@ -848,7 +848,7 @@ body.nexus-menu-open { overflow:hidden; touch-action:none; }
   .nexus-guide-card p,.nexus-faq-grid details p { font-size:.68rem; }
   .nexus-faq-grid { grid-template-columns:1fr; gap:7px; }
   .nexus-contact-section { grid-template-columns:1fr; gap:17px; }
-  .reaction-bar { grid-template-columns:repeat(5,minmax(0,1fr)); }
+  .reaction-bar { grid-template-columns:repeat(4,minmax(0,1fr)); }
   .reaction-button { min-height:44px; padding:4px 1px; }
   .reaction-label { font-size:.48rem; }
 }
@@ -951,7 +951,7 @@ END WALLPAPER CARD TEMPLATE
   <div class="nexus-menu-head"><div><p class="nexus-menu-kicker">NEXUS / NAVIGATION</p><h2>Explore the Vault</h2></div><button type="button" class="nexus-menu-close" id="nexus-menu-close" aria-label="Close navigation">×</button></div>
   <div class="nexus-menu-links">
     <a href="#top" data-menu-close>⌂ <span>Home</span></a>
-    <a href="#wallpaper-grid" data-menu-filter="All">▦ <span>All Wallpapers</span></a>
+    <a href="#wallpaper-grid" data-menu-close>▦ <span>All Wallpapers</span></a>
     <button type="button" data-menu-filter="NEXUS Originals">✦ <span>NEXUS Originals</span></button>
     <a href="#featured-section" data-menu-close>◇ <span>Featured Wallpapers</span></a>
     <a href="#wallpaper-grid" data-menu-sort="latest">◷ <span>Latest Wallpapers</span></a>
@@ -4413,11 +4413,10 @@ END WALLPAPER CARD TEMPLATE
      Counts are public-read / securely-transactional-write in Firestore.
      --------------------------------------------------------------- */
   const reactionTypes = [
-    { id: "love", emoji: "❤️", label: "Love" },
+    { id: "love", emoji: "😍", label: "Love" },
     { id: "fire", emoji: "🔥", label: "Fire" },
     { id: "cool", emoji: "😎", label: "Cool" },
-    { id: "awesome", emoji: "⚡", label: "Awesome" },
-    { id: "legendary", emoji: "💎", label: "Legendary" }
+    { id: "bug", emoji: "🐛", label: "Bug" }
   ];
   const reactionStorageKey = "nexus-firestore-reactions-v2";
   const firebaseConfig = {
@@ -4445,7 +4444,7 @@ END WALLPAPER CARD TEMPLATE
   } catch (_) { reactionSelections = {}; }
 
   function reactionId(card) { return card.dataset.wallpaperId || card.id || ""; }
-  function emptyCounts() { return { love: 0, fire: 0, cool: 0, awesome: 0, legendary: 0 }; }
+  function emptyCounts() { return { love: 0, fire: 0, cool: 0, bug: 0 }; }
   function selectedReaction(id) {
     return reactionUser && reactionSelections[reactionUser.uid] && reactionSelections[reactionUser.uid][id] || "";
   }
@@ -4476,7 +4475,6 @@ END WALLPAPER CARD TEMPLATE
       button.disabled = !reactionReady || Boolean(selected) || button.dataset.pending === "true";
       button.classList.toggle("is-selected", isSelected);
       button.querySelector(".reaction-count").textContent = String(Number(counts[type.id]) || 0);
-      button.querySelector(".reaction-label").textContent = type.label;
       button.setAttribute("aria-label", type.label + " reaction, " + (Number(counts[type.id]) || 0) + " global reactions" + (isSelected ? ", your reaction" : selected ? ", you have already reacted" : ""));
       button.title = type.label + " — one reaction per wallpaper per Firebase account";
     });
@@ -4544,7 +4542,6 @@ END WALLPAPER CARD TEMPLATE
         updateAllReactionBars();
       });
       if (!auth.currentUser) await authApi.signInAnonymously(auth);
-      reactionUser = auth.currentUser || reactionUser;
       const countsQuery = firestoreApi.collection(reactionDb, "wallpaperReactions");
       firestoreApi.onSnapshot(countsQuery, snapshot => {
         snapshot.docChanges().forEach(change => {
@@ -5140,14 +5137,6 @@ END WALLPAPER CARD TEMPLATE
   if (close) close.addEventListener("click", () => setMenu(false));
   if (scrim) scrim.addEventListener("click", () => setMenu(false));
   document.addEventListener("keydown", event => { if (event.key === "Escape" && toggle && toggle.getAttribute("aria-expanded") === "true") setMenu(false); });
-  if (menu) menu.addEventListener("keydown", event => {
-    if (event.key !== "Tab") return;
-    const focusable = Array.from(menu.querySelectorAll('a[href],button:not([disabled])')).filter(el => !el.hidden);
-    if (!focusable.length) return;
-    const first = focusable[0], last = focusable[focusable.length - 1];
-    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
-  });
   if (menu) menu.addEventListener("click", event => {
     const filter = event.target.closest("[data-menu-filter]");
     const sort = event.target.closest("[data-menu-sort]");
@@ -5159,8 +5148,6 @@ END WALLPAPER CARD TEMPLATE
       return;
     }
     if (sort) {
-      const allPill = document.querySelector('.category-pill[data-filter="All"]');
-      if (allPill) allPill.click();
       const select = document.getElementById("sort-select");
       if (select) { select.value = sort.dataset.menuSort; select.dispatchEvent(new Event("change", {bubbles:true})); }
     }
