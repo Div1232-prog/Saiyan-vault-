@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saiyan-vault.pages.dev/sitemap.xml
